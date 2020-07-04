@@ -4,6 +4,8 @@ import { CommonModule } from "@angular/common";
 import { PagesRoutingModule } from './pages-routing.module';
 
 import { HomePageComponent } from './home-page/home-page.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { HomePageComponent } from './home-page/home-page.component';
   ],
   imports: [
     PagesRoutingModule,
-    CommonModule
-  ],
+    CommonModule,
+    CarouselModule
+  ]
 })
 export class PagesModule { }

@@ -1,7 +1,7 @@
 
 $white: #fff;
 $off-white: #e8e8e8;
-
+$primar: #f9a825;
 
 .sidenav-container {
   position: absolute;
@@ -111,6 +111,32 @@ width : 30%;
     }
   }
 }
+
+.footer-wrapper{
+  background-color: $primar;
+  p {
+    a {
+      text-decoration: none;
+    }
+    a:hover{
+      color: $white;
+    }
+  }
+  .footer-bottom {
+    text-align: center;
+    .footer-social {
+      a {
+        padding: 5px 10px;
+        font-size: 20px;
+      }
+      a:hover {
+        color: $white !important
+      }
+    }
+  }
+
+}
+
 
 
 

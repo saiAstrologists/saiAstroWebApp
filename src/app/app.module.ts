@@ -11,6 +11,7 @@ import { MaterialModule } from './material-module';
 import { LoginComponent } from './login/login.component'
 import { HttpIntercepterBasicAuthService } from './shared/service/http/http-intercepter-basic-auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,
+    CarouselModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

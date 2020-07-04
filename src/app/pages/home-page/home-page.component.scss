@@ -57,12 +57,42 @@ anchors are inline so you need ot make them block to go full width
   }
 
 }
-
-
 .hm-about-us-block{
   text-align: center;
 }
 
+.slide.testimonial-img {
+  img {
+    width: 30%;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .testimonial-content {
+    text-align: center;
+    padding: 12px 7px;
+
+    p {
+      font-size: 17px;
+      line-height: 27px;
+    }
+  }
+}
+
+.cardShadow{
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+// .owl-theme .owl-nav .owl-next {
+//   position: absolute;
+//   top: 121px;
+//   right: -24px;
+// }
+
+// .owl-theme .owl-nav  .owl-prev {
+//   position: absolute;
+//   top: 123px;
+//   left: -34px;
+// }
 
 
 @media (max-width: 1024px) {
