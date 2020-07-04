@@ -1,0 +1,96 @@
+<mat-sidenav-container
+    class="sidenav-container" (backdropClick)="close('backdrop')">
+
+  <mat-sidenav class="drawer-container" #sidenav [fixedInViewport]="true" (keydown.escape)="close('escape')" disableClose>
+    <!-- <button mat-button  (click)="close('toggle button')">X</button> -->
+      <div class="side-bar-logo"><img class="mb-2" src="../assets/images/logo/PNG/font120px.png"></div>
+      <div class="list-group side-bar-quick-link" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="astro-talk" data-toggle="list" href="#astro-talk" role="tab" aria-controls="astro-talk">Talk to Astrologer</a>
+        <a class="list-group-item list-group-item-action" id="horoscope" data-toggle="list" href="#horoscope" role="tab" aria-controls="horoscope">Horoscope 2020</a>
+        <a class="list-group-item list-group-item-action" id="kundli" data-toggle="list" href="#kundli" role="tab" aria-controls="kundli">Kundli</a>
+        <a class="list-group-item list-group-item-action" id="astro-mall" data-toggle="list" href="#astro-mall" role="tab" aria-controls="astro-mall">AstroMall</a>
+        <a class="list-group-item list-group-item-action" id="blog" data-toggle="list" href="#blog" role="tab" aria-controls="blog">Blog</a>
+      </div>
+
+      <!-- <li><a>Talk to Astrologer</a></li>
+      <li><a>Horoscope 2020</a></li>
+      <li><a>Kundli</a></li>
+      <li><a>AstroMall</a></li>
+      <li><a>Blog</a></li> -->
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="toolbar-wrapper">
+
+      <mat-toolbar-row>
+        <button mat-button class="menu-button" (click)="sidenav.open()"><mat-icon aria-hidden="false">view_headline</mat-icon></button>
+        <span><img src="../assets/images/logo/PNG/font120px.png"></span>
+        <span class="example-spacer"></span>
+        <div class="quick-link">
+        <span class="example-spacer"></span>
+        <span>Talk to Astrologer</span>
+        <span>Chat with Astrologer</span>
+        <span>Horoscope 2020 </span>
+        <span>Kundli</span>
+        <span>AstroMall</span>
+        <span>Blog</span>
+       </div>
+        <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
+        <button mat-raised-button color="primary" (click)="openDialog()">Login</button>
+        <mat-icon class="hm-wallet" mat-raised-button>account_balance_wallet</mat-icon>
+        <!-- <mat-icon  mat-raised-button>login</mat-icon> -->
+
+        <mat-icon class="hm-cart" mat-raised-button>shopping_cart</mat-icon>
+
+        <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+
+      <div class="fixed-plugin">
+
+          <div class="example-button-row">
+            <!-- <button mat-mini-fab>Basic</button>
+            <button mat-mini-fab color="primary">Primary</button>
+            <button mat-mini-fab color="accent">Accent</button>
+            <button mat-mini-fab color="warn">Warn</button>
+            <button mat-mini-fab disabled>Disabled</button> -->
+            <button mat-mini-fab  aria-label="Example icon-button with a heart icon">
+              <mat-icon>chat</mat-icon>
+            </button>
+            <button mat-mini-fab  aria-label="Example icon-button with a heart icon">
+              <mat-icon>phone</mat-icon>
+            </button>
+            <button mat-mini-fab   aria-label="Example icon-button with a heart icon">
+              <mat-icon>assignment</mat-icon>
+            </button>
+            <button mat-mini-fab   aria-label="Example icon-button with a heart icon">
+              <mat-icon>question_answer</mat-icon>
+            </button>
+          </div>
+          <!-- <mat-divider></mat-divider>
+          <span class="follow-text">Follow</span>
+          <button mat-mini-fab class="facebook-color" aria-label="facebook-icon">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </button>
+          <button mat-mini-fab color="warn" aria-label="youtube-icon">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </button>
+          <button mat-mini-fab class="instagram-color" aria-label="instagram-icon">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </button> -->
+       </div>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+  <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
+
+</mat-sidenav-container>
+
+
+

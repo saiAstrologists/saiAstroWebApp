@@ -1,0 +1,165 @@
+
+$white: #fff;
+$off-white: #e8e8e8;
+
+
+.sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.facebook-color{
+  background-color: blue;
+  color: #fff;
+}
+.instagram-color{
+  background-color: purple;
+  color: #fff;
+}
+
+mat-toolbar-row{
+  height: 80px;
+}
+
+// mat-toolbar-row .mat-button {
+// left: -3px;
+// /* top: 0px; */
+// border: 1px solid #ccc;
+// }
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-wrapper {
+position: sticky;
+position: -webkit-sticky; /* For macOS/iOS Safari */
+top: 0; /* Sets the sticky toolbar to be on top */
+z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+.mat-icon.hm-wallet {
+  margin: 0px 20px;
+}
+}
+
+.toolbar-wrapper button{
+  border-radius: 20px;
+  &.menu-button {
+    min-width: 36px;
+    left: -11px;
+    padding: 0px !important;
+  }
+
+}
+
+.toolbar-wrapper span{
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.toolbar-wrapper span img{
+width : 30%;
+}
+
+.toolbar-wrapper .notification-icon{
+  border-radius: 20px;
+}
+
+.fixed-plugin {
+  position: fixed;
+  top: 115px;
+  right: 15px;
+  line-height: 48px;
+  width: 64px;
+  background: rgba(0, 0, 0, 0.08);
+  z-index: 1031;
+  border-radius: 8px 0 0 8px;
+  text-align: center;
+
+  .follow-text {
+    color: #fff;
+   }
+
+   button{
+     background: $off-white;
+   }
+}
+
+.fixed-plugin
+
+.side-bar-quick-link{
+  display: none;
+}
+
+.side-bar-quick-link a {
+  padding: 1rem 50px;
+}
+
+.mat-sidenav {
+  width: 230px;
+  .side-bar-logo {
+    text-align: center;
+      img{
+      width:80%;
+      padding-top: 10px;
+    }
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .fixed-plugin {
+    right: 0px;
+  }
+  .toolbar-wrapper span img{
+    width : 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-plugin {
+    right: 0px;
+  }
+  .toolbar-wrapper span{
+    padding: 0 0px;
+  }
+
+  .quick-link{
+    display: none;
+  }
+  .toolbar-wrapper span img{
+    width : 40%;
+  }
+
+  .side-bar-quick-link {
+    display: block;
+
+  }
+}
+
+@media (max-width: 640px) {
+
+  .toolbar-wrapper{
+      span img{
+        width : 85%;
+      }
+      .mat-icon.hm-wallet {
+        margin: 0px 14px;
+      }
+      button {
+        border-radius: 12px;
+        font-size: 12px;
+        min-width: 48px;
+        padding: 0px;
+        line-height: 30px;
+      }
+  }
+
+}

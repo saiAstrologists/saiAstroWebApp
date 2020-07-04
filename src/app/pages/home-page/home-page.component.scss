@@ -1,0 +1,90 @@
+/*
+Removes white gap between slides - chagnge to base color of slide images
+*/
+
+$primary : #f9a825;
+$white : #fff;
+$black: #000;
+
+.carousel {
+  background:$primary;
+}
+
+/*
+Forces image to be 100% width and not max width of 100%
+*/
+.carousel-item .img-fluid {
+  width:100%;
+}
+
+/*
+anchors are inline so you need ot make them block to go full width
+*/
+.carousel-item a {
+  display: block;
+  width:100%;
+}
+
+.hm-horoscope-header {
+  text-align: center;
+}
+
+.hm-horoscope-block {
+  div {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  img{
+  width: 50%
+  }
+  img:hover{
+    opacity: 0.5;
+  }
+  h4{
+    font-size: 13px !important;
+    margin-top: 10px;
+  }
+}
+
+.hm-about-us{
+  background-color: $primary;
+  color: $black;
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+}
+
+
+.hm-about-us-block{
+  text-align: center;
+}
+
+
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 640px) {
+  .hm-horoscope-block {
+    img{
+      width: 80%
+      }
+      h4{
+        font-size: 9px !important;
+      }
+  }
+
+  .hm-about-us p{
+    font-size: 17px;
+  }
+
+}
