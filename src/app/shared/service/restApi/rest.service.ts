@@ -11,7 +11,7 @@ export class RestService {
   constructor(private http: HttpClient) {}
 
   public create = (route: string, body) => {
-    // console.log("route",route,"body",body);
+    console.log("route",route,"body",body);
     return this.http.post(environment.urlAddress + route, body);
   };
 

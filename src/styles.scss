@@ -59,6 +59,9 @@ $primary : #f9a825;
 html, body { height: 100%; }
 body { margin: 0; font-family: Muli, sans-serif; }
 
+.mat-error{
+  font-size: 14px;
+}
 a:hover {
   color : $primary;
 }
