@@ -11,6 +11,11 @@ $primar: #f9a825;
   right: 0;
 }
 
+h4 {
+  font-size: 13px;
+  padding: 0px 10px;
+  margin: 4px 0px;
+}
 .facebook-color{
   background-color: blue;
   color: #fff;
@@ -43,9 +48,29 @@ position: sticky;
 position: -webkit-sticky; /* For macOS/iOS Safari */
 top: 0; /* Sets the sticky toolbar to be on top */
 z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
-.mat-icon.hm-wallet {
-  margin: 0px 20px;
+.mat-icon{
+    &.hm-wallet {
+      margin: 0px 20px;
+    }
+    &.hm-user-icon{
+      margin: 0px 10px;
+      font-size: 35px;
+      height: auto;
+      cursor: pointer;
+    }
+  }
 }
+
+// .hm-user-menu-item + div.cdk-overlay-pane > div.mat-menu-panel > div.mat-menu-content {
+
+//   }
+
+
+.hm-user-menu-item{
+  h4 {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 .toolbar-wrapper button{
@@ -61,6 +86,16 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 .toolbar-wrapper span{
   padding-right: 10px;
   font-size: 14px;
+  cursor: pointer;
+}
+.toolbar-wrapper span a{
+  text-decoration: none;
+}
+.toolbar-wrapper span.highlight-menu{
+  border: 2px solid #f2bf2b;
+  border-radius: 44px;
+  padding:10px;
+  margin-right: 10px;
 }
 
 .toolbar-wrapper span img{

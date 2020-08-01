@@ -5,11 +5,13 @@ import { PagesRoutingModule } from './pages-routing.module';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { AstroRegistrationComponent } from './astro-registration/astro-registration.component';
 
 
 @NgModule({
   declarations: [
-    HomePageComponent
+    HomePageComponent,
+    AstroRegistrationComponent
   ],
   imports: [
     PagesRoutingModule,

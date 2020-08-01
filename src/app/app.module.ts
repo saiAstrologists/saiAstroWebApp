@@ -12,12 +12,14 @@ import { LoginComponent } from './login/login.component'
 import { HttpIntercepterBasicAuthService } from './shared/service/http/http-intercepter-basic-auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

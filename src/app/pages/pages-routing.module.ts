@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component'
+import { AstroRegistrationComponent } from './astro-registration/astro-registration.component';
+
 
 const routes: Routes = [
 
-  {path: '', component: HomePageComponent}
+  {path: '', component: HomePageComponent},
+  {path: 'astroRegistration', component: AstroRegistrationComponent}
+
 
 ];
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { RegexConstant } from '../shared/constant/regex-constant'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { loginService } from './login.service'
-
+import {CommonService} from '../shared/service/commonService/common.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,22 +13,23 @@ export class LoginComponent implements OnInit {
   validateForm: FormGroup;
   otpForm: FormGroup;
   isVisible:boolean = false;
+  isForgotPassVisible: boolean = false;
 
 
 
-  constructor(private _formBuilder: FormBuilder,public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
+  constructor(private _commonService: CommonService,private _formBuilder: FormBuilder,public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
    ) { }
 
   ngOnInit(): void {
     this.validateForm = this._formBuilder.group({
-      mobile   : ['', [Validators.required, this.mobileNumber]],
+      contactNo   : ['', [Validators.required, this.mobileNumber]],
       password: ['', [Validators.required, this.passwordPattern]],
-      type: [null, Validators.required]
+      userType: [null, Validators.required]
 
     });
 
     this.otpForm = this._formBuilder.group({
-      otp : ['']
+      otp : ['', Validators.required]
      });
 
   }
@@ -48,23 +49,45 @@ export class LoginComponent implements OnInit {
         let resonseMessage = responseData.message;
 
         if(responseData.status == 200){
-          this.isVisible = true;
+          // this.isVisible = true;
+          this._commonService.tostMessage(resonseMessage)
+          this.dialogRef.close(responseData.data);
         } else {
           alert(resonseMessage);
         }
 
         })
-}
+  }
 
-otpSubmitForm(value: any) {
-  alert("OTP Submited Successfuly")
-  this.dialogRef.close(value);
-}
 
-signUpSubmitForm(value: any){
-  alert("Registered Successfuly")
-  this.dialogRef.close(value);
-}
+
+  otpSubmitForm(value: any) {
+    alert("OTP Submited Successfuly")
+    this.dialogRef.close(value);
+  }
+
+  forgotPassword() {
+    this.isVisible = true;
+  }
+
+  resetLogin(event){
+
+    if(event){
+      this.isVisible = false;
+    } else {
+      this.isVisible = true;
+    }
+  }
+// signUpSubmitForm(value: any){
+//   alert("Registered Successfuly")
+//   console.log("value User ++++++++ ",value)
+//   if(value) {
+//     this.message = "User registered and verified Successfully"
+//   } else {
+//     this.message = "User not verified, please try to register again"
+//   }
+//   // this.dialogRef.close(value);
+// }
 
 mobileNumber= (control: FormControl): {[s: string]: boolean} => {
 

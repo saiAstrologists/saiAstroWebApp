@@ -8,14 +8,16 @@ import { RestUrl } from '../shared/constant/rest-url.constants';
   providedIn: 'root'
 })
 
-export class signUpService {
+export class ForgotPasswordService {
 
   constructor(private restService: RestService) {}
 
-  signUp(data): Observable<any> {
-    console.log("data in sign up", data)
-    return this.restService.create(RestUrl.signUp, data)
+  forgetPassword(data): Observable<any> {
+    return this.restService.create(RestUrl.forgetPassword, data)
   }
 
+  resetUser(data): Observable<any> {
+    return this.restService.create(RestUrl.resetUser, data);
+  }
 
 }

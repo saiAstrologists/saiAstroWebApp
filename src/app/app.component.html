@@ -26,19 +26,28 @@
 
       <mat-toolbar-row>
         <button mat-button class="menu-button" (click)="sidenav.open()"><mat-icon aria-hidden="false">view_headline</mat-icon></button>
-        <span><img src="../assets/images/logo/PNG/font120px.png"></span>
+        <span><a href=""><img src="../assets/images/logo/PNG/font120px.png"></a></span>
         <span class="example-spacer"></span>
         <div class="quick-link">
         <span class="example-spacer"></span>
-        <span>Talk to Astrologer</span>
-        <span>Chat with Astrologer</span>
-        <span>Horoscope 2020 </span>
-        <span>Kundli</span>
-        <span>AstroMall</span>
-        <span>Blog</span>
+        <span class="highlight-menu"><a href="">Talk to Astrologer</a></span>
+        <span class="highlight-menu"><a href="">Chat with Astrologer</a></span>
+        <span><a href="">Horoscope 2020</a> </span>
+        <span><a href="">Kundli</a></span>
+        <span><a href="">AstroMall</a></span>
+        <span><a href="">Blog</a></span>
        </div>
         <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
-        <button mat-raised-button color="primary" (click)="openDialog()">Login</button>
+        <mat-icon class="hm-user-icon" *ngIf="isUserLogin" mat-button [matMenuTriggerFor]="menu" mat-raised-button>face</mat-icon>
+        <mat-menu #menu="matMenu" backdropClass="hm-user-menu-item" >
+          <h4 *ngIf="isUserLogin">{{checkUser.name}}</h4>
+          <!-- <h4>{{checkUser.email}}</h4> -->
+          <h4 *ngIf="isUserLogin">{{checkUser.conatctNo}}</h4>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="logOut()">Log Out</button>
+          <!-- <button mat-menu-item>Info</button> -->
+        </mat-menu>
+        <button mat-raised-button color="primary" (click)="openDialog()" *ngIf="!isUserLogin">Login</button>
         <mat-icon class="hm-wallet" mat-raised-button>account_balance_wallet</mat-icon>
         <!-- <mat-icon  mat-raised-button>login</mat-icon> -->
 

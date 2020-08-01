@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { RegexConstant } from '../shared/constant/regex-constant';
 import { signUpService } from './sign-up.service';
+import {CommonService} from '../shared/service/commonService/common.service'
 
 @Component({
   selector: 'app-sign-up',
@@ -12,25 +13,27 @@ export class SignUpComponent implements OnInit {
   signUpValidateForm: FormGroup;
   otpForm: FormGroup;
   isVisible:boolean = false;
+  loginResponseData;
+  message;
 
   @Output()
   outputSignUpData: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private _formBuilder: FormBuilder, private _signUpService : signUpService) { }
+  constructor(private _formBuilder: FormBuilder, private _signUpService : signUpService, private _commonService : CommonService) { }
 
   ngOnInit(): void {
 
     this.signUpValidateForm = this._formBuilder.group({
       name           : ['', [Validators.required]],
       email          : ['', [Validators.required, Validators.email]],
-      mobile          : ['', [Validators.required, this.mobileNumber]],
+      contactNo          : ['', [Validators.required, this.mobileNumber]],
       password       : ['', [Validators.required, this.passwordPattern]],
-      type          : ['', [Validators.required]]
+      userType          : ['', [Validators.required]]
     });
 
 
     this.otpForm = this._formBuilder.group({
-      otp : ['']
+      otp : ['',[Validators.required]]
     });
 
 
@@ -46,7 +49,7 @@ export class SignUpComponent implements OnInit {
 
       this._signUpService.signUp(value).subscribe((responseData) => {
         console.log("responseData login ",responseData);
-
+        // responseData.status = 200;
         let resonseMessage = responseData.message;
 
         if(responseData.status == 200) {
@@ -59,7 +62,36 @@ export class SignUpComponent implements OnInit {
   }
 
   otpSubmitForm(value: any) {
-    this.outputSignUpData.emit(value);
+    console.log("submit Form ",value);
+
+    let requestData = {
+      contactNo : this.signUpValidateForm.value.contactNo,
+      otp : value.otp,
+      userType : this.signUpValidateForm.value.userType
+    }
+
+    this._commonService.verifyOTP(requestData).subscribe((responseData) => {
+      console.log("responseData login ",responseData);
+      responseData.status = 200;
+
+      let resonseMessage = responseData.message;
+
+      if(responseData.status == 200) {
+        alert(resonseMessage);
+        this.isVisible = false;
+        this.message = "User registered and verified Successfully!"
+        this.signUpValidateForm.reset();
+        // this.outputSignUpData.emit(true);
+      } else {
+        alert(resonseMessage);
+        this.message = "OTP invalid, please resend your OTP!"
+        this.signUpValidateForm.reset();
+        // this.outputSignUpData.emit(false);
+      }
+
+    });
+
+
     // this.dialogRef.close(value);
   }
 
