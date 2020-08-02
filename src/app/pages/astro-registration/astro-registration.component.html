@@ -2,7 +2,7 @@
 <mat-card class="profile-card">
 <div class="form-wrapper">
   <h2>Create Profile</h2>
-  <form  name="validateForm" [formGroup]="validateForm" novalidate (ngSubmit)="submitForm(validateForm.value)">
+  <form  name="validateForm" [formGroup]="validateForm" novalidate>
 
     <mat-form-field class="form-field-width">
       <mat-label>Full Name</mat-label>
@@ -305,7 +305,7 @@
 
   <div class="mt-5">
   <button mat-raised-button color="primary" class="submit-button mt-3 mr-5" aria-label="LOGIN"
-  [disabled]="validateForm.invalid">
+  [disabled]="validateForm.invalid" (click)="submitForm(validateForm.value)">
     Create
   </button>
 

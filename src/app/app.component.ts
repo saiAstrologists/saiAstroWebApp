@@ -3,7 +3,8 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component'
 import {CommonService} from './shared/service/commonService/common.service'
-
+import {Router} from '@angular/router'
+import { ObservableDataService } from './observables/behaviourSubject.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   isUserLogin : boolean = false;
   checkUser;
-  constructor(private _commonService: CommonService, public dialog: MatDialog){}
+  constructor(private _commonService: CommonService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){}
 
   reason = '';
 
@@ -51,6 +52,7 @@ export class AppComponent implements OnInit {
       if(typeof result != 'undefined' || result != null){
         this.isUserLogin = true;
         this.checkUser = result.userData;
+        this._observableDataService.checkUser(result.userData);
         sessionStorage.setItem('token',result.token);
         sessionStorage.setItem('userData',JSON.stringify(result.userData));
       }
@@ -61,5 +63,6 @@ export class AppComponent implements OnInit {
     sessionStorage.clear();
     this._commonService.tostMessage("Log Out Successfully!")
     this.isUserLogin = false;
+    this._route.navigate(['']);
   }
 }

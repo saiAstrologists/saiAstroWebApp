@@ -17,7 +17,10 @@ import {
     providedIn: "root"
   })
   export class HttpIntercepterBasicAuthService implements HttpInterceptor {
-    constructor(private _commonService: CommonService, private basicAuthenticationService: AuthenticationService) {}
+
+    constructor(private _commonService: CommonService, private basicAuthenticationService: AuthenticationService) {
+
+    }
 
     intercept(request: HttpRequest<any>, next: HttpHandler) : Observable<HttpEvent<any>>  {
 
@@ -25,18 +28,21 @@ import {
       console.log("basicAuthHeaderString +++++++++++++ ",basicAuthHeaderString)
         // request = request.clone({
         //   setHeaders: {
-        //     'Content-Type': 'application/json'
+        //     'content-type': 'application/json'
         //   }
         // });
 
       if (basicAuthHeaderString) {
+        console.log("if condition");
         request = request.clone({
           setHeaders: {
-            Authorization: basicAuthHeaderString,
+            // 'Authorization': basicAuthHeaderString,
+            // 'token': basicAuthHeaderString,
             'Content-Type': 'application/json'
           }
         });
       } else {
+        console.log("else condition");
         request = request.clone({
           setHeaders: {
             'Content-Type': 'application/json'
@@ -72,7 +78,7 @@ import {
       } else {
 
         // server-side error
-
+        // this._commonService.tostMessage(errorMessage)
         errorMessage = `Error Code: ${error.error.status}\nMessage: ${error.error.message}`;
 
       }

@@ -94,6 +94,18 @@ anchors are inline so you need ot make them block to go full width
 //   left: -34px;
 // }
 
+.hm-astrologer-wrapper{
+  text-align: center;
+  .astro_img img {
+    width:100%;
+  }
+  p{
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+
+}
 
 @media (max-width: 1024px) {
 

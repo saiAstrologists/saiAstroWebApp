@@ -20,8 +20,8 @@ export class AuthenticationService {
 
 
   getAuthenticatedToken() {
-    let token = JSON.parse(sessionStorage.getItem('token'));
-    // console.log("get token console ",token);
+    let token = JSON.parse(JSON.stringify(sessionStorage.getItem('token')));
+    console.log("get token console ",token);
       return token
   }
 

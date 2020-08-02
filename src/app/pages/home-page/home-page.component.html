@@ -206,6 +206,65 @@
   </div>
 </section>
 
+
+
+<section class="hm-astrologer-wrapper py-5">
+  <div class="container">
+    <div class="hm-astrologer-header mb-5">
+      <h1 class="mt-5 mb-1"><b>Astologer's</b></h1>
+      <div class="separator home">
+        <span class="text">Our Astrologer</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 col-md-3" *ngFor="let astro of astroData">
+        <div class="astro_img">
+          <img src="../../../assets//images/user/default-user.jpg">
+        </div>
+        <p>Name: {{astro.name}}</p>
+        <div>
+          <button mat-mini-fab (click)="makeCall(astro)">
+            <mat-icon>phone</mat-icon>
+          </button>
+        </div>
+      </div>
+      <!-- <div class="col-sm-3 col-md-3">
+        <div class="astro_img">
+          <img src="../../../assets//images/user/default-user.jpg">
+        </div>
+        <p>Name: Astro 2</p>
+        <div>
+          <button mat-mini-fab>
+            <mat-icon>phone</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="astro_img">
+          <img src="../../../assets//images/user/default-user.jpg">
+        </div>
+        <p>Name: Astro 3</p>
+        <div>
+          <button mat-mini-fab>
+            <mat-icon>phone</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <div class="astro_img">
+          <img src="../../../assets//images/user/default-user.jpg">
+        </div>
+        <p>Name: Astro 4</p>
+        <div>
+          <button mat-mini-fab>
+            <mat-icon>phone</mat-icon>
+          </button>
+        </div>
+      </div> -->
+  </div>
+  </div>
+</section>
+
 <section class="testimonial-wrapper py-5">
 <div class="container">
   <div class="hm-horoscope-header mb-5">

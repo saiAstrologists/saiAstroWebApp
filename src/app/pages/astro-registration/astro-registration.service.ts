@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestService } from '../../shared/service/restApi/rest.service';
 import { RestUrl } from '../../shared/constant/rest-url.constants';
+import { ProfileUpdateService } from '../../shared/service/restApi/profileUpdate.service';
 
 
 
@@ -11,10 +11,15 @@ import { RestUrl } from '../../shared/constant/rest-url.constants';
 
 export class AstroRegistartionService {
 
-  constructor(private restService: RestService) {}
+  constructor( private _profileUpdateService : ProfileUpdateService) {
+
+
+  }
 
   astroCreateProfile(data): Observable<any> {
-    return this.restService.create(RestUrl.login, data)
+    return this._profileUpdateService.createProfile(RestUrl.astroCreateProfile, data)
   }
+
+
 
 }

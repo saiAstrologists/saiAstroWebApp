@@ -16,8 +16,8 @@ export class AstroRegistrationComponent implements OnInit {
   portalFlag: boolean = false;
   skillList: string[] = ['Vedic Astrology', 'Nadi Astrology', 'Vastu', 'Gemology'];
   languageList: string[] = ['English', 'Hindi', 'Tamil', 'Marathi', 'Punjabi'];
-
-
+  ProfileToUpload: File = null;
+  IdProofToUpload: File = null;
 
   constructor(private _formBuilder: FormBuilder, private _commonService: CommonService, private _astroRegistartionService : AstroRegistartionService) { }
 
@@ -71,21 +71,55 @@ export class AstroRegistrationComponent implements OnInit {
 
       console.log("submit Form ",value);
       // this._route.navigate(['/profile']);
+      const formData: FormData = new FormData();
+      this.ProfileToUpload = value.profilePic._files[0]
+      this.IdProofToUpload = value.idProof._files[0]
 
-      // this._astroRegistartionService.astroCreateProfile(value).subscribe((responseData) => {
-      //   console.log("responseData login ",responseData);
+      formData.append('profilePic', this.ProfileToUpload, this.ProfileToUpload.name);
+      formData.append('idProof', this.IdProofToUpload, this.IdProofToUpload.name);
+      formData.append('accountHolderName', value.accountHolderName );
+      formData.append('accountType', value.accountType);
+      formData.append('address', value.address);
+      formData.append('adharCardNumber', value.adharCardNumber);
+      formData.append('bankAccountNumber', value.bankAccountNumber);
+      formData.append('city', value.city);
+      formData.append('contactNo', value.contactNo);
+      formData.append('country', value.country);
+      formData.append('dob', value.dob);
+      formData.append('email', value.email);
+      formData.append('experience', value.experience);
+      formData.append('gender', value.gender);
+      formData.append('ifsc', value.ifsc);
+      formData.append('language', value.language);
+      formData.append('longBio', value.longBio);
+      formData.append('monthlyEarning', value.monthlyEarning);
+      formData.append('name', value.name);
+      formData.append('otherWorkingSite', value.otherWorkingSite);
+      formData.append('panNumber', value.panNumber);
+      formData.append('pinCode', value.pinCode);
+      formData.append('shortBio', value.shortBio);
+      formData.append('skill', value.skill);
+      formData.append('state', value.state);
 
-      //   let resonseMessage = responseData.message;
-
-      //   if(responseData.status == 200) {
-      //     // this.isVisible = true;
-      //     this._commonService.tostMessage(resonseMessage)
+      console.log("formData+++++  ",formData);
 
 
-      //   } else {
-      //     alert(resonseMessage);
-      //   }
-      //   })
+      // formData.append('fileKey', fileToUpload, fileToUpload.name);
+
+      this._astroRegistartionService.astroCreateProfile(formData).subscribe((responseData) => {
+        console.log("responseData login ",responseData);
+
+        let resonseMessage = responseData.message;
+
+        if(responseData.status == 200) {
+          // this.isVisible = true;
+          this._commonService.tostMessage(resonseMessage)
+
+
+        } else {
+          alert(resonseMessage);
+        }
+        })
   }
 
   resetForm(e: MouseEvent): void {
