@@ -55,7 +55,7 @@ export class SignUpComponent implements OnInit {
         if(responseData.status == 200) {
           this.isVisible = true;
         } else {
-          alert(resonseMessage);
+          this._commonService.tostMessage(resonseMessage)
         }
 
         })
@@ -77,13 +77,13 @@ export class SignUpComponent implements OnInit {
       let resonseMessage = responseData.message;
 
       if(responseData.status == 200) {
-        alert(resonseMessage);
+        this._commonService.tostMessage(resonseMessage)
         this.isVisible = false;
-        this.message = "User registered and verified Successfully!"
+        this.message = "User registered and verified Successfully, Please Login!"
         this.signUpValidateForm.reset();
         // this.outputSignUpData.emit(true);
       } else {
-        alert(resonseMessage);
+        this._commonService.tostMessage(resonseMessage)
         this.message = "OTP invalid, please resend your OTP!"
         this.signUpValidateForm.reset();
         // this.outputSignUpData.emit(false);

@@ -25,10 +25,13 @@
     <mat-toolbar class="toolbar-wrapper">
 
       <mat-toolbar-row>
+
         <button mat-button class="menu-button" (click)="sidenav.open()"><mat-icon aria-hidden="false">view_headline</mat-icon></button>
         <span><a href=""><img src="../assets/images/logo/PNG/font120px.png"></a></span>
         <span class="example-spacer"></span>
+
         <div class="quick-link">
+
         <span class="example-spacer"></span>
         <span class="highlight-menu"><a href="">Talk to Astrologer</a></span>
         <span class="highlight-menu"><a href="">Chat with Astrologer</a></span>
@@ -36,6 +39,7 @@
         <span><a href="">Kundli</a></span>
         <span><a href="">AstroMall</a></span>
         <span><a href="">Blog</a></span>
+
        </div>
         <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
         <mat-icon class="hm-user-icon" *ngIf="isUserLogin" mat-button [matMenuTriggerFor]="menu" mat-raised-button>face</mat-icon>
@@ -48,15 +52,18 @@
           <!-- <button mat-menu-item>Info</button> -->
         </mat-menu>
         <button mat-raised-button color="primary" (click)="openDialog()" *ngIf="!isUserLogin">Login</button>
-        <mat-icon class="hm-wallet" mat-raised-button>account_balance_wallet</mat-icon>
+        <mat-icon class="hm-wallet mt-3" mat-raised-button>account_balance_wallet</mat-icon>
         <!-- <mat-icon  mat-raised-button>login</mat-icon> -->
 
-        <mat-icon class="hm-cart" mat-raised-button>shopping_cart</mat-icon>
-
+        <mat-icon class="hm-cart mt-3" mat-raised-button>shopping_cart</mat-icon>       
         <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
       </mat-toolbar-row>
-
+      <div class="header-social">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
     </mat-toolbar>
 
       <div class="fixed-plugin">

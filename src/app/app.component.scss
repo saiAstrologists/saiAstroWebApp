@@ -26,7 +26,10 @@ h4 {
 }
 
 mat-toolbar-row{
-  height: 80px;
+  height: 95px;
+}
+.quick-link{
+  margin-top: 20px;
 }
 
 // mat-toolbar-row .mat-button {
@@ -61,6 +64,18 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   }
 }
 
+.header-social {
+  position: absolute;
+  right: 12px;
+  a {
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+  a:hover {
+    color: $primar !important
+  }
+}
+
 // .hm-user-menu-item + div.cdk-overlay-pane > div.mat-menu-panel > div.mat-menu-content {
 
 //   }
@@ -75,10 +90,12 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 
 .toolbar-wrapper button{
   border-radius: 20px;
+  margin-top: 20px;
   &.menu-button {
     min-width: 36px;
     left: -11px;
     padding: 0px !important;
+    margin-top: 0px;
   }
 
 }

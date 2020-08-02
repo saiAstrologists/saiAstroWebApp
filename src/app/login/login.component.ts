@@ -4,6 +4,7 @@ import { RegexConstant } from '../shared/constant/regex-constant'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { loginService } from './login.service'
 import {CommonService} from '../shared/service/commonService/common.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private _commonService: CommonService,private _formBuilder: FormBuilder,public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
+  constructor(private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
    ) { }
 
   ngOnInit(): void {
@@ -47,13 +48,18 @@ export class LoginComponent implements OnInit {
         console.log("responseData login ",responseData);
 
         let resonseMessage = responseData.message;
+        let responseBody = responseData.data;
 
-        if(responseData.status == 200){
+        if(responseData.status == 200) {
           // this.isVisible = true;
           this._commonService.tostMessage(resonseMessage)
-          this.dialogRef.close(responseData.data);
+          if(!responseBody.profileUpdated){
+            this.router.navigate(['astroRegistration']);
+            this.dialogRef.close(responseData.data);
+          }
+
         } else {
-          alert(resonseMessage);
+          this._commonService.tostMessage(resonseMessage);
         }
 
         })
@@ -61,8 +67,9 @@ export class LoginComponent implements OnInit {
 
 
 
+
   otpSubmitForm(value: any) {
-    alert("OTP Submited Successfuly")
+
     this.dialogRef.close(value);
   }
 
