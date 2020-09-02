@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component'
 
 const routes: Routes = [
-
-  { path: '' , loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)}
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home' , loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)}
   // { path: '' , component: HomePageComponent}
 
 

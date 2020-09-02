@@ -5,7 +5,9 @@ export class RestUrl {
     public static get forgetPassword(): string { return `/users/forgetPwd`; }
     public static get resetUser(): string { return '/users/resetPwd'; }
     public static get astroCreateProfile(): string { return '/users/updateprofile'; }
-    public static get getAstro(): string { return '/users/getastrologerslist'; }
+    public static get getAstroListingApi(): string { return '/users/getastrologerslist'; }
+
+    public static get getAstro(): string { return '/users/listOfAstrologers'; }
     public static get makeCall(): string { return '/users/call'; }
 
 

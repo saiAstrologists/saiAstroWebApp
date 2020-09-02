@@ -1,0 +1,275 @@
+
+<div class="container">
+  <div *ngIf="isVisible" class="report-listing-wrapper">
+  <div class="row">
+    <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Education Report')">
+        <h1>Education Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Love & Relationship Report')" >
+        <h1>Love & Relationship Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+     <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Child Name Report')" >
+        <h1>Child Name Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Career & Business Report')" >
+        <h1>Career & Business Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 my-3">
+      <mat-card  class="card1" (click)="reportForm('Match Making Report')" >
+        <h1>Match Making Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Travel & Foreign Settlement Report')" >
+        <h1>Travel & Foreign Settlement</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+     <div  class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Child Birth Report')" >
+        <h1>Child Birth Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+    <div  class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('Ask any question on one topic Report')" >
+        <h1>Ask any question on one topic</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3 my-3">
+      <mat-card class="card1" (click)="reportForm('2020 Detailed Yearly Report')">
+        <h1>2020 Detailed Yearly Report</h1>
+        <p>Report will be manually prepared (no computer generated content) by the Astrologer after deep analysis on your chart.
+          This report will cover complete eduction for the coming years. And if you have any specific query,
+          then kindly write it in the comment box and we will cover the same....</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<mat-card class="my-5" *ngIf="!isVisible">
+  <div class="form-wrapper">
+    <h2>{{reportType}} Intake Form</h2>
+
+  <form name="validateForm" [formGroup]="validateForm" novalidate>
+    <mat-form-field class="form-field-width">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-icon matSuffix class="secondary-text">user</mat-icon>
+      <!-- <mat-error *ngIf="validateForm.get('name').hasError('required')">
+        Name is required!
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="form-field-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name" required>
+      <mat-icon matSuffix class="secondary-text">user</mat-icon>
+      <!-- <mat-error *ngIf="validateForm.get('last_name').hasError('required')">
+        Name is required!
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="form-field-width">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput formControlName="contactNo" minlength="10" maxlength="10" required>
+      <!-- <mat-icon matSuffix class="secondary-text">phone</mat-icon> -->
+      <mat-error *ngIf="validateForm.get('contactNo').hasError('required')">
+          Mobile number is required!
+      </mat-error>
+      <mat-error
+          *ngIf="!validateForm.get('contactNo').hasError('required') &&
+                  validateForm.get('contactNo').hasError('mobileErr')">
+          Please enter a valid mobile number!
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Gender</mat-label>
+    <mat-select name="gender" formControlName="gender" required>
+      <mat-option value="M">Male</mat-option>
+      <mat-option value="F">Female</mat-option>
+      <mat-option value="O">Other</mat-option>
+    </mat-select>
+      <mat-error>
+        Gender is required!
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Date Of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" required>
+    <mat-datepicker-toggle matSuffix [for]="picker" >
+      <!-- <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon> -->
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-hint align="start"><strong>Date Format MM/DD/YYY</strong> </mat-hint>
+    <mat-error>
+      Date Of Birth required!
+    </mat-error>
+  </mat-form-field>
+
+    <mat-form-field class="form-field-width">
+      <mat-label>Time of Birth</mat-label>
+      <div class="custom-theme-example">
+          <input matInput placeholder="HH:MM" formControlName="tob" aria-label="Custom theme"
+              [ngxTimepicker]="darkPicker" readonly>
+          <ngx-material-timepicker #darkPicker [theme]="darkTheme"></ngx-material-timepicker>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="form-field-width">
+      <mat-label>Place of Birth City</mat-label>
+      <input matInput formControlName="place_of_birth_city" required>
+      <mat-icon matSuffix class="secondary-text">user</mat-icon>
+      <mat-error *ngIf="validateForm.get('place_of_birth_city').hasError('required')">
+        Name is required!
+      </mat-error>
+    </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Place of Birth State</mat-label>
+    <input matInput formControlName="place_of_birth_state" required>
+    <mat-icon matSuffix class="secondary-text">user</mat-icon>
+    <mat-error *ngIf="validateForm.get('place_of_birth_state').hasError('required')">
+      Name is required!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Place of Birth Country</mat-label>
+    <input matInput formControlName="place_of_birth_country" required>
+    <mat-icon matSuffix class="secondary-text">user</mat-icon>
+    <mat-error *ngIf="validateForm.get('place_of_birth_country').hasError('required')">
+      Name is required!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Marital Status</mat-label>
+    <mat-select name="martial" formControlName="martial" required>
+      <mat-option value="Single">Single</mat-option>
+      <mat-option value="Married">Married</mat-option>
+      <mat-option value="Divorced">Divorced</mat-option>
+      <mat-option value="Separated">Separated</mat-option>
+      <mat-option value="Widowed">Widowed</mat-option>
+    </mat-select>
+      <mat-error>
+        Marital status is required!
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Employed in</mat-label>
+    <mat-select name="employed" formControlName="employed" required>
+      <mat-option value="Private Sector">Private Sector</mat-option>
+      <mat-option value="Govt Sector">Govt Sector</mat-option>
+      <mat-option value="Business/Self Employed">Business/Self Employed</mat-option>
+      <mat-option value="Civil Services">Civil Services</mat-option>
+      <mat-option value="Defence">Defence</mat-option>
+      <mat-option value="Not Working">Not Working</mat-option>
+      <mat-option value="Student">Student</mat-option>
+    </mat-select>
+      <mat-error>
+        Employed in is required!
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width">
+    <mat-label>Select Language</mat-label>
+    <mat-select name="language" formControlName="language" required>
+      <mat-option value="English">English</mat-option>
+      <mat-option value="Hindi">Hindi</mat-option>
+    </mat-select>
+      <mat-error>
+        Language is required!
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-full-width">
+    <mat-label>Comment</mat-label>
+    <textarea matInput placeholder="Your Comment" formControlName="comment" required></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="mt-5" [disabled]="validateForm.invalid" (click)="submitForm(validateForm.value)"> Ask {{astroName}}</button>
+
+  </form>
+</div>
+</mat-card>
+</div>

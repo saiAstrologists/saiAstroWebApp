@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit {
     nav: false
   }
 
-  astroData;
+  astroData = [];
   userData;
   isVisible : boolean = false;
   constructor(private _service : HomeService,private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
@@ -45,7 +45,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('userData'))
+
     this.getAstro();
+
     // if( this.userData != null && this.userData.userType == 1) {
     //   this._observableDataService.checkUserData.subscribe((UserData)=>{
     //     console.log("User Data ++++++++++++++ ",UserData)
@@ -56,13 +58,28 @@ export class HomePageComponent implements OnInit {
     // }
   }
 
-  getAstro(){
+  getAstro() {
     this.isVisible = true
     this._service.getAstroApi().subscribe((responseData)=>{
         console.log("responseData ++++++++++++", responseData);
         let resonseMessage = responseData.message;
        if(responseData.status == 200){
-        this.astroData = responseData.data
+        // this.astroData = responseData.data
+        let data = responseData.data
+        data.map((element)=>{
+            let obj = {
+              contactNo : element.contactNo,
+              email : element.email,
+              name : element.name,
+              userType : element.userType,
+              experience : element.astrologistDetails.experience,
+              language : element.astrologistDetails.language[0],
+              profilePic : element.astrologistDetails.profilePic
+            }
+            this.astroData.push(obj)
+        })
+        console.log("this.astroData ++++++++++++", this.astroData);
+
        } else {
         this._commonService.tostMessage(resonseMessage);
        }

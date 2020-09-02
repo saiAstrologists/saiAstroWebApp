@@ -31,13 +31,12 @@ export class SignUpComponent implements OnInit {
       userType          : ['', [Validators.required]]
     });
 
-
     this.otpForm = this._formBuilder.group({
       otp : ['',[Validators.required]]
     });
 
-
   }
+
 
   submitForm(value: any){
     for (const key in this.signUpValidateForm.controls) {

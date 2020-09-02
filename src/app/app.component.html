@@ -4,12 +4,15 @@
   <mat-sidenav class="drawer-container" #sidenav [fixedInViewport]="true" (keydown.escape)="close('escape')" disableClose>
     <!-- <button mat-button  (click)="close('toggle button')">X</button> -->
       <div class="side-bar-logo"><img class="mb-2" src="../assets/images/logo/PNG/font120px.png"></div>
-      <div class="list-group side-bar-quick-link" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action active" id="astro-talk" data-toggle="list" href="#astro-talk" role="tab" aria-controls="astro-talk">Talk to Astrologer</a>
-        <a class="list-group-item list-group-item-action" id="horoscope" data-toggle="list" href="#horoscope" role="tab" aria-controls="horoscope">Horoscope 2020</a>
-        <a class="list-group-item list-group-item-action" id="kundli" data-toggle="list" href="#kundli" role="tab" aria-controls="kundli">Kundli</a>
-        <a class="list-group-item list-group-item-action" id="astro-mall" data-toggle="list" href="#astro-mall" role="tab" aria-controls="astro-mall">AstroMall</a>
-        <a class="list-group-item list-group-item-action" id="blog" data-toggle="list" href="#blog" role="tab" aria-controls="blog">Blog</a>
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="astro-talk" data-toggle="list" href="javascript:;" (click)="talkToAstro()" role="tab" aria-controls="astro-talk">Talk to Astrologer</a>
+        <a class="list-group-item list-group-item-action" id="astro-chat" data-toggle="list" href="javascript:;" (click)="chatToAstro()" role="tab" aria-controls="astro-chat">Chat with Astrologer</a>
+        <a class="list-group-item list-group-item-action" id="astro-report" data-toggle="list" href="javascript:;" (click)="viewReport()" role="tab" aria-controls="astro-report">Get Reports</a>
+        <a class="list-group-item list-group-item-action" id="astro-question" data-toggle="list" href="javascript:;" (click)="viewQA()" role="tab" aria-controls="astro-question">Ask Question</a>
+        <a class="list-group-item list-group-item-action" id="horoscope" data-toggle="list" href="javascript:;" role="tab" aria-controls="horoscope">Horoscope 2020</a>
+        <a class="list-group-item list-group-item-action" id="kundli" data-toggle="list" href="javascript:;" role="tab" aria-controls="kundli">Kundli</a>
+        <a class="list-group-item list-group-item-action" id="astro-mall" data-toggle="list" href="javascript:;" role="tab" aria-controls="astro-mall">AstroMall</a>
+        <a class="list-group-item list-group-item-action" id="blog" data-toggle="list" href="javascript:;" role="tab" aria-controls="blog">Blog</a>
       </div>
 
       <!-- <li><a>Talk to Astrologer</a></li>
@@ -27,18 +30,18 @@
       <mat-toolbar-row>
 
         <button mat-button class="menu-button" (click)="sidenav.open()"><mat-icon aria-hidden="false">view_headline</mat-icon></button>
-        <span><a href=""><img src="../assets/images/logo/PNG/font120px.png"></a></span>
+        <span class="hm-logo"><a href=""><img src="../assets/images/logo/PNG/font120px.png"></a></span>
         <span class="example-spacer"></span>
 
         <div class="quick-link">
 
         <span class="example-spacer"></span>
-        <span class="highlight-menu"><a href="">Talk to Astrologer</a></span>
-        <span class="highlight-menu"><a href="">Chat with Astrologer</a></span>
-        <span><a href="">Horoscope 2020</a> </span>
-        <span><a href="">Kundli</a></span>
-        <span><a href="">AstroMall</a></span>
-        <span><a href="">Blog</a></span>
+        <span class="highlight-menu"><a href="javascript:;" (click)="talkToAstro()">Talk to Astrologer</a></span>
+        <span class="highlight-menu"><a href="javascript:;" (click)="chatToAstro()">Chat with Astrologer</a></span>
+        <span class="highlight-menu"><a href="javascript:;" (click)="viewReport()">Get Reports</a></span>
+        <span class="highlight-menu"><a href="javascript:;" (click)="viewQA()">Ask Question</a></span>
+        <span><a href="javascript:;">Horoscope 2020</a> </span>
+
 
        </div>
         <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
@@ -55,51 +58,37 @@
         <mat-icon class="hm-wallet mt-3" mat-raised-button>account_balance_wallet</mat-icon>
         <!-- <mat-icon  mat-raised-button>login</mat-icon> -->
 
-        <mat-icon class="hm-cart mt-3" mat-raised-button>shopping_cart</mat-icon>       
+        <mat-icon class="hm-cart mt-3" mat-raised-button>shopping_cart</mat-icon>
         <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
       </mat-toolbar-row>
       <div class="header-social">
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="javascript:;"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+        <a href="javascript:;"><i class="fa fa-instagram"></i></a>
       </div>
     </mat-toolbar>
 
       <div class="fixed-plugin">
 
           <div class="example-button-row">
-            <!-- <button mat-mini-fab>Basic</button>
-            <button mat-mini-fab color="primary">Primary</button>
-            <button mat-mini-fab color="accent">Accent</button>
-            <button mat-mini-fab color="warn">Warn</button>
-            <button mat-mini-fab disabled>Disabled</button> -->
-            <button mat-mini-fab  aria-label="Example icon-button with a heart icon">
+
+            <button matTooltip="Chat" matTooltipPosition="left"  mat-mini-fab (click)="chatToAstro()" aria-label="chat icon">
               <mat-icon>chat</mat-icon>
             </button>
-            <button mat-mini-fab  aria-label="Example icon-button with a heart icon">
+            <button matTooltip="Call" matTooltipPosition="before" mat-mini-fab (click)="talkToAstro()"  aria-label="call icon">
               <mat-icon>phone</mat-icon>
             </button>
-            <button mat-mini-fab   aria-label="Example icon-button with a heart icon">
+            <button matTooltip="Report" matTooltipPosition="before" mat-mini-fab  (click)="viewReport()" aria-label="report icon">
               <mat-icon>assignment</mat-icon>
             </button>
-            <button mat-mini-fab   aria-label="Example icon-button with a heart icon">
+            <button matTooltip="Ask Question" matTooltipPosition="before" mat-mini-fab (click)="viewQA()"  aria-label="Q&A icon">
               <mat-icon>question_answer</mat-icon>
             </button>
           </div>
-          <!-- <mat-divider></mat-divider>
-          <span class="follow-text">Follow</span>
-          <button mat-mini-fab class="facebook-color" aria-label="facebook-icon">
-            <i class="fa fa-facebook-square" aria-hidden="true"></i>
-          </button>
-          <button mat-mini-fab color="warn" aria-label="youtube-icon">
-            <i class="fa fa-youtube-play" aria-hidden="true"></i>
-          </button>
-          <button mat-mini-fab class="instagram-color" aria-label="instagram-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </button> -->
        </div>
 
+     <app-spinner></app-spinner>
     <router-outlet></router-outlet>
 
 

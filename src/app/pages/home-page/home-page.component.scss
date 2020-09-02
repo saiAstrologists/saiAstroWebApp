@@ -60,6 +60,27 @@ anchors are inline so you need ot make them block to go full width
 .hm-about-us-block{
   text-align: center;
 }
+.hm-astrologer-wrapper {
+   text-align: center;
+  .slide.astrologer-img{
+    img{
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 50%;
+      margin-bottom: 25px;
+    }
+  }
+  .astro-content{
+    h1{
+      font-size: 17px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+}
 
 .slide.testimonial-img {
   img {
@@ -78,9 +99,7 @@ anchors are inline so you need ot make them block to go full width
   }
 }
 
-.cardShadow{
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
+
 
 // .owl-theme .owl-nav .owl-next {
 //   position: absolute;
@@ -94,18 +113,18 @@ anchors are inline so you need ot make them block to go full width
 //   left: -34px;
 // }
 
-.hm-astrologer-wrapper{
-  text-align: center;
-  .astro_img img {
-    width:100%;
-  }
-  p{
-    font-size: 15px;
-    font-weight: 700;
-    margin-top: 20px;
-  }
+// .hm-astrologer-wrapper{
+//   text-align: center;
+//   .astro_img img {
+//     width:100%;
+//   }
+//   p{
+//     font-size: 15px;
+//     font-weight: 700;
+//     margin-top: 20px;
+//   }
 
-}
+// }
 
 @media (max-width: 1024px) {
 

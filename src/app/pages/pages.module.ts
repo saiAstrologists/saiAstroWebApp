@@ -8,11 +8,21 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AstroRegistrationComponent } from './astro-registration/astro-registration.component';
 import { MaterialModule } from '../material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AstrologerComponent } from './astrologer/astrologer.component';
+import { ReportListingComponent } from './report-listing/report-listing.component';
+import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
+
 
 @NgModule({
   declarations: [
     HomePageComponent,
-    AstroRegistrationComponent
+    AstroRegistrationComponent,
+    AstrologerComponent,
+    ReportListingComponent,
+    QuestionAndAnswerComponent
   ],
   imports: [
     PagesRoutingModule,
@@ -20,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CarouselModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaterialTimepickerModule,
+
   ]
 })
 export class PagesModule { }

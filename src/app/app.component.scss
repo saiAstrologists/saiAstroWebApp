@@ -9,7 +9,9 @@ $primar: #f9a825;
   bottom: 0;
   left: 0;
   right: 0;
+  transition: all 0.3s ease-out;
 }
+
 
 h4 {
   font-size: 13px;
@@ -51,6 +53,7 @@ position: sticky;
 position: -webkit-sticky; /* For macOS/iOS Safari */
 top: 0; /* Sets the sticky toolbar to be on top */
 z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+
 .mat-icon{
     &.hm-wallet {
       margin: 0px 20px;
@@ -60,7 +63,7 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
       font-size: 35px;
       height: auto;
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 15px;
     }
   }
 }
@@ -77,9 +80,6 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   }
 }
 
-// .hm-user-menu-item + div.cdk-overlay-pane > div.mat-menu-panel > div.mat-menu-content {
-
-//   }
 
 
 .hm-user-menu-item{
@@ -116,13 +116,17 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   margin-right: 10px;
 }
 
-.toolbar-wrapper span img{
-width : 30%;
+.toolbar-wrapper span{
+  &.hm-logo {
+    width: 200px;
+  }
+  img{
+    width : 100%;
+  }
+
 }
 
-.toolbar-wrapper .notification-icon{
-  border-radius: 20px;
-}
+
 
 .fixed-plugin {
   position: fixed;
@@ -144,7 +148,11 @@ width : 30%;
    }
 }
 
-.fixed-plugin
+.tooltip{
+  background: #b71c1c;
+}
+
+
 
 .side-bar-quick-link{
   display: none;
@@ -198,7 +206,7 @@ width : 30%;
     right: 0px;
   }
   .toolbar-wrapper span img{
-    width : 75%;
+    width : 100%;
   }
 }
 
@@ -214,7 +222,7 @@ width : 30%;
     display: none;
   }
   .toolbar-wrapper span img{
-    width : 40%;
+    width : 100%;
   }
 
   .side-bar-quick-link {
@@ -227,7 +235,7 @@ width : 30%;
 
   .toolbar-wrapper{
       span img{
-        width : 85%;
+        width : 80%;
       }
       .mat-icon.hm-wallet {
         margin: 0px 14px;

@@ -38,5 +38,9 @@ export class CommonService {
     return this.restService.create(RestUrl.verifyOTP, data)
   }
 
+  makeCall(data): Observable<any> {
+    return this.restService.create(RestUrl.makeCall, data)
+  }
+
 
 }

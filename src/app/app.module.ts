@@ -13,13 +13,17 @@ import { HttpIntercepterBasicAuthService } from './shared/service/http/http-inte
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LoaderInterceptorService } from './shared/service/http/loader-interceptor.service';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -30,20 +34,19 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    // MatSliderModule,
-    // MatSidenavModule,
-    // MatFormFieldModule,
-    // MatSelectModule,
-    // MatToolbarModule,
-    // MatIconModule,
-
     AppRoutingModule,
+    NgxSpinnerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: HttpIntercepterBasicAuthService,
     multi: true
-  }],
+  }, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptorService,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

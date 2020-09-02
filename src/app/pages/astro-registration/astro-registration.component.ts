@@ -18,15 +18,20 @@ export class AstroRegistrationComponent implements OnInit {
   languageList: string[] = ['English', 'Hindi', 'Tamil', 'Marathi', 'Punjabi'];
   ProfileToUpload: File = null;
   IdProofToUpload: File = null;
+  userData;
 
   constructor(private _formBuilder: FormBuilder, private _commonService: CommonService, private _astroRegistartionService : AstroRegistartionService) { }
 
   ngOnInit(): void {
 
+    this.userData = JSON.parse(sessionStorage.getItem('userData'));
+
+
+
     this.validateForm = this._formBuilder.group({
-      name: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      contactNo   : ['', [Validators.required, this.mobileNumber]],
+      name: [{value : null, disabled: true}, [Validators.required]],
+      email: [{value : null, disabled: true}, [Validators.required, Validators.email]],
+      contactNo   : [{value : null, disabled: true}, [Validators.required, this.mobileNumber]],
       gender: [null, Validators.required],
       dob: [null, Validators.required],
       skill: [null, Validators.required],
@@ -52,6 +57,12 @@ export class AstroRegistrationComponent implements OnInit {
       monthlyEarning: [null],
 
     });
+
+    this.validateForm.patchValue({
+      name : this.userData.name,
+      email : this.userData.email,
+      contactNo : this.userData.contactNo
+    })
 
     // if(this.validateForm.controls['portalFlag'].value == 1 ){
     //   this.portalFlag = true;
@@ -83,23 +94,25 @@ export class AstroRegistrationComponent implements OnInit {
       formData.append('adharCardNumber', value.adharCardNumber);
       formData.append('bankAccountNumber', value.bankAccountNumber);
       formData.append('city', value.city);
-      formData.append('contactNo', value.contactNo);
+      formData.append('contactNo', this.validateForm.controls['contactNo'].value);
       formData.append('country', value.country);
       formData.append('dob', value.dob);
-      formData.append('email', value.email);
+      formData.append('email', this.validateForm.controls['email'].value);
       formData.append('experience', value.experience);
       formData.append('gender', value.gender);
       formData.append('ifsc', value.ifsc);
       formData.append('language', value.language);
       formData.append('longBio', value.longBio);
       formData.append('monthlyEarning', value.monthlyEarning);
-      formData.append('name', value.name);
+      formData.append('name', this.validateForm.controls['name'].value);
       formData.append('otherWorkingSite', value.otherWorkingSite);
       formData.append('panNumber', value.panNumber);
       formData.append('pinCode', value.pinCode);
       formData.append('shortBio', value.shortBio);
       formData.append('skill', value.skill);
       formData.append('state', value.state);
+      formData.append('userType', this.userData.userType);
+
 
       console.log("formData+++++  ",formData);
 

@@ -1,0 +1,23 @@
+.astrologer-listing-wrapper{
+  img{
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h1 span{
+    float: right;
+    margin-top: 3px;
+    color:green;
+  }
+  button{
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+}

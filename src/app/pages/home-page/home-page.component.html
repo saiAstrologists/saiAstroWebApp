@@ -216,7 +216,76 @@
         <span class="text">Our Astrologer</span>
       </div>
     </div>
-    <div class="row">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let astro of astroData">
+          <div class="slide astrologer-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
+            <!-- <img src="../../../assets//images/user/default-user.jpg"> -->
+            <img src="{{astro.profilePic ? astro.profilePic : '../../../assets//images/user/default-user.jpg'}}" >
+
+            <div class="astro-content">
+                <h1>{{astro.name}}</h1>
+                <p>{{astro.language}}</p>
+                <p>Experience: {{astro.experience}}</p>
+            </div>
+          </div>
+      </ng-template>
+      <!-- <ng-template carouselSlide>
+        <div class="slide astrologer-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
+          <img src="../../../assets//images/user/default-user.jpg">
+
+          <div class="astro-content">
+
+              <h1>Bijendra Gaur</h1>
+              <p>Hindi, English</p>
+              <p>Vedic Astrologer, Gemology</p>
+
+          </div>
+        </div>
+
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="slide astrologer-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
+          <img src="../../../assets//images/user/default-user.jpg">
+
+          <div class="astro-content">
+
+              <h1>Bijendra Gaur</h1>
+              <p>Hindi, English</p>
+              <p>Vedic Astrologer, Gemology</p>
+
+          </div>
+        </div>
+
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="slide astrologer-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
+          <img src="../../../assets//images/user/default-user.jpg">
+
+          <div class="astro-content">
+
+              <h1>Bijendra Gaur</h1>
+              <p>Hindi, English</p>
+              <p>Vedic Astrologer, Gemology</p>
+
+          </div>
+        </div>
+
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="slide astrologer-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
+          <img src="../../../assets//images/user/default-user.jpg">
+
+          <div class="astro-content">
+              <h1>Bijendra Gaur</h1>
+              <p>Hindi, English</p>
+              <p>Vedic Astrologer, Gemology</p>
+          </div>
+        </div>
+
+      </ng-template> -->
+  </owl-carousel-o>
+    <!-- <div class="row">
       <div class="col-sm-3 col-md-3" *ngFor="let astro of astroData">
         <div class="astro_img">
           <img src="../../../assets//images/user/default-user.jpg">
@@ -227,7 +296,7 @@
             <mat-icon>phone</mat-icon>
           </button>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="col-sm-3 col-md-3">
         <div class="astro_img">
           <img src="../../../assets//images/user/default-user.jpg">
@@ -261,7 +330,7 @@
           </button>
         </div>
       </div> -->
-  </div>
+  <!-- </div> -->
   </div>
 </section>
 
@@ -275,7 +344,7 @@
   </div>
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
-        <div class="slide testimonial-img  cardShadow mr-3 p-3 bg-white rounded">
+        <div class="slide testimonial-img  cardShadow my-3 mr-3 p-3 bg-white rounded">
           <img src="//www.saiastrofuture.com/wp-content/uploads/2020/06/satwik-150x150-1.jpeg">
 
           <div class="testimonial-content">
@@ -291,7 +360,7 @@
         </div>
     </ng-template>
     <ng-template carouselSlide>
-      <div class="slide testimonial-img cardShadow mr-3 p-3 bg-white rounded">
+      <div class="slide testimonial-img cardShadow my-3 mr-3 p-3 bg-white rounded">
         <img src="//www.saiastrofuture.com/wp-content/uploads/2020/06/Arnima-150x150-1.jpg">
 
         <div class="testimonial-content">
@@ -309,7 +378,7 @@
 
     </ng-template>
     <ng-template carouselSlide>
-      <div class="slide testimonial-img cardShadow mr-3 p-3 bg-white rounded">
+      <div class="slide testimonial-img cardShadow my-3 mr-3 p-3 bg-white rounded">
         <img src="//www.saiastrofuture.com/wp-content/uploads/2020/06/Ankur-150x150-1.jpg">
 
         <div class="testimonial-content">
@@ -328,7 +397,7 @@
     </ng-template>
 
     <ng-template carouselSlide>
-      <div class="slide testimonial-img cardShadow mr-3 p-3 bg-white rounded">
+      <div class="slide testimonial-img cardShadow my-3 mr-3 p-3 bg-white rounded">
         <img src="//www.saiastrofuture.com/wp-content/uploads/2020/06/rima-150x150-1.jpeg">
 
         <div class="testimonial-content">
