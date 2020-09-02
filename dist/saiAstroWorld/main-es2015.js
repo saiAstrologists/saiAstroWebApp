@@ -1815,7 +1815,7 @@ class HttpIntercepterBasicAuthService {
             console.log("if condition");
             request = request.clone({
                 setHeaders: {
-                    // 'Authorization': basicAuthHeaderString,
+                    'Authorization': basicAuthHeaderString,
                     // 'token': basicAuthHeaderString,
                     'Content-Type': 'application/json'
                 }

@@ -12871,7 +12871,7 @@ class AstrologerService {
         this.restService = restService;
     }
     getAstroListingApi() {
-        return this.restService.get(_shared_constant_rest_url_constants__WEBPACK_IMPORTED_MODULE_1__["RestUrl"].getAstro);
+        return this.restService.get(_shared_constant_rest_url_constants__WEBPACK_IMPORTED_MODULE_1__["RestUrl"].getAstroListingApi);
     }
 }
 AstrologerService.ɵfac = function AstrologerService_Factory(t) { return new (t || AstrologerService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_shared_service_restApi_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"])); };

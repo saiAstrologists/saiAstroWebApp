@@ -16718,7 +16718,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       _createClass2(AstrologerService, [{
         key: "getAstroListingApi",
         value: function getAstroListingApi() {
-          return this.restService.get(_shared_constant_rest_url_constants__WEBPACK_IMPORTED_MODULE_1__["RestUrl"].getAstro);
+          return this.restService.get(_shared_constant_rest_url_constants__WEBPACK_IMPORTED_MODULE_1__["RestUrl"].getAstroListingApi);
         }
       }]);
 

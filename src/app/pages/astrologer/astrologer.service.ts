@@ -14,7 +14,7 @@ export class AstrologerService {
 
 
   getAstroListingApi(): Observable<any> {
-    return this.restService.get(RestUrl.getAstro)
+    return this.restService.get(RestUrl.getAstroListingApi)
   }
 
 

@@ -26,18 +26,12 @@ import {
 
       let basicAuthHeaderString = this.basicAuthenticationService.getAuthenticatedToken();
       console.log("basicAuthHeaderString +++++++++++++ ",basicAuthHeaderString)
-        // request = request.clone({
-        //   setHeaders: {
-        //     'content-type': 'application/json'
-        //   }
-        // });
 
       if (basicAuthHeaderString) {
         console.log("if condition");
         request = request.clone({
           setHeaders: {
-            // 'Authorization': basicAuthHeaderString,
-            // 'token': basicAuthHeaderString,
+            'Authorization': basicAuthHeaderString,
             'Content-Type': 'application/json'
           }
         });

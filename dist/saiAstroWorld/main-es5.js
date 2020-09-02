@@ -3496,7 +3496,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.log("if condition");
             request = request.clone({
               setHeaders: {
-                // 'Authorization': basicAuthHeaderString,
+                'Authorization': basicAuthHeaderString,
                 // 'token': basicAuthHeaderString,
                 'Content-Type': 'application/json'
               }
