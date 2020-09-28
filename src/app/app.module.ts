@@ -18,7 +18,7 @@ import { LoaderInterceptorService } from './shared/service/http/loader-intercept
 import { SpinnerComponent } from './spinner/spinner.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/canActivateAuth.gaurd'
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { AuthGuard } from './auth/canActivateAuth.gaurd'
   providers: [
     AuthService,
     AuthGuard,
+  {provide: LocationStrategy, useClass: HashLocationStrategy},
   {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpIntercepterBasicAuthService,
