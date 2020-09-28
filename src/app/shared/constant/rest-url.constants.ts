@@ -10,6 +10,9 @@ export class RestUrl {
     public static get getAstro(): string { return '/users/listOfAstrologers'; }
     public static get makeCall(): string { return '/users/call'; }
 
+    public static get submitReport(): string { return '/users/sendreport'; }
+    public static get submitQAReport(): string { return '/users/askquestion'; }
+
 
 
 }

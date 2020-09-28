@@ -88,7 +88,8 @@ export class AstrologerComponent implements OnInit {
             userType : element.userType,
             experience : element.astrologistDetails.experience,
             language : element.astrologistDetails.language[0],
-            profilePic : element.astrologistDetails.profilePic
+            profilePic : element.astrologistDetails.profilePic,
+            id : element._id
           }
           this.astroListing.push(obj)
       })
@@ -103,7 +104,7 @@ export class AstrologerComponent implements OnInit {
 
   report(value) {
 
-    this._observableDataService.passAstroDetails(value.name);
+    this._observableDataService.passAstroDetails(value);
     this._route.navigate(['home/reportListing'])
   }
 
@@ -115,7 +116,7 @@ export class AstrologerComponent implements OnInit {
         console.log("Can make call ");
 
               let requestBody = {
-              contactNo : this.userData.conatctNo,
+              contactNo : this.userData.contactNo,
               astrologerNo : value.contactNo
               }
 
@@ -135,11 +136,17 @@ export class AstrologerComponent implements OnInit {
   }
 
   chat(){
+    if(this.userData != null) {
+      // this._observableDataService.passAstroDetails(value);
+      this._route.navigate(['home/astrologerChat'])
+    }else {
+      this._commonService.tostMessage("Login is required!");
+    }
 
   }
 
   question(value){
-    this._observableDataService.passAstroDetails(value.name);
+    this._observableDataService.passAstroDetails(value);
     this._route.navigate(['home/questionAnswer'])
   }
 
@@ -151,7 +158,7 @@ export class AstrologerComponent implements OnInit {
 //         console.log("Can make call ");
 
 //               let requestBody = {
-//               contactNo : this.userData.conatctNo,
+//               contactNo : this.userData.contactNo,
 //               astrologerNo : value.contactNo
 //               }
 

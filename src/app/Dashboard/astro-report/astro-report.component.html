@@ -1,0 +1,75 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #reportSideNav [mode]="mode.value" position="end">
+    <p><button mat-button (click)="reportSideNav.toggle()">Toggle</button></p>
+    <h1>Comming Soon.......................</h1>
+    <!-- <p>
+      <mat-radio-group class="example-radio-group" [formControl]="mode">
+        <label>Mode:</label>
+        <mat-radio-button value="over">Over</mat-radio-button>
+        <mat-radio-button value="side">Side</mat-radio-button>
+        <mat-radio-button value="push">Push</mat-radio-button>
+      </mat-radio-group>
+    </p> -->
+  </mat-sidenav>
+
+
+
+
+<mat-sidenav-content >
+  <div class="container">
+    <button class="my-3" mat-mini-fab color="primary" routerLink="/dashboard"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <div class="separator mb-1">
+      <span class="dashboard-title text ">Reports</span>
+    </div>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8 mb-5">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Edit Column -->
+        <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
+        <td class="edit-report" mat-cell *matCellDef="let row" data-label="Edit" (click)="editReport(reportSideNav,row)"><mat-icon> edit </mat-icon> </td>
+      </ng-container>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="progress">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+          <td mat-cell *matCellDef="let row" data-label="progress"> {{row.progress}}% </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row" data-label="name"> {{row.name}} </td>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="color">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.color" data-label="color"> {{row.color}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    </div>
+</mat-sidenav-content>
+</mat-sidenav-container>

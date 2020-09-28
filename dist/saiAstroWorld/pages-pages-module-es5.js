@@ -16578,7 +16578,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
             if (this.userData.userType == 1) {
               console.log("Can make call ");
               var requestBody = {
-                contactNo: this.userData.conatctNo,
+                contactNo: this.userData.contactNo,
                 astrologerNo: value.contactNo
               };
 
@@ -17121,7 +17121,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
             if (this.userData.userType == 1) {
               console.log("Can make call ");
               var requestBody = {
-                contactNo: this.userData.conatctNo,
+                contactNo: this.userData.contactNo,
                 astrologerNo: value.contactNo
               };
 

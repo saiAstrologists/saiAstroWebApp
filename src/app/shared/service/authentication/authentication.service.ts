@@ -25,11 +25,9 @@ export class AuthenticationService {
       return token
   }
 
-  // getUserRole() {
-  //   if (this.getAuthenticatedUser()) {
-  //     return sessionStorage.getItem('role');
-  //   }
-  // }
+  getUser() {
+    return  JSON.parse(sessionStorage.getItem('userData'));
+  }
 
   // isUserLoggedIn() {
   //   const user = sessionStorage.getItem('username');

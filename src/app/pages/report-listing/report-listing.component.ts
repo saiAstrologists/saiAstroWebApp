@@ -5,7 +5,8 @@ import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
 import { RegexConstant } from 'src/app/shared/constant/regex-constant';
-
+import { AuthenticationService } from 'src/app/shared/service/authentication/authentication.service';
+import { ReportService } from './report.service'
 @Component({
   selector: 'app-report-listing',
   templateUrl: './report-listing.component.html',
@@ -13,11 +14,12 @@ import { RegexConstant } from 'src/app/shared/constant/regex-constant';
 })
 export class ReportListingComponent implements OnInit {
 
-  constructor(private _formBuilder: FormBuilder, private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
+  constructor(private _reportService: ReportService,private _authenticationService : AuthenticationService ,private _formBuilder: FormBuilder, private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
   validateForm: FormGroup;
   isVisible : boolean = true;
-  astroName;
+  astroData;
   reportType;
+  userData;
   darkTheme: NgxMaterialTimepickerTheme = {
     container: {
         bodyBackgroundColor: '#424242',
@@ -35,10 +37,9 @@ export class ReportListingComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-
+    this.userData = this._authenticationService.getUser();
     this.validateForm = this._formBuilder.group({
-      name: [null , [Validators.required]],
+      first_name: [null , [Validators.required]],
       last_name: [null , [Validators.required]],
       contactNo: [null , [Validators.required, this.mobileNumber]],
       gender: [null , [Validators.required]],
@@ -56,10 +57,14 @@ export class ReportListingComponent implements OnInit {
     this._observableDataService.observedAstroDetail.subscribe((ObserveData)=>{
       console.log("ObserveData astro data +++++++++", ObserveData )
       if(ObserveData != null){
-        sessionStorage.setItem('AstroData',ObserveData)
-        this.astroName = ObserveData;
+        this.astroData = ObserveData;
+        console.log("this.astroData +++++++++", this.astroData )
+
+        sessionStorage.setItem('AstroData',JSON.stringify(ObserveData));
       } else {
-        this.astroName =  sessionStorage.getItem('AstroData');
+        this.astroData =  JSON.parse(sessionStorage.getItem('AstroData'));
+        console.log("this.astroData +++++++++", this.astroData )
+
       }
   })
 
@@ -68,7 +73,6 @@ export class ReportListingComponent implements OnInit {
 reportForm(reportName){
   console.log("reportName  +++++++++", reportName )
   this.reportType = reportName;
-
   this.isVisible = !this.isVisible;
 }
 
@@ -78,7 +82,41 @@ submitForm(value) {
     this.validateForm.controls[key].markAsPristine();
     this.validateForm.controls[key].updateValueAndValidity();
   }
-  this._commonService.tostMessage("Report submited successfully, "+this.astroName+" will soon get back to you");
+  console.log("this.userData ",this.userData);
+
+  const formData: FormData = new FormData();
+  formData.append('userId', this.userData._id );
+  formData.append('astrologerId', this.astroData.id );
+  formData.append('reportSubType', this.reportType );
+  formData.append('firstName', value.first_name );
+  formData.append('lastName', value.last_name );
+  formData.append('mobileNumber', value.contactNo );
+  formData.append('gender', value.gender );
+  formData.append('dob', value.dob );
+  formData.append('dobTime', value.tob );
+  formData.append('city', value.place_of_birth_city );
+  formData.append('state', value.place_of_birth_state );
+  formData.append('country', value.place_of_birth_country );
+  formData.append('maritalStatus', value.martial );
+  formData.append('employment', value.employed );
+  formData.append('language', value.language );
+  formData.append('comment', value.comment);
+
+  console.log("+++++++=formData ",formData);
+
+
+  this._reportService.submitReport(formData).subscribe((responseData)=>{
+    console.log("responseDataa ",responseData);
+    let resonseMessage = responseData.message;
+    if(responseData.status == 200) {
+
+      this._commonService.tostMessage("Report submited successfully, "+this.astroData.name+" will soon get back to you");
+
+    } else {
+      this._commonService.tostMessage(resonseMessage);
+    }
+  })
+
 
 }
 

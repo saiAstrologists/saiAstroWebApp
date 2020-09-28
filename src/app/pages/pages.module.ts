@@ -12,6 +12,8 @@ import { AstrologerComponent } from './astrologer/astrologer.component';
 import { ReportListingComponent } from './report-listing/report-listing.component';
 import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { AuthGuard } from '../auth/canActivateAuth.gaurd';
+import { AstrologerChatComponent } from './astrologer-chat/astrologer-chat.component'
 
 
 
@@ -22,7 +24,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     AstroRegistrationComponent,
     AstrologerComponent,
     ReportListingComponent,
-    QuestionAndAnswerComponent
+    QuestionAndAnswerComponent,
+    AstrologerChatComponent
   ],
   imports: [
     PagesRoutingModule,
@@ -33,6 +36,9 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
 
+  ],
+  providers: [
+    AuthGuard
   ]
 })
 export class PagesModule { }

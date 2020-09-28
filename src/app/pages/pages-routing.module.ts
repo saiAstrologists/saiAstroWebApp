@@ -5,19 +5,18 @@ import { AstroRegistrationComponent } from './astro-registration/astro-registrat
 import { AstrologerComponent } from './astrologer/astrologer.component';
 import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
 import { ReportListingComponent } from './report-listing/report-listing.component';
-
+import { AstrologerChatComponent } from './astrologer-chat/astrologer-chat.component';
+import { AuthGuard } from '../auth/canActivateAuth.gaurd'
 
 
 const routes: Routes = [
 
   {path: '', component: HomePageComponent},
-  {path: 'astroRegistration', component: AstroRegistrationComponent},
-  {path: 'astrologer', component: AstrologerComponent},
-  {path: 'questionAnswer', component: QuestionAndAnswerComponent},
-  {path: 'reportListing', component: ReportListingComponent}
-
-
-
+  {path: 'astroRegistration', component: AstroRegistrationComponent, canActivate: [AuthGuard]},
+  {path: 'astrologer', component: AstrologerComponent, canActivate: [AuthGuard]},
+  {path: 'questionAnswer', component: QuestionAndAnswerComponent, canActivate: [AuthGuard]},
+  {path: 'reportListing', component: ReportListingComponent, canActivate: [AuthGuard]},
+  {path: 'astrologerChat', component: AstrologerChatComponent, canActivate: [AuthGuard]}
 
 ];
 

@@ -5,6 +5,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { loginService } from './login.service'
 import {CommonService} from '../shared/service/commonService/common.service'
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
           // this.isVisible = true;
           this._commonService.tostMessage(resonseMessage)
 
-          if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined'){
+          if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined') {
             this.router.navigate(['astroRegistration']);
             this.dialogRef.close(responseData.data);
           } else {

@@ -6,6 +6,8 @@ import {CommonService} from './shared/service/commonService/common.service'
 import {Router} from '@angular/router'
 import { ObservableDataService } from './observables/behaviourSubject.service';
 import { ResourceLoader } from '@angular/compiler';
+import { AuthService } from './auth/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -20,13 +22,19 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   isUserLogin : boolean = false;
   checkUser;
-  constructor(private _commonService: CommonService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){}
-
   reason = '';
+  Ip;
+  isAstrologerLoggedIn$: Observable<boolean>;
+  isLoggedIn$: Observable<boolean>;
+  AdminLoginHideFlag
+  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){}
+
 
   ngOnInit() {
 
       this.checkUser = JSON.parse(sessionStorage.getItem('userData'));
+      this.isAstrologerLoggedIn$ = this.authService.isAstrologerLoggedIn;
+      this.isLoggedIn$ = this.authService.isLoggedIn;
 
       console.log("checkUser ++",this.checkUser);
       if(this.checkUser != null) {
@@ -36,6 +44,30 @@ export class AppComponent implements OnInit {
       }
       console.log("this.isUserLogin ++++ ",this.isUserLogin);
 
+      this.isAstrologerLoggedIn$.subscribe(res=>{
+        if(res) {
+          this.AdminLoginHideFlag = true;
+        } else {
+          this.AdminLoginHideFlag = false;
+        }
+      });
+
+      this.getIPAddress();
+  }
+
+  dashboard(){
+    this._route.navigate(['dashboard']);
+  }
+
+  home(){
+    this._route.navigate(['home']);
+  }
+
+  getIPAddress() {
+    this._commonService.getIPAddress().subscribe(res=>{
+      this.Ip = res.ip;
+      console.log("Res is ===>>> ",this.Ip);
+    });
   }
 
   close(reason: string) {
@@ -53,9 +85,15 @@ export class AppComponent implements OnInit {
       if(typeof result != 'undefined' || result != null) {
         this.isUserLogin = true;
         this.checkUser = result.userData;
-        this._observableDataService.checkUser(result.userData);
         sessionStorage.setItem('token',result.token);
         sessionStorage.setItem('userData',JSON.stringify(result.userData));
+       let isAdminUser  = this.authService.checkAccess(this.checkUser);
+       console.log("isAdminUser ",isAdminUser);
+       if(!isAdminUser) {
+        this._route.navigate(['dashboard']);
+       }
+
+        // this._observableDataService.checkUser(result.userData);
       }
     });
   }
@@ -104,10 +142,6 @@ export class AppComponent implements OnInit {
 
 
   logOut(){
-    sessionStorage.clear();
-    this._route.navigate(['']);
-    this.isUserLogin = false;
-    this._commonService.tostMessage("Log Out Successfully!")
-
+    this.authService.logOut();
   }
 }

@@ -94,7 +94,7 @@ export class HomePageComponent implements OnInit {
         console.log("Can make call ");
 
               let requestBody = {
-              contactNo : this.userData.conatctNo,
+              contactNo : this.userData.contactNo,
               astrologerNo : value.contactNo
               }
 
@@ -106,13 +106,10 @@ export class HomePageComponent implements OnInit {
 
       } else {
         this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
-
       }
      } else {
       this._commonService.tostMessage("Login is required!");
     }
-
-
 }
 
 }

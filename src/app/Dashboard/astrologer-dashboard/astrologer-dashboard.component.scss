@@ -1,0 +1,82 @@
+.astro-dashboard-wrapper{
+  text-align: center;
+  margin-bottom: 78px;
+  h1 {
+     color : orange;
+  }
+  .mat-icon {
+     font-size: 25px;
+     color: #000;
+  }
+  .dashboard-title{
+    color: #000;
+    font-size: 25px;
+  }
+}
+
+$primary : #f9a825;
+$white : #fff;
+$black: #000;
+
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: $primary;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card1 {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: $primary;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.7s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(30);
+  }
+}
+
+.card1:hover {
+    cursor: pointer;
+  p {
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  h1 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../assets/scss/variables.scss';
+
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.mat-row:hover {
+  background: $hover-color;
+}
+.edit-report{
+ cursor: pointer;
+}
+.dashboard-title{
+  color: #000;
+  font-size: 25px;
+}
+// td, th {
+//   width: 5%;
+// }
+
+
+// media query
+
+@media only screen and (max-width: 991px) {
+  td, th {
+    width: 100%;
+  }
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+    padding: 10px;
+  }
+  .mat-table {
+    background-color: transparent;
+}
+  .mat-header-row {
+    display: none;
+}
+  .mat-row {
+    height: 100%;
+    margin: 0 0 10px;
+    display: block;
+    background-color: $white;
+    &:hover {
+        background-color: $hover-color;
+    }
+  }
+
+  td.mat-cell {
+    padding: 10px;
+    display: block;
+    text-align: right;
+    &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    &[data-label="edit"] {
+        padding: 10px 10px 0;
+    }
+  }
+  }

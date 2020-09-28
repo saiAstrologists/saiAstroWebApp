@@ -7,6 +7,7 @@ import {
 import { Observable } from 'rxjs';
 import { RestService } from '../restApi/rest.service';
 import { RestUrl } from '../../constant/rest-url.constants';
+import { ProfileUpdateService } from '../restApi/profileUpdate.service';
 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class CommonService {
   horizontalPosition: MatSnackBarHorizontalPosition;
   verticalPosition: MatSnackBarVerticalPosition;
 
-  constructor(private _snackBar: MatSnackBar,private restService: RestService) {}
+  constructor(private _snackBar: MatSnackBar,private restService: RestService, private ipAddressService : ProfileUpdateService) {}
 
   tostMessage(message) {
     this._snackBar.open(message,'close', {
@@ -40,6 +41,10 @@ export class CommonService {
 
   makeCall(data): Observable<any> {
     return this.restService.create(RestUrl.makeCall, data)
+  }
+
+  getIPAddress(): Observable<any> {
+    return this.ipAddressService.getIPAddress("http://api.ipify.org?format=json");
   }
 
 

@@ -1,0 +1,25 @@
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.example-card {
+  max-width: 80%;
+  margin: auto;
+}
+
+.example-viewport {
+  height: 500px;
+
+}
+
+.example-item {
+  height: 50px;
+}
+
+@media (max-width: 640px) {
+  .example-card {
+    max-width: 100%;
+  }
+
+}

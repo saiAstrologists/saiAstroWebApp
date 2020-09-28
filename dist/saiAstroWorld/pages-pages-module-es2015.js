@@ -12802,7 +12802,7 @@ class AstrologerComponent {
             if (this.userData.userType == 1) {
                 console.log("Can make call ");
                 let requestBody = {
-                    contactNo: this.userData.conatctNo,
+                    contactNo: this.userData.contactNo,
                     astrologerNo: value.contactNo
                 };
                 this._commonService.makeCall(requestBody).subscribe((responseData) => {
@@ -13096,7 +13096,7 @@ class HomePageComponent {
             if (this.userData.userType == 1) {
                 console.log("Can make call ");
                 let requestBody = {
-                    contactNo: this.userData.conatctNo,
+                    contactNo: this.userData.contactNo,
                     astrologerNo: value.contactNo
                 };
                 this._service.makeCall(requestBody).subscribe((responseData) => {

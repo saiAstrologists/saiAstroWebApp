@@ -31,6 +31,8 @@ export class RestService {
     return this.http.get(environment.urlAddress + route);
   };
 
+
+
   // public delete = (route: string) => {
   //   return this.http.delete(
   //     this.createCompleteRoute(route, environment.urlAddress)

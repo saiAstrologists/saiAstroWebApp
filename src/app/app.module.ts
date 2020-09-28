@@ -16,6 +16,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoaderInterceptorService } from './shared/service/http/loader-interceptor.service';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/canActivateAuth.gaurd'
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
     AppRoutingModule,
     NgxSpinnerModule
   ],
-  providers: [{
+  providers: [
+    AuthService,
+    AuthGuard,
+  {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpIntercepterBasicAuthService,
     multi: true
