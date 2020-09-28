@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
         this.isUserLogin = true;
       } else {
         this.isUserLogin = false;
+        this.home()
       }
       console.log("this.isUserLogin ++++ ",this.isUserLogin);
 

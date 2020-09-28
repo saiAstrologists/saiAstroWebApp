@@ -48,9 +48,9 @@ export class AuthService {
   }
 
   logOut(){
+    location.reload();
     sessionStorage.clear();
     this._route.navigate(['']);
-    location.reload();
     this._commonService.tostMessage("Log Out Successfully!");
   }
 

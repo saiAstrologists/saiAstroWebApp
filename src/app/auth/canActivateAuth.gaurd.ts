@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
     let date = new Date();
     let userValue = JSON.parse(sessionStorage.getItem("userData"));
     console.log("Can Activate servcie  ++++++++++++++ ",userValue)
-    if(userValue == null) this.authService.logOut();
+    // if(userValue == null) this.authService.logOut();
 
     let userFlag = this.authService.checkSession(userValue);
     console.log("flag",userFlag);
