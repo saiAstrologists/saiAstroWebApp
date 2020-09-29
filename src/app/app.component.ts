@@ -78,12 +78,13 @@ export class AppComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(LoginComponent, {
-      width: '500px'
+      width: '500px',
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed',result);
-      if(typeof result != 'undefined' || result != null) {
+      if(typeof result != undefined && result != null && result != '') {
         this.isUserLogin = true;
         this.checkUser = result.userData;
         sessionStorage.setItem('token',result.token);
@@ -93,7 +94,6 @@ export class AppComponent implements OnInit {
        if(!isAdminUser) {
         this._route.navigate(['dashboard']);
        }
-
         // this._observableDataService.checkUser(result.userData);
       }
     });

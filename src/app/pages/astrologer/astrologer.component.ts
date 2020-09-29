@@ -17,6 +17,8 @@ export class AstrologerComponent implements OnInit {
   QAndAFlag : boolean = false;
   astroListing = [];
   userData;
+  searchText;
+  filter;
   constructor(private _service : AstrologerService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router) { }
 
   ngOnInit(): void {

@@ -1,14 +1,37 @@
 @import '../../../assets/scss/variables.scss';
 
+.drawer-container{
+  button.close-drawer{
+    margin-left: 15px;
+  }
+}
 
 table {
   width: 100%;
 }
-
+.mat-drawer{
+  max-width: 75%;
+}
 .mat-form-field {
   font-size: 14px;
   width: 100%;
 }
+.form-wrapper{
+  text-align: center;
+  .form-field-width{
+    width: 40%;
+    margin-right: 10px;
+    line-height: 25px;
+  }
+  .form-field-full-width{
+    width: 83%;
+  }
+  .edit-form-title{
+    color: #000;
+    font-size: 18px;
+  }
+}
+
 .mat-row:hover {
   background: $hover-color;
 }
@@ -18,6 +41,9 @@ table {
 .dashboard-title{
   color: #000;
   font-size: 25px;
+}
+.wrapper-box{
+  margin-bottom: 25%;
 }
 // td, th {
 //   width: 5%;

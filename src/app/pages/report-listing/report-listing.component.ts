@@ -82,7 +82,7 @@ submitForm(value) {
     this.validateForm.controls[key].markAsPristine();
     this.validateForm.controls[key].updateValueAndValidity();
   }
-  console.log("this.userData ",this.userData);
+  console.log("value ",value);
 
   const formData: FormData = new FormData();
   formData.append('userId', this.userData._id );
@@ -93,7 +93,7 @@ submitForm(value) {
   formData.append('mobileNumber', value.contactNo );
   formData.append('gender', value.gender );
   formData.append('dob', value.dob );
-  formData.append('dobTime', value.tob );
+  formData.append('dobTime', value.tob);
   formData.append('city', value.place_of_birth_city );
   formData.append('state', value.place_of_birth_state );
   formData.append('country', value.place_of_birth_country );
@@ -116,9 +116,8 @@ submitForm(value) {
       this._commonService.tostMessage(resonseMessage);
     }
   })
-
-
 }
+
 
 mobileNumber= (control: FormControl): {[s: string]: boolean} => {
 

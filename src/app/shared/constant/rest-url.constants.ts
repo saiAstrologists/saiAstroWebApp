@@ -13,6 +13,13 @@ export class RestUrl {
     public static get submitReport(): string { return '/users/sendreport'; }
     public static get submitQAReport(): string { return '/users/askquestion'; }
 
+    //Admin Dashboard
+
+    public static get getReportByAstroId(): string { return '/users/getreports'; }
+    public static get getQuestionByAstroId(): string { return '/users/getquestions'; }
+    public static get replyReports(): string { return '/users/respondReport'; }
+
+
 
 
 }

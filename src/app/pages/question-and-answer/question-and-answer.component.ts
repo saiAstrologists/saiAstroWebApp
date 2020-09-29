@@ -67,8 +67,8 @@ export class QuestionAndAnswerComponent implements OnInit {
     formData.append('firstName', value.first_name );
     formData.append('lastName', value.last_name );
     formData.append('mobileNumber', value.contactNo );
-    formData.append('employment ', value.employed );
-    formData.append('comment ', value.comment );
+    formData.append('employment', value.employed );
+    formData.append('comment', value.comment );
 
     console.log("+++++++=formData ",formData);
 

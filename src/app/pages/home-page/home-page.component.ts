@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 3
+        items: 4
       }
     },
     nav: false

@@ -87,9 +87,12 @@
       <a href="#">terms and conditions</a>
   </div> -->
 
-  <button mat-raised-button color="primary" class="submit-button mt-5" aria-label="CREATE AN ACCOUNT"
+  <button mat-raised-button color="primary" class="submit-button mt-5 mr-3" aria-label="CREATE AN ACCOUNT"
           [disabled]="signUpValidateForm.invalid">
       Sign Up
+  </button>
+  <button mat-stroked-button color="warn" class="submit-button mt-3" aria-label="Cancel" [mat-dialog-close]="">
+    Cancel
   </button>
 
 </form>

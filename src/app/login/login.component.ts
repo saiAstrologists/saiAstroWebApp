@@ -5,6 +5,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { loginService } from './login.service'
 import {CommonService} from '../shared/service/commonService/common.service'
 import { Router } from '@angular/router';
+import { SocialAuthService } from "angularx-social-login";
+// import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+// import { SocialUser } from "angularx-social-login";
 
 @Component({
   selector: 'app-login',
@@ -16,10 +19,10 @@ export class LoginComponent implements OnInit {
   otpForm: FormGroup;
   isVisible:boolean = false;
   isForgotPassVisible: boolean = false;
+  // user: SocialUser;
+  // loggedIn: boolean;
 
-
-
-  constructor(private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
+  constructor( private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
    ) { }
 
   ngOnInit(): void {
@@ -34,9 +37,16 @@ export class LoginComponent implements OnInit {
       otp : ['', Validators.required]
      });
 
+    //  this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   this.loggedIn = (user != null);
+    // });
+
+    // console.log("this.loggedIn ", this.loggedIn);
+
   }
 
-  submitForm(value: any){
+  submitForm(value: any) {
     for (const key in this.validateForm.controls) {
         this.validateForm.controls[key].markAsDirty();
         this.validateForm.controls[key].updateValueAndValidity();
@@ -69,11 +79,15 @@ export class LoginComponent implements OnInit {
         })
   }
 
+  // signInWithGoogle(): void {
+  //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  // }
 
-
+  // signOut(): void {
+  //   this.authService.signOut();
+  // }
 
   otpSubmitForm(value: any) {
-
     this.dialogRef.close(value);
   }
 
@@ -81,7 +95,7 @@ export class LoginComponent implements OnInit {
     this.isVisible = true;
   }
 
-  resetLogin(event){
+  resetLogin(event) {
 
     if(event){
       this.isVisible = false;

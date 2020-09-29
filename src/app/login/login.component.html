@@ -52,9 +52,12 @@
         </a>
     </div>
 
-    <button mat-raised-button color="primary" class="submit-button mt-3" aria-label="LOGIN"
+    <button mat-raised-button color="primary" class="submit-button mt-3 mr-3" aria-label="LOGIN"
             [disabled]="validateForm.invalid">
         LOGIN
+    </button>
+    <button mat-stroked-button color="warn" class="submit-button mt-3" aria-label="Cancel" [mat-dialog-close]="">
+      Cancel
     </button>
     </form>
 
@@ -63,21 +66,17 @@
     <app-forgot-password *ngIf="isVisible" (outputResetData)="resetLogin($event)"> </app-forgot-password>
   </div>
 
-    <div class="separator login">
+    <!-- <div class="separator login">
       <span class="text">OR</span>
-    </div>
+    </div> -->
 
-    <div class="d-flex  justify-content-center">
+    <!-- <div class="d-flex  justify-content-center">
 
       <button mat-stroked-button class="google"><i><img src="../../assets/images/social/google.png"></i>
           <b>Log in with Google</b>
       </button>
 
-      <!-- <button mat-raised-button class="facebook">
-          Log in with Facebook
-      </button> -->
-
-    </div>
+    </div> -->
   </div>
    <!-- loginform ends -->
 

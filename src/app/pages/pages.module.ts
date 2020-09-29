@@ -14,7 +14,7 @@ import { QuestionAndAnswerComponent } from './question-and-answer/question-and-a
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { AuthGuard } from '../auth/canActivateAuth.gaurd';
 import { AstrologerChatComponent } from './astrologer-chat/astrologer-chat.component'
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -35,6 +35,7 @@ import { AstrologerChatComponent } from './astrologer-chat/astrologer-chat.compo
     FormsModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [

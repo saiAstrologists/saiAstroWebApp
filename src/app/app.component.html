@@ -51,9 +51,9 @@
           <!-- <h4>{{checkUser.email}}</h4> -->
           <h4 *ngIf="isUserLogin">{{checkUser.contactNo}}</h4>
           <mat-divider></mat-divider>
-          <button *ngIf="!AdminLoginHideFlag" mat-menu-item (click)="dashboard()">Dashboard</button>
-          <button *ngIf="AdminLoginHideFlag" mat-menu-item (click)="home()">Home</button>
-          <button mat-menu-item (click)="logOut()">Log Out</button>
+          <button *ngIf="!AdminLoginHideFlag" mat-menu-item (click)="dashboard()"><mat-icon>dashboard</mat-icon> <span>Dashboard</span></button>
+          <button *ngIf="AdminLoginHideFlag" mat-menu-item (click)="home()"><mat-icon>home</mat-icon> <span>Home</span></button>
+          <button mat-menu-item (click)="logOut()"><mat-icon>power_settings_new</mat-icon> Log Out</button>
           <!-- <button mat-menu-item>Info</button> -->
         </mat-menu>
         <button mat-raised-button color="primary" (click)="openDialog()" *ngIf="!isUserLogin">Login</button>

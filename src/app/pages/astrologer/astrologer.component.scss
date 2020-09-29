@@ -1,3 +1,11 @@
+.filter-wrapper {
+  text-align: center;
+  margin: 20px 0px;
+   .mat-form-field {
+    width: 40%;
+    margin-right: 20px;
+}
+}
 .astrologer-listing-wrapper{
   img{
     width: 80px;
@@ -19,5 +27,4 @@
     font-weight: bold;
     margin-right: 5px;
   }
-
 }

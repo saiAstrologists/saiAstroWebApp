@@ -19,6 +19,11 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/canActivateAuth.gaurd'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +42,26 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    // SocialLoginModule
   ],
   providers: [
     AuthService,
     AuthGuard,
+    // {
+    //   provide: 'SocialAuthServiceConfig',
+    //   useValue: {
+    //     autoLogin: false,
+    //     providers: [
+    //       {
+    //         id: GoogleLoginProvider.PROVIDER_ID,
+    //         provider: new GoogleLoginProvider(
+    //           'clientId'
+    //         ),
+    //       },
+    //     ],
+    //   } as SocialAuthServiceConfig ,
+    // },
   {provide: LocationStrategy, useClass: HashLocationStrategy},
   {
     provide: HTTP_INTERCEPTORS,
