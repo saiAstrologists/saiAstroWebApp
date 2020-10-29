@@ -12,8 +12,8 @@ export class HomeService {
 
   constructor(private restService: RestService) {}
 
-  getAstroApi(): Observable<any> {
-    return this.restService.get(RestUrl.getAstro)
+  getAstroApi(data): Observable<any> {
+    return this.restService.create(RestUrl.getAstro,data)
   }
 
   makeCall(data): Observable<any> {

@@ -60,7 +60,10 @@ export class HomePageComponent implements OnInit {
 
   getAstro() {
     this.isVisible = true
-    this._service.getAstroApi().subscribe((responseData)=>{
+    let data = {
+      "page":1
+    }
+    this._service.getAstroApi(data).subscribe((responseData)=>{
         console.log("responseData ++++++++++++", responseData);
         let resonseMessage = responseData.message;
        if(responseData.status == 200){
