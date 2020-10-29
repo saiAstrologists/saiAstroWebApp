@@ -6,6 +6,7 @@ import { loginService } from './login.service'
 import {CommonService} from '../shared/service/commonService/common.service'
 import { Router } from '@angular/router';
 import { SocialAuthService } from "angularx-social-login";
+import { FirebaseService } from '../shared/service/firebase/firebase.service';
 // import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 // import { SocialUser } from "angularx-social-login";
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   // user: SocialUser;
   // loggedIn: boolean;
 
-  constructor( private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService
+  constructor( private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService, public firebaseService: FirebaseService
    ) { }
 
   ngOnInit(): void {
@@ -62,10 +63,24 @@ export class LoginComponent implements OnInit {
         let responseBody = responseData.data;
 
         if(responseData.status == 200) {
+
+          // call firebase service on login
+          let firebaseLoginReq = {
+            email: responseBody.userData.email,
+            password: responseBody.userData.contactNo,
+            name: responseBody.userData.name
+          }
+          this.firebaseService.loginFirebase(firebaseLoginReq);
+
+          // call firebase service on login end
+
+
           // this.isVisible = true;
           this._commonService.tostMessage(resonseMessage)
 
           if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined') {
+              console.log(responseBody, 'response body');
+            // this.firebaseService.loginFirebase()
             this.router.navigate(['astroRegistration']);
             this.dialogRef.close(responseData.data);
           } else {

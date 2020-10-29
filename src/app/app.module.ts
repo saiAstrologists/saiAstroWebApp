@@ -19,8 +19,30 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/canActivateAuth.gaurd'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+// import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+// import { GoogleLoginProvider } from 'angularx-social-login';
+import firebase from 'firebase/app';
+import { ChatComponent } from './chat/chat.component';
+
+
+
+export const config = {
+  apiKey: "AIzaSyCwcgfKu2EkT1E_2uRqf7bloO8P6PHRNO0",
+  authDomain: "simpleintroslider.firebaseapp.com",
+  databaseURL: "https://SimpleIntroSlider.firebaseio.com",
+  projectId: "simpleintroslider",
+  storageBucket: "",
+  messagingSenderId: "861357045560"
+};
+
+// apiKey: "<API_KEY>",
+// authDomain: "<PROJECT_ID>.firebaseapp.com",
+// databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+// projectId: "<PROJECT_ID>",
+// storageBucket: "<BUCKET>.appspot.com",
+// messagingSenderId: "<SENDER_ID>",
+
+firebase.initializeApp(config);
 
 
 
@@ -30,7 +52,8 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     LoginComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

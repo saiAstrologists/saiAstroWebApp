@@ -9,6 +9,8 @@ export class ObservableDataService {
   private checkOperationSource = new BehaviorSubject<any>(null);
   private astroDetail = new BehaviorSubject<any>(null);
 
+  public getMessage = new BehaviorSubject<any>(null);
+
 
   checkUserData = this.messageSource.asObservable();
   checkUserOperationFlag = this.checkOperationSource.asObservable();
@@ -28,6 +30,10 @@ export class ObservableDataService {
 
   passAstroDetails(message: any) {
     this.astroDetail.next(message)
+  }
+
+  messageData(message : any){
+    this.getMessage.next(message);
   }
 
 }

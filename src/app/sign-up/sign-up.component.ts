@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { RegexConstant } from '../shared/constant/regex-constant';
 import { signUpService } from './sign-up.service';
 import {CommonService} from '../shared/service/commonService/common.service'
+import { FirebaseService } from '../shared/service/firebase/firebase.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,7 +20,7 @@ export class SignUpComponent implements OnInit {
   @Output()
   outputSignUpData: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private _formBuilder: FormBuilder, private _signUpService : signUpService, private _commonService : CommonService) { }
+  constructor(private _formBuilder: FormBuilder, private _signUpService : signUpService, private _commonService : CommonService, public firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
 
@@ -53,6 +54,15 @@ export class SignUpComponent implements OnInit {
 
         if(responseData.status == 200) {
           this.isVisible = true;
+
+          // fire base register
+          let firebaseLoginReq = {
+            email: responseData.body.userData.email,
+            password: responseData.body.userData.contactNo,
+            name: responseData.body.userData.name
+          }
+          this.firebaseService.signInFirebase(firebaseLoginReq);
+          // fire base register end
         } else {
           this._commonService.tostMessage(resonseMessage)
         }
