@@ -146,11 +146,33 @@
              </div>
         </div>
       </div>
+      
+<!-- 
+  <button (click)="signupFirebase()">signup</button>
+  <button (click)="signupWithOther()">other signup</button>
+  <button (click)="loginFirebase()">login</button>
+  <button (click)="loginOtherFirebase()">login other</button>
+  <button (click)="sendMessage()">Send</button>
+  <button (click)="getUserList()">user</button>
+  <button (click)="getAllMessage();">All message</button>
+
+  <div *ngFor="let list of userList;">
+    <span (click)="setReceiverId(list)">{{list.username}}</span>
+  </div>
+  <form [formGroup]="messaging" class="mt-5">
+    <input type="text" formControlName="typing">
+  </form>
+  <div *ngFor="let list of chatList;">
+    {{list.message}}
+  </div> -->
     </footer>
+
+    <app-chat [viewChatOption]="true"></app-chat>
 
   </mat-sidenav-content>
 
   <!-- <button mat-button><mat-icon aria-hidden="false">notifications</mat-icon></button> -->
+
 
 </mat-sidenav-container>
 

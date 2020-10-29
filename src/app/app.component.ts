@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit, ViewEncapsulation } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component'
 import {CommonService} from './shared/service/commonService/common.service'
@@ -8,6 +9,10 @@ import { ObservableDataService } from './observables/behaviourSubject.service';
 import { ResourceLoader } from '@angular/compiler';
 import { AuthService } from './auth/auth.service';
 import { Observable } from 'rxjs';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +23,11 @@ import { Observable } from 'rxjs';
 
 export class AppComponent implements OnInit {
   title = 'saiAstroWorld';
+  chatList: any = [];
+  userList: any  = [];
+  messaging: FormGroup;
+  receiverId: any;
+  senderId: any;
 
   @ViewChild('sidenav') sidenav: MatSidenav;
   isUserLogin : boolean = false;
@@ -27,7 +37,48 @@ export class AppComponent implements OnInit {
   isAstrologerLoggedIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
   AdminLoginHideFlag
-  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){}
+  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){
+    this.messaging = new FormGroup({
+      typing: new FormControl('')
+    })
+
+
+      
+    // this.eventListener();
+    
+    // if(sender && receiver){
+    //   firebase.database().ref().child('Chats').child(convId).limitToLast(1).on('child_added', (snapShot) => {
+    //     console.log(snapShot.val(), 'added');
+    //     this.chatList.push(snapShot.val());
+    //   })
+    // }
+
+    // child added for first time
+    // firebase.database().ref().child('Chats').limitToLast(1).on('child_added', snapShot => {
+    //   let sender = this.senderId;
+    //   let receiver = this.receiverId;
+    //   let convId ;
+    //   if(sender >  receiver) {
+    //     convId = receiver + '-' + sender;
+    //   }else {
+    //     convId = sender + '-' + receiver;
+    //   }
+    //   if(snapShot.key == convId){
+    //     let value = Object.values(snapShot.val())[Object.values(snapShot.val()).length - 1];
+    //     this.chatList.push(value);
+    //   }
+    // })
+
+    // firebase.database().ref().child('Chats').limitToLast(1).on('child_changed', snapShot => {
+    //   console.log(snapShot.val(), 'valkjkukjk');
+    //   if(snapShot.key){
+    //     let value = Object.values(snapShot.val())[Object.values(snapShot.val()).length - 1];
+    //     this.chatList.push(value);
+    //   }
+    // })
+
+    
+  }
 
 
   ngOnInit() {
@@ -144,5 +195,152 @@ export class AppComponent implements OnInit {
 
   logOut(){
     this.authService.logOut();
+  }
+
+
+  // firebase remove afterwards
+  signupFirebase(){
+    firebase.auth().createUserWithEmailAndPassword('amit.wohlig@gmail.com', 'Test@123').then((response)=> {
+      if(response){
+        console.log(response, 'signup response');
+
+        let userData = {
+          id: response.user.uid,
+          imageURL: '',
+          status: '',
+          username: 'Amit Verma'
+        }
+
+        console.log(response.user.uid, 'local id');
+        firebase.database().ref().child('Users').child(response.user.uid).set(userData);
+      }
+    })
+  }
+
+  signupWithOther(){
+    firebase.auth().createUserWithEmailAndPassword('amitverma@gmail.com', 'Test@123').then((response)=> {
+      if(response){
+        console.log(response, 'signup response');
+
+        let userData = {
+          id: response.user.uid,
+          imageURL: '',
+          status: '',
+          username: 'Amit Verma'
+        }
+
+        console.log(response.user.uid, 'local id');
+        firebase.database().ref().child('Users').child(response.user.uid).set(userData);
+      }
+    })
+  }
+  loginFirebase(){
+    firebase.auth().signInWithEmailAndPassword('amit.wohlig@gmail.com', 'Test@123').then((response) => {
+      console.log(response, 'login response'); 
+      this.senderId = response.user.uid;
+    })
+  }
+
+  loginOtherFirebase(){
+    firebase.auth().signInWithEmailAndPassword('amitverma@gmail.com', 'Test@123').then((response) => {
+      console.log(response, 'login response'); 
+      this.senderId = response.user.uid;
+    })
+  }
+
+  // sendMessage(){
+
+  // }
+
+  getUserList(){
+    firebase.database().ref('Users').on('value', snapshot => {
+      let snapvalue = snapshot.val();
+      if(snapvalue){
+        Object.values(snapvalue).forEach(list => {
+          if(list){
+            this.userList.push(list);
+          }
+        });
+      }
+    })
+  }
+
+  getAllMessage(){
+    console.log(firebase);
+    // firebase.database().ref('Chats').orderByChild('sender').equalTo("mpksRVLonrQVNPWZZWJ0z2KsLWl2").on('value', (snapShot)=> {
+    //   let snapVal = snapShot.val();
+    //   if(snapVal){
+    //       Object.values(snapVal).forEach(list => {
+    //         if(list['receiver'] == 'W6qE30aqEWb6OzHcWGoxg52U0F53'){
+    //           this.chatList.push(list);
+    //         }
+    //     });
+    //   }
+
+    // });
+
+    let sender = this.senderId || 'W6qE30aqEWb6OzHcWGoxg52U0F53';
+    let receiver = this.receiverId || 'mpksRVLonrQVNPWZZWJ0z2KsLWl2';
+    let convId ;
+    if(sender >  receiver) {
+      convId = receiver + '-' + sender;
+    }else {
+      convId = sender + '-' + receiver;
+    }
+    firebase.database().ref('Chats').child(convId).once('value', (snapShot) => {
+      console.log(snapShot.val(), 'value');
+      Object.values(snapShot.val()).forEach(list => this.chatList.push(list));
+    })
+  }
+
+  sendMessage(){
+    let sender = this.senderId || 'W6qE30aqEWb6OzHcWGoxg52U0F53';
+    let receiver = this.receiverId || 'mpksRVLonrQVNPWZZWJ0z2KsLWl2';
+    let convId ;
+    if(sender >  receiver) {
+      convId = receiver + '-' + sender;
+    }else {
+      convId = sender + '-' + receiver;
+    }
+    let reqObj = {
+      sender: 'W6qE30aqEWb6OzHcWGoxg52U0F53',
+      receiver: 'mpksRVLonrQVNPWZZWJ0z2KsLWl2',
+      isseen: false,
+      message: this.messaging.value.typing,
+    }
+    let key = firebase.database().ref().child('Chats').push().key;
+    firebase.database().ref().child('Chats').child(convId).child(key).set(reqObj).then(sendVal => {
+      console.log(sendVal, 'send value');
+    });
+
+    // event listener
+  }
+  
+
+  setReceiverId(list){
+    this.receiverId = list.id
+  }
+
+
+  eventListener() {
+    let sender = this.senderId;
+    let receiver = this.receiverId;
+    let convId ;
+    if(sender >  receiver) {
+      convId = receiver + '-' + sender;
+    }else {
+      convId = sender + '-' + receiver;
+    }
+    if(sender && receiver){
+      firebase.database().ref().child('Chats').child(convId).orderByKey().limitToLast(1).on('child_added', (snapShot) => {
+        console.log(snapShot.val(), 'added');
+        this.chatList.push(snapShot.val());
+      })
+    }
+
+
+    firebase.database().ref().child('Chats').on('child_added', snapShot => {
+      console.log(snapShot.val(), 'valkjkukjk');
+    })
   }
 }
