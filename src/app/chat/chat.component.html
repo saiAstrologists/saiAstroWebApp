@@ -1,8 +1,8 @@
 <div class="chat-wrapper" *ngIf="viewChatOption">
     <form [formGroup]="chatForm">
         <div class="chat-list">
-            <div class="listing" *ngFor="let list of chatList;">
-                <span [ngClass]="(list?.sender == getFirebaseUserData?.id ? 'mine': 'other')">{{list?.message}}</span>
+            <div class="listing clearfix" *ngFor="let list of chatList;">
+                <span [ngClass]="(list?.receiver == getFirebaseUserData?.id) ? 'mine': 'other'">{{list?.message}}</span>
             </div>
         </div>
         <div class="input-field">

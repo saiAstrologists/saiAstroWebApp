@@ -16,7 +16,7 @@ export class ChatComponent implements OnInit {
   constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService) {
     this.chatForm = new FormGroup({
       message: new FormControl()
-    });
+    }); 
 
     if(sessionStorage.getItem('userFirebaseData')){
       this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
@@ -42,6 +42,7 @@ export class ChatComponent implements OnInit {
 
   sendMessage(){
     this.firebaseService.sendMessages(this.chatForm.value.message);
+    this.chatForm.reset();
   }
 
 }
