@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RestService } from '../restApi/rest.service';
 // import { RestUrl } from '../../constant/rest-url.constants';
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -33,10 +31,5 @@ export class AuthenticationService {
   //   const user = sessionStorage.getItem('username');
   //   return !(user === null);
   // }
-
-  // logout() {
-  //   return this.restService.getData(RestUrl.logout, false);
-  // }
-
 
 }

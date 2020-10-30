@@ -20,10 +20,10 @@
       </mat-form-field>
       <!-- <input class="form-control" type="text" > -->
     </div>
-    <div class="row astrologer-listing-wrapper">
+    <div class="row astrologer-listing-wrapper" *ngIf="!this.isDetailPage">
 
       <div class="col-md-4 my-3" *ngFor="let element of astroListing | filter:searchText">
-        <mat-card>
+        <mat-card (click)="detailPage(element)">
         <div class="row">
           <div class="col-4">
             <img src="{{element.profilePic ? element.profilePic : '../../../assets//images/user/default-user.jpg'}}">
@@ -40,187 +40,25 @@
         </div>
       </mat-card>
       </div>
+    </div>
 
-
-
-
-
-
-      <!-- <div class="col-md-4 my-3">
-        <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" (click)="report()">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary" (click)="call()">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat()">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary" (click)="question()">Ask Question</button>
-          </div>
+    <div *ngIf="this.isDetailPage" class="detail-page-wrapper">
+      {{this.isDetailPage}}
+      <div class="row">
+        <div class="col-4">
+          <img src="{{detailData.profilePic ? detailData.profilePic : '../../../assets//images/user/default-user.jpg'}}">
         </div>
-      </mat-card>
+        <div class="col-8">
+          <h1>{{detailData.name}} <span><mat-icon>verified</mat-icon></span></h1>
+          <p>{{detailData.language}}</p>
+          <p>Vedic Astrologer, Gemology</p>
+          <p>{{detailData.email}}</p>
+          <p>Experience : {{detailData.experience}}</p>
+          <p>{{detailData.contactNo}}</p>
+         </div>
       </div>
-      <div class="col-md-4 my-3">
-        <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-              <p>Hindi, English</p>
-              <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-        </mat-card>
-      </div>
-      <div class="col-md-4 my-3">
-        <mat-card>
-        <div class="row ">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-      </mat-card>
-      </div>
-
-      <div class="col-md-4 my-3">
-        <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-      </mat-card>
-      </div>
-      <div class="col-md-4 my-3">
-      <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-      </mat-card>
-      </div>
-      <div class="col-md-4 my-3">
-        <mat-card>
-          <div class="row">
-            <div class="col-4">
-              <img src="../../../assets//images/user/default-user.jpg">
-            </div>
-            <div class="col-8">
-              <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-              <p>Hindi, English</p>
-              <p>Vedic Astrologer, Gemology</p>
-              <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-              <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-              <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-              <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-            </div>
-          </div>
-      </mat-card>
-      </div>
-
-      <div class="col-md-4 my-3">
-        <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-      </mat-card>
-      </div>
-      <div class="col-md-4 my-3">
-      <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <img src="../../../assets//images/user/default-user.jpg">
-          </div>
-          <div class="col-8">
-            <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-            <p>Hindi, English</p>
-            <p>Vedic Astrologer, Gemology</p>
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-          </div>
-        </div>
-      </mat-card>
-      </div>
-      <div class="col-md-4 my-3">
-        <mat-card>
-          <div class="row">
-            <div class="col-4">
-              <img src="../../../assets//images/user/default-user.jpg">
-            </div>
-            <div class="col-8">
-              <h1>Bijendra Gaur <span><mat-icon>verified</mat-icon></span></h1>
-              <p>Hindi, English</p>
-              <p>Vedic Astrologer, Gemology</p>
-              <button *ngIf="ReportBtnFlag" mat-raised-button color="primary">Report</button>
-              <button *ngIf="CallBtnFlag" mat-raised-button color="primary">Call</button>
-              <button *ngIf="ChatBtnFlag" mat-raised-button color="primary">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary">Ask Question</button>
-
-            </div>
-          </div>
-      </mat-card>
-      </div> -->
 
     </div>
-  <!-- </div> -->
 </div>
 
 

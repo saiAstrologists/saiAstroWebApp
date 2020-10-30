@@ -3,7 +3,7 @@ import { ObservableDataService } from 'src/app/observables/behaviourSubject.serv
 import { Router } from '@angular/router';
 import { AstrologerService } from './astrologer.service';
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
-
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-astrologer',
   templateUrl: './astrologer.component.html',
@@ -16,10 +16,12 @@ export class AstrologerComponent implements OnInit {
   CallBtnFlag : boolean = false;
   QAndAFlag : boolean = false;
   astroListing = [];
+  isDetailPage : boolean = false;
+  detailData;
   userData;
   searchText;
   filter;
-  constructor(private _service : AstrologerService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router) { }
+  constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router) { }
 
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('userData'))
@@ -75,7 +77,7 @@ export class AstrologerComponent implements OnInit {
 
 
   getAstroListing(){
-    this._service.getAstroListingApi().subscribe((responseData)=>{
+    this._service.getAstroListingApi({page : 1}).subscribe((responseData)=>{
 
       console.log("responseData ++++++++++++", responseData);
       let resonseMessage = responseData.message;
@@ -97,12 +99,14 @@ export class AstrologerComponent implements OnInit {
       })
       console.log("this.astroData ++++++++++++", this.astroListing);
 
+     } else if(responseData.status == 300) {
+      this._commonService.tostMessage(resonseMessage);
+      this._authService.logOut();
      } else {
       this._commonService.tostMessage(resonseMessage);
      }
-
-    })
-  }
+   })
+}
 
   report(value) {
 
@@ -151,6 +155,13 @@ export class AstrologerComponent implements OnInit {
     this._observableDataService.passAstroDetails(value);
     this._route.navigate(['home/questionAnswer'])
   }
+
+  detailPage(astroData){
+    console.log("astroData ----> ", astroData);
+    this.detailData = astroData;
+    this.isDetailPage = !this.isDetailPage;
+  }
+
 
 //   makeCall(value){
 //     this.userData = JSON.parse(sessionStorage.getItem('userData'))

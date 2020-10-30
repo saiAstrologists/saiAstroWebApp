@@ -13,8 +13,8 @@ export class AstrologerService {
   constructor(private restService: RestService) {}
 
 
-  getAstroListingApi(): Observable<any> {
-    return this.restService.get(RestUrl.getAstroListingApi)
+  getAstroListingApi(data): Observable<any> {
+    return this.restService.create(RestUrl.getAstroListingApi,data)
   }
 
 
