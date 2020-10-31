@@ -6,6 +6,7 @@ export class RestUrl {
     public static get resetUser(): string { return '/users/resetPwd'; }
     public static get astroCreateProfile(): string { return '/users/updateprofile'; }
     public static get getAstroListingApi(): string { return '/users/getastrologerslist'; }
+    public static get loginFirebase(): string { return '/users/firebaseId'; }
 
     public static get getAstro(): string { return '/users/listOfAstrologers'; }
     public static get makeCall(): string { return '/users/call'; }

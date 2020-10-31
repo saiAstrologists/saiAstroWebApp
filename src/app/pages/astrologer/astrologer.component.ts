@@ -141,10 +141,16 @@ export class AstrologerComponent implements OnInit {
     }
   }
 
-  chat(){
+  chat(element){
+
+    // remove just for dummy
+    sessionStorage.setItem('chatName', element.name);
+    // remove just for dummy end
+  
     if(this.userData != null) {
       // this._observableDataService.passAstroDetails(value);
-      this._route.navigate(['home/astrologerChat'])
+      // this._route.navigate(['home/astrologerChat'])
+      this._route.navigate(['/chat']);
     }else {
       this._commonService.tostMessage("Login is required!");
     }

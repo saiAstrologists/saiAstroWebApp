@@ -34,7 +34,7 @@
             <p>Vedic Astrologer, Gemology</p>
             <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" (click)="report(element)">Report</button>
             <button *ngIf="CallBtnFlag" mat-raised-button color="primary" (click)="call(element)">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat()">Chat</button>
+            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat(element)">Chat</button>
             <button *ngIf="QAndAFlag" mat-raised-button color="primary" (click)="question(element)">Ask Question</button>
           </div>
         </div>
@@ -49,12 +49,12 @@
           <img src="{{detailData.profilePic ? detailData.profilePic : '../../../assets//images/user/default-user.jpg'}}">
         </div>
         <div class="col-8">
-          <h1>{{detailData.name}} <span><mat-icon>verified</mat-icon></span></h1>
-          <p>{{detailData.language}}</p>
+          <h1>{{detailData?.name}} <span><mat-icon>verified</mat-icon></span></h1>
+          <p>{{detailData?.language}}</p>
           <p>Vedic Astrologer, Gemology</p>
-          <p>{{detailData.email}}</p>
-          <p>Experience : {{detailData.experience}}</p>
-          <p>{{detailData.contactNo}}</p>
+          <p>{{detailData?.email}}</p>
+          <p>Experience : {{detailData?.experience}}</p>
+          <p>{{detailData?.contactNo}}</p>
          </div>
       </div>
 
