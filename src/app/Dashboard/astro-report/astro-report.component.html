@@ -47,12 +47,13 @@
 
           </mat-form-field>
 
-        <mat-form-field class="form-field-width">
+        <mat-form-field class="form-field-full-width">
           <mat-label>Answer</mat-label>
-          <textarea matInput formControlName="message" required></textarea>
+          <textarea matInput formControlName="message" maxlength="4000" #message (keyup)="count(message.value)" required></textarea>
+          <mat-hint align="start">{{characters}} / 4000</mat-hint>
         </mat-form-field>
 
-        <mat-form-field class="form-field-width">
+        <!-- <mat-form-field class="form-field-width">
           <mat-label>Upload Report</mat-label>
           <ngx-mat-file-input formControlName="attachment" required [accept]="'.pdf'"></ngx-mat-file-input>
           <mat-icon matSuffix>folder</mat-icon>
@@ -60,7 +61,7 @@
           <mat-error *ngIf="validateForm.get('attachment').hasError('attachment')">
             Upload Report is required!
           </mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <div class="mt-5">
           <button mat-raised-button color="primary" class="submit-button mt-3 mr-5" aria-label="LOGIN"

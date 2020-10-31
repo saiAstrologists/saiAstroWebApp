@@ -43,9 +43,9 @@ export class AppComponent implements OnInit {
     })
 
 
-      
+
     // this.eventListener();
-    
+
     // if(sender && receiver){
     //   firebase.database().ref().child('Chats').child(convId).limitToLast(1).on('child_added', (snapShot) => {
     //     console.log(snapShot.val(), 'added');
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
     //   }
     // })
 
-    
+
   }
 
 
@@ -153,43 +153,43 @@ export class AppComponent implements OnInit {
   viewReport(){
     console.log("this.checkUser ", this.checkUser);
 
-    if(this.checkUser != null) {
+    // if(this.checkUser != null) {
       console.log("view report");
       this._observableDataService.checkUserOperation('Report');
       this._route.navigate(['home/astrologer']);
-    } else {
-    this._commonService.tostMessage("Please Login to ask report to Astrologers!")
-    }
+    // } else {
+    // this._commonService.tostMessage("Please Login to ask report to Astrologers!")
+    // }
   }
 
   viewQA(){
-    if(this.checkUser != null) {
+    // if(this.checkUser != null) {
       console.log("QA report");
       this._observableDataService.checkUserOperation('Q&A');
       this._route.navigate(['home/astrologer']);
-    } else {
-    this._commonService.tostMessage("Please Login to ask question to Astrologers!")
-    }
+    // } else {
+    // this._commonService.tostMessage("Please Login to ask question to Astrologers!")
+    // }
   }
 
   talkToAstro(){
-    if(this.checkUser != null) {
+    // if(this.checkUser != null) {
       console.log("QA report");
       this._observableDataService.checkUserOperation('Call');
       this._route.navigate(['home/astrologer']);
-    } else {
-    this._commonService.tostMessage("Please Login to talk with Astrologers!")
-    }
+    // } else {
+    // this._commonService.tostMessage("Please Login to talk with Astrologers!")
+    // }
   }
 
   chatToAstro(){
-    if(this.checkUser != null) {
+    // if(this.checkUser != null) {
       console.log("QA report");
       this._observableDataService.checkUserOperation('Chat');
       this._route.navigate(['home/astrologer']);
-    } else {
-    this._commonService.tostMessage("Please Login to chat with Astrologers!")
-    }
+    // } else {
+    // this._commonService.tostMessage("Please Login to chat with Astrologers!")
+    // }
   }
 
 
@@ -236,14 +236,14 @@ export class AppComponent implements OnInit {
   }
   loginFirebase(){
     firebase.auth().signInWithEmailAndPassword('amit.wohlig@gmail.com', 'Test@123').then((response) => {
-      console.log(response, 'login response'); 
+      console.log(response, 'login response');
       this.senderId = response.user.uid;
     })
   }
 
   loginOtherFirebase(){
     firebase.auth().signInWithEmailAndPassword('amitverma@gmail.com', 'Test@123').then((response) => {
-      console.log(response, 'login response'); 
+      console.log(response, 'login response');
       this.senderId = response.user.uid;
     })
   }
@@ -315,7 +315,7 @@ export class AppComponent implements OnInit {
 
     // event listener
   }
-  
+
 
   setReceiverId(list){
     this.receiverId = list.id

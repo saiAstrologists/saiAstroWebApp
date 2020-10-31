@@ -23,9 +23,9 @@
     <div class="row astrologer-listing-wrapper" *ngIf="!this.isDetailPage">
 
       <div class="col-md-4 my-3" *ngFor="let element of astroListing | filter:searchText">
-        <mat-card (click)="detailPage(element)">
+        <mat-card>
         <div class="row">
-          <div class="col-4">
+          <div class="col-4" (click)="detailPage(element)">
             <img src="{{element.profilePic ? element.profilePic : '../../../assets//images/user/default-user.jpg'}}">
           </div>
           <div class="col-8">
@@ -42,23 +42,36 @@
       </div>
     </div>
 
-    <div *ngIf="this.isDetailPage" class="detail-page-wrapper">
-      {{this.isDetailPage}}
+    <div *ngIf="this.isDetailPage" class="detail-page-wrapper mb-5">
+      <mat-card>
       <div class="row">
         <div class="col-4">
           <img src="{{detailData.profilePic ? detailData.profilePic : '../../../assets//images/user/default-user.jpg'}}">
         </div>
         <div class="col-8">
-          <h1>{{detailData.name}} <span><mat-icon>verified</mat-icon></span></h1>
+          <h1>{{detailData.name}} <span><mat-icon>verified</mat-icon></span>
+            <span class="action-btn"> <button mat-mini-fab (click)="goBack()" class="mr-3" color="primary" aria-label="Close Menu">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button> <button mat-mini-fab color="primary" aria-label="Close Menu">
+            <mat-icon>edit</mat-icon>
+          </button>
+           </span></h1>
+
           <p>{{detailData.language}}</p>
           <p>Vedic Astrologer, Gemology</p>
           <p>{{detailData.email}}</p>
           <p>Experience : {{detailData.experience}}</p>
           <p>{{detailData.contactNo}}</p>
+          <p>Short Bio : {{detailData.shortBio}}</p>
+          <p>Long Bio : {{detailData.longBio}}</p>
          </div>
       </div>
-
+    </mat-card>
     </div>
+
+    <section *ngIf="!this.isDetailPage" class="load-more-wrapper my-5" >
+      <button class="bounce" mat-stroked-button color="warn" (click)="getAstroListing(1)">Load More <mat-icon >filter_list</mat-icon></button>
+    </section>
 </div>
 
 

@@ -62,42 +62,43 @@ export class AstrologerComponent implements OnInit {
           this.CallBtnFlag = true;
         }
     })
-
-    if( this.userData != null) {
-      this.getAstroListing();
-    } else {
-      console.log("astrologer +++++++++++++++",this.userData);
-
-      this._route.navigate['home'];
-    }
-
-
+    this.getAstroListing(null);
 
   }
 
 
-  getAstroListing(){
-    this._service.getAstroListingApi({page : 1}).subscribe((responseData)=>{
+  getAstroListing(pageNo){
+
+    let pagination = pageNo != null ? pageNo + 1 : 1;
+    console.log("pagination ++", pagination);
+
+    this._service.getAstroListingApi({page : pagination}).subscribe((responseData)=>{
 
       console.log("responseData ++++++++++++", responseData);
       let resonseMessage = responseData.message;
      if(responseData.status == 200){
       // this.astroData = responseData.data
       let data = responseData.data
-      data.map((element)=>{
-          let obj = {
-            contactNo : element.contactNo,
-            email : element.email,
-            name : element.name,
-            userType : element.userType,
-            experience : element.astrologistDetails.experience,
-            language : element.astrologistDetails.language[0],
-            profilePic : element.astrologistDetails.profilePic,
-            id : element._id
-          }
-          this.astroListing.push(obj)
-      })
-      console.log("this.astroData ++++++++++++", this.astroListing);
+      if(data != null && data.length) {
+          data.map((element)=>{
+              let obj = {
+                contactNo : element.contactNo,
+                email : element.email,
+                name : element.name,
+                userType : element.userType,
+                experience : element.astrologistDetails.experience,
+                language : element.astrologistDetails.language[0],
+                profilePic : element.astrologistDetails.profilePic,
+                id : element._id,
+                shortBio : element.astrologistDetails.shortBio,
+                longBio : element.astrologistDetails.longBio
+              }
+              this.astroListing.push(obj)
+          })
+          console.log("this.astroData ++++++++++++", this.astroListing);
+    } else {
+      this._commonService.tostMessage("No More Astrologer Found!");
+     }
 
      } else if(responseData.status == 300) {
       this._commonService.tostMessage(resonseMessage);
@@ -108,10 +109,22 @@ export class AstrologerComponent implements OnInit {
    })
 }
 
-  report(value) {
+loadMore(data){
 
-    this._observableDataService.passAstroDetails(value);
-    this._route.navigate(['home/reportListing'])
+}
+
+  report(value) {
+    if( this.userData != null) {
+      if(this.userData.userType == 1) {
+        console.log("Can question");
+        this._observableDataService.passAstroDetails(value);
+        this._route.navigate(['home/reportListing'])
+    } else {
+      this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
+    }
+  } else {
+    this._commonService.tostMessage("Login is required!");
+}
   }
 
   call(value) {
@@ -134,7 +147,6 @@ export class AstrologerComponent implements OnInit {
 
       } else {
         this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
-
       }
      } else {
       this._commonService.tostMessage("Login is required!");
@@ -142,23 +154,42 @@ export class AstrologerComponent implements OnInit {
   }
 
   chat(){
-    if(this.userData != null) {
+
+    if( this.userData != null) {
+      if(this.userData.userType == 1) {
+        console.log("Can chat ");
       // this._observableDataService.passAstroDetails(value);
       this._route.navigate(['home/astrologerChat'])
-    }else {
-      this._commonService.tostMessage("Login is required!");
+    } else {
+      this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
     }
+   } else {
+    this._commonService.tostMessage("Login is required!");
+  }
 
   }
 
   question(value){
-    this._observableDataService.passAstroDetails(value);
-    this._route.navigate(['home/questionAnswer'])
+    if( this.userData != null) {
+      if(this.userData.userType == 1) {
+        console.log("Can question");
+          this._observableDataService.passAstroDetails(value);
+          this._route.navigate(['home/questionAnswer'])
+      } else {
+        this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
+      }
+    } else {
+      this._commonService.tostMessage("Login is required!");
+    }
   }
 
   detailPage(astroData){
     console.log("astroData ----> ", astroData);
     this.detailData = astroData;
+    this.isDetailPage = !this.isDetailPage;
+  }
+
+  goBack(){
     this.isDetailPage = !this.isDetailPage;
   }
 

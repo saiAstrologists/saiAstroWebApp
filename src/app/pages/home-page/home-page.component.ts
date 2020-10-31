@@ -69,19 +69,19 @@ export class HomePageComponent implements OnInit {
        if(responseData.status == 200){
         // this.astroData = responseData.data
         let data = responseData.data
-        data.map((element)=>{
-            let obj = {
-              contactNo : element.contactNo,
-              email : element.email,
-              name : element.name,
-              userType : element.userType,
-              experience : element.astrologistDetails.experience,
-              language : element.astrologistDetails.language[0],
-              profilePic : element.astrologistDetails.profilePic
-            }
-            this.astroData.push(obj)
-        })
-        console.log("this.astroData ++++++++++++", this.astroData);
+          data.map((element)=>{
+              let obj = {
+                contactNo : element.contactNo,
+                email : element.email,
+                name : element.name,
+                userType : element.userType,
+                experience : element.astrologistDetails.experience,
+                language : element.astrologistDetails.language[0],
+                profilePic : element.astrologistDetails.profilePic
+              }
+              this.astroData.push(obj)
+          })
+          console.log("this.astroData ++++++++++++", this.astroData);
 
        } else {
         this._commonService.tostMessage(resonseMessage);

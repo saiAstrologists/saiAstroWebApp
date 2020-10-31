@@ -41,6 +41,8 @@ export class AstroQuestionComponent implements OnInit {
   validateForm: FormGroup;
   selectedUser;
   users: UserData[];
+  characters = 0;
+
 
   constructor(private _authService : AuthService, private _formBuilder: FormBuilder, private _authenticationService : AuthenticationService, private _commonService: CommonService, private _astroReportService : QuestionReportService) { }
 
@@ -178,6 +180,10 @@ export class AstroQuestionComponent implements OnInit {
       this.validateForm.controls[key].markAsPristine();
       this.validateForm.controls[key].updateValueAndValidity();
     }
+  }
+
+  count(value){
+    this.characters = 0 + value.length;
   }
 
   closeDrawer(reference){

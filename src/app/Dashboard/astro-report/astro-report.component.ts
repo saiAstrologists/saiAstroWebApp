@@ -43,6 +43,9 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   selectedUser;
   users: UserData[];
 
+  characters = 0;
+
+
   constructor(private _authService : AuthService, private _commonService: CommonService, private _astroReportService : AstroReportService, private _authenticationService : AuthenticationService, private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -55,7 +58,7 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
       reportSubType: [{value : null, disabled: true}, [Validators.required]],
       employment: [{value : null, disabled: true}, [Validators.required]],
       message: [null, [Validators.required]],
-      attachment: [null, [Validators.required]]
+      // attachment: [null, [Validators.required]]
     });
 
     this.dataSource = new MatTableDataSource(this.users);
@@ -146,7 +149,7 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
 
       const formData: FormData = new FormData();
       formData.append('message', value['message'] );
-      formData.append('attachment', value['attachment']);
+      // formData.append('attachment', value['attachment']);
       formData.append('userId', this.selectedUser.userId );
       formData.append('astrologerId', this.selectedUser.astrologerId);
       formData.append('queryId', this.selectedUser._id);
@@ -171,11 +174,15 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   resetForm(e: MouseEvent): void {
     e.preventDefault();
     this.validateForm.controls['message'].reset();
-    this.validateForm.controls['attachment'].reset();
+    // this.validateForm.controls['attachment'].reset();
     for (const key in this.validateForm.controls) {
       this.validateForm.controls[key].markAsPristine();
       this.validateForm.controls[key].updateValueAndValidity();
     }
+  }
+
+  count(value){
+    this.characters = 0 + value.length;
   }
 
   closeDrawer(reference){
