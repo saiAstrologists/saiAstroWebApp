@@ -1,13 +1,20 @@
 <div class="chat-wrapper" *ngIf="viewChatOption">
-    <form [formGroup]="chatForm">
-        <div class="chat-list">
-            <div class="listing clearfix" *ngFor="let list of chatList;">
-                <span [ngClass]="(list?.receiver == getFirebaseUserData?.id) ? 'mine': 'other'">{{list?.message}}</span>
-            </div>
-        </div>
-        <div class="input-field">
-            <input type="text" formControlName="message">
-            <button class="send" (click)="sendMessage()">Send</button>
-        </div>
-    </form>
+    <mat-card class="example-card" >
+            <mat-card-header>
+                <div mat-card-avatar class="user-header-image"></div>
+                <mat-card-title>{{chatName}}</mat-card-title>
+                <mat-card-subtitle>Online</mat-card-subtitle>
+            </mat-card-header>
+        <form [formGroup]="chatForm">
+                <div class="chat-list" id="chatWrap">
+                    <div class="listing clearfix" *ngFor="let list of chatList;">
+                        <span [ngClass]="(list?.receiver == getFirebaseUserData?.id) ? 'mine': 'other'">{{list?.message}}</span>
+                    </div>
+                </div>
+                <div class="message-field">
+                    <textarea formControlName="message"></textarea>
+                    <button mat-mini-fab color="primary" (click)="sendMessage()" [disabled]="chatForm.invalid"><mat-icon>send</mat-icon></button>
+                </div>
+            </form>
+    </mat-card>
 </div>

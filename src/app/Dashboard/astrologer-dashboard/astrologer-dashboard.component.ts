@@ -21,5 +21,9 @@ export class AstrologerDashboardComponent implements OnInit {
     this._route.navigate(['dashboard/astroQuestion']);
   }
 
+  chatUser(){
+    this._route.navigate(['/chat'])
+  }
+
 
 }

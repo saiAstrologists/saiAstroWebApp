@@ -81,15 +81,20 @@ export class FirebaseService {
         message: message
       }
       let key = firebase.database().ref().child('Chats').push().key;
-      firebase.database().ref().child('Chats').child(convId).child(key).set(reqObj).then(sendVal => {
-        console.log(sendVal, 'send value');
-        resolve(reqObj); 
-      });
+      if(convId && sender && receiver) {
+        firebase.database().ref().child('Chats').child(convId).child(key).set(reqObj).then(sendVal => {
+          console.log(sendVal, 'send value');
+          resolve(reqObj); 
+        });
+      } 
     });
     return promise;
   }
 
   getAllMessages(): Promise<any>{
+    if(sessionStorage.getItem('userFirebaseData')){
+      this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
+    }    
     let promise = new Promise((resolve, reject) => {
       let sender = this.getFirebaseUserData.id;
       let receiver = sessionStorage.getItem('receiverId');
@@ -102,13 +107,15 @@ export class FirebaseService {
       firebase.database().ref('Chats').child(convId).once('value', (snapShot) => {
         console.log(snapShot.val(), 'value');
         let chatList = [];
-        Object.values(snapShot.val()).forEach(list => {
-          if(list){
-            chatList.push(list);
-          }
-        });
-        // return chatList;
-        resolve(chatList);
+        if(snapShot.val()){
+          Object.values(snapShot.val()).forEach(list => {
+            if(list){
+              chatList.push(list);
+            }
+          });
+          // return chatList;
+          resolve(chatList);
+        }       
       })
     });
     return promise;

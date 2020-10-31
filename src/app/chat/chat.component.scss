@@ -1,10 +1,72 @@
 .chat-wrapper {
+    .example-card {
+        width: 80%;
+        min-height: calc(100vh - 30vh);
+        padding: 0;
+        margin: 2rem auto;
+        position: relative;
+    }
+    .mat-card-header {
+        padding: 1rem 1rem 0;
+        box-shadow: 0px 1px 2px #dbdbdb;
+        background: whitesmoke;
+    }
+    .user-header-image {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/images/user/default-user.jpg');
+        background-size: contain;
+        box-shadow: 0px 1px 5px #e1e1e1;
+        margin-top: -5px;
+    }
+    .chat-list {
+        max-height: calc(100vh - 58vh);
+        padding: 1rem 1.5rem 1rem 1rem;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
     .listing {
+        margin-top: 15px;
+        > span {
+            max-width: 65%;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background-color: #f9a825;;
+        }
         .mine {
             float: left;
         }
         .other {
             float: right;
         }
+    }
+    .message-field {
+        width: 100%;
+        padding: 0 1rem;
+        position: absolute;
+        bottom: 20px;
+        textarea {
+            width: 90%;
+            max-height: 46px;
+            resize: none;
+            padding: 8px 20px;
+            margin-right: 1rem;
+            border-radius: 22px;
+            vertical-align: middle;
+            &:focus {
+                outline: none;
+            }
+        }
+        ::ng-deep span.bmd-form-group {
+            width: 90%;
+            padding: 0;
+            margin-right: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+            >  textarea {
+                width: 100%;
+            }
+        }
+
     }
 }

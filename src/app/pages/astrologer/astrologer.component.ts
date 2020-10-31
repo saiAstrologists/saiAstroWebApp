@@ -83,6 +83,8 @@ export class AstrologerComponent implements OnInit {
           data.map((element)=>{
               let obj = {
                 contactNo : element.contactNo,
+                countryCode : element.countryCode,
+                userId: element.userId,
                 email : element.email,
                 name : element.name,
                 userType : element.userType,
@@ -130,14 +132,16 @@ loadMore(data){
   call(value) {
 
     console.log(" this.userData ------>> ",this.userData);
+    console.log(" call value ------>> ",value);
     if( this.userData != null) {
       if(this.userData.userType == 1){
         console.log("Can make call ");
-
+              let countryCode =  !!this.userData.countryCode ? this.userData.countryCode : '+91';
               let requestBody = {
-              contactNo : this.userData.contactNo,
-              astrologerNo : value.contactNo
+              contactNo : countryCode + this.userData.contactNo,
+              astrologerId : value.userId
               }
+              console.log("call requestBody ", requestBody);
 
               this._commonService.makeCall(requestBody).subscribe((responseData)=>{
                 console.log("makeCall ++++++++++++", responseData);
@@ -153,19 +157,23 @@ loadMore(data){
     }
   }
 
-  chat(){
+  chat(element){
 
     if( this.userData != null) {
       if(this.userData.userType == 1) {
         console.log("Can chat ");
-      // this._observableDataService.passAstroDetails(value);
-      this._route.navigate(['home/astrologerChat'])
-    } else {
-      this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
-    }
-   } else {
-    this._commonService.tostMessage("Login is required!");
-  }
+          // remove just for dummy
+             sessionStorage.setItem('chatName', element.name);
+          // remove just for dummy end
+          // this._observableDataService.passAstroDetails(value);
+          // this._route.navigate(['home/astrologerChat'])
+          this._route.navigate(['/chat']);
+        } else {
+          this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
+        }
+      } else {
+        this._commonService.tostMessage("Login is required!");
+      }
 
   }
 

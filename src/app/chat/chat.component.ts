@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '../../../node_modules/@angular/forms';
+import { FormGroup, FormControl, Validators } from '../../../node_modules/@angular/forms';
 import { FirebaseService } from '../shared/service/firebase/firebase.service';
 import { ObservableDataService } from '../observables/behaviourSubject.service';
 
@@ -12,26 +12,40 @@ export class ChatComponent implements OnInit {
   chatForm: FormGroup;
   chatList: any = [];
   getFirebaseUserData: any;
-  @Input() viewChatOption : boolean;
+  chatName =  '';
+  @Input() viewChatOption : boolean = true;
   constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService) {
     this.chatForm = new FormGroup({
-      message: new FormControl()
+      message: new FormControl('', Validators.required)
     }); 
 
     if(sessionStorage.getItem('userFirebaseData')){
       this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
     }  
-
-    this.getAllMessage();
     // this.firebaseService.messageListener();
 
     // get subject message
     this.observableService.getMessage.asObservable().subscribe(messageRes => {
-      this.chatList.push(messageRes);
+      if(messageRes){
+        this.chatList.push(messageRes);
+        setTimeout(() => {
+          let element = document.getElementById('chatWrap');
+          if (element) {						
+            element.scrollTop = element.scrollHeight;
+          }
+        }, 100);
+      }
     })
   }
 
   ngOnInit(): void {
+    this.getAllMessage();
+
+    // just for dummy purpose
+    if(sessionStorage.getItem('chatName')){
+      this.chatName = sessionStorage.getItem('chatName');
+    }
+    // just for dummy purpose end
   }
 
   getAllMessage(){

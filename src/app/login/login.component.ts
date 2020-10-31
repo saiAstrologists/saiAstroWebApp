@@ -70,7 +70,20 @@ export class LoginComponent implements OnInit {
             password: responseBody.userData.contactNo,
             name: responseBody.userData.name
           }
-          this.firebaseService.loginFirebase(firebaseLoginReq);
+          this.firebaseService.loginFirebase(firebaseLoginReq).then(firebaseResponse => {
+            if(responseBody.userData.firebaseUserId !== firebaseResponse.id){
+              let requestObj = {
+                userId: responseBody.userData.userId,
+                firebaseUserId: firebaseResponse.id
+              }
+              this._loginService.loginFirebase(requestObj).subscribe(response => {
+                if(response.data && response.data.firebaseUserId){
+                  console.log('firebase login successfully');
+                }
+              })
+            }
+          });
+
 
           // call firebase service on login end
 
