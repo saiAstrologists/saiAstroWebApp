@@ -92,6 +92,9 @@ export class FirebaseService {
   }
 
   getAllMessages(): Promise<any>{
+    if(sessionStorage.getItem('userFirebaseData')){
+      this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
+    }    
     let promise = new Promise((resolve, reject) => {
       let sender = this.getFirebaseUserData.id;
       let receiver = sessionStorage.getItem('receiverId');

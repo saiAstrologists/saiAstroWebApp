@@ -29,11 +29,11 @@ export class ChatComponent implements OnInit {
       if(messageRes){
         this.chatList.push(messageRes);
         setTimeout(() => {
-          let element = document.getElementById('#chatWrap');
+          let element = document.getElementById('chatWrap');
           if (element) {						
             element.scrollTop = element.scrollHeight;
           }
-        }, 500);
+        }, 100);
       }
     })
   }

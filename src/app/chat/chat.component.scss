@@ -23,6 +23,7 @@
         max-height: calc(100vh - 58vh);
         padding: 1rem 1.5rem 1rem 1rem;
         overflow-y: auto;
+        scroll-behavior: smooth;
     }
     .listing {
         margin-top: 15px;
@@ -44,22 +45,28 @@
         padding: 0 1rem;
         position: absolute;
         bottom: 20px;
-        ::ng-deep span.bmd-form-group {
-            width: 85%;
-            padding: 0;
-            margin-right: 1rem;
-            display: inline-block;
-            vertical-align: middle;
-        }
         textarea {
-            width: 100%;
+            width: 90%;
             max-height: 46px;
             resize: none;
             padding: 8px 20px;
+            margin-right: 1rem;
             border-radius: 22px;
+            vertical-align: middle;
             &:focus {
                 outline: none;
             }
         }
+        ::ng-deep span.bmd-form-group {
+            width: 90%;
+            padding: 0;
+            margin-right: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+            >  textarea {
+                width: 100%;
+            }
+        }
+
     }
 }
