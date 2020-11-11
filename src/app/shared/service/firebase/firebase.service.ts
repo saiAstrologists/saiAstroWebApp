@@ -11,11 +11,16 @@ import { ObservableDataService } from '../../../observables/behaviourSubject.ser
 })
 export class FirebaseService {
   getFirebaseUserData: any;
+  allUserList = [];
 
   constructor(public observableService : ObservableDataService) {
+    console.log(firebase, 'firebase');
+    
     if(sessionStorage.getItem('userFirebaseData')){
       this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
     }
+
+    this.getAllUserList();
 
     this.messageListener();
   }
@@ -78,7 +83,8 @@ export class FirebaseService {
         sender: this.getFirebaseUserData.id,
         receiver: sessionStorage.getItem('receiverId'),
         isseen: false,
-        message: message
+        message: message,
+        // timeStamp: new Date().valueOf()
       }
       let key = firebase.database().ref().child('Chats').push().key;
       if(convId && sender && receiver) {
@@ -122,8 +128,11 @@ export class FirebaseService {
   }
 
   messageListener(){
-    firebase.database().ref().child('Chats').limitToLast(1).on('child_added', snapShot => {
-      let sender = this.getFirebaseUserData.id;
+    if(sessionStorage.getItem('userFirebaseData')){
+      this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
+    } 
+    firebase.database().ref().child('Chats').limitToLast(10).on('child_added', snapShot => {
+      let sender = this.getFirebaseUserData ? this.getFirebaseUserData.id: null;
       let receiver = sessionStorage.getItem('receiverId');
       let convId ;
       if(sender >  receiver) {
@@ -138,12 +147,95 @@ export class FirebaseService {
       }
     })
 
-    firebase.database().ref().child('Chats').limitToLast(1).on('child_changed', snapShot => {
+    firebase.database().ref().child('Chats').on('child_changed', snapShot => {
       if(snapShot.key){
-        let value = Object.values(snapShot.val())[Object.values(snapShot.val()).length - 1];
-        this.observableService.messageData(value);
-        return value;
+
+        let sender = this.getFirebaseUserData ? this.getFirebaseUserData.id: null;
+        let receiver = sessionStorage.getItem('receiverId');
+        let convId ;
+        if(sender >  receiver) {
+          convId = receiver + '-' + sender;
+        }else {
+          convId = sender + '-' + receiver;
+        }
+
+        if(snapShot.key ==  convId){
+          let value = Object.values(snapShot.val())[Object.values(snapShot.val()).length - 1];
+          this.observableService.messageData(value);
+          return value;
+        }
       }
     })
+  }
+
+
+  // get chat list
+  getChatList(){
+    let promise = new Promise((resolve, reject) => {
+      if(sessionStorage.getItem('userFirebaseData')){
+        this.getFirebaseUserData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
+      } 
+  
+      let chatList = [];
+  
+      firebase.database().ref('Chats').once('value', snapShot => {
+        let allConversationList = snapShot.val();
+        if(allConversationList){
+          for (let key in allConversationList){
+            if(key.includes(this.getFirebaseUserData.id)){
+
+              let userData: any;
+              let lastConversationDetail =  Object.values(allConversationList[key])[Object.values(allConversationList[key]).length - 1];
+
+              // get user data on login basis 
+              if(this.getFirebaseUserData && this.getFirebaseUserData.id == lastConversationDetail['sender']){
+                userData =  this.allUserList.find(list => list.id == lastConversationDetail['receiver']);
+              }else {
+                userData =  this.allUserList.find(list => list.id == lastConversationDetail['sender']);
+              }
+              // get user data end
+
+              let createChatListObj = {};
+              createChatListObj['lastMessage'] = lastConversationDetail['message'];
+              createChatListObj['name'] = userData ? userData.username : null;
+              createChatListObj['id'] = userData ? userData.id : null;
+              createChatListObj['imageURL'] = userData ? userData.imageURL : null;
+              createChatListObj['shortName'] = this.getShortName(userData.username);
+              createChatListObj['color'] = Math.floor(Math.random()*16777215).toString(16);
+              chatList.push(createChatListObj);
+            }
+          }
+
+          resolve(chatList);
+        }
+      })
+    });
+    return promise;
+   
+  }
+  // get chat list end
+
+
+  getAllUserList(){
+    console.log(firebase, 'firebase');
+    
+    firebase.database().ref('Users').once('value', snapShot => {
+      let userList = snapShot.val();
+      if(userList) {
+        Object.values(snapShot.val()).forEach(list => this.allUserList.push(list));
+      }
+    })
+  }
+
+  // short name
+  getShortName(name){
+    if(name){
+      let namelist = name.split(' ');
+      if(namelist && namelist.length > 1){
+        return namelist[0].charAt(0) + namelist[1].charAt(0);
+      }else {
+        return namelist[0].charAt(0);
+      }
+    }
   }
 }

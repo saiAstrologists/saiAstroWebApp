@@ -144,19 +144,7 @@ export class AppComponent implements OnInit {
        console.log("isAdminUser ",isAdminUser);
        if(!isAdminUser) {
         this._route.navigate(['dashboard']);
-
-        // remove this is for temporary 
-        sessionStorage.setItem('receiverId', 'Ztvo67kfr2S4gX0joiKQBgFeR5b2');
-        // remove this is for temporary end
-        
-        sessionStorage.setItem('chatName', 'Dipali');
-
        }else {
-        //  remove this is for temporary
-        sessionStorage.setItem('receiverId', 'km6MQtZTJXdqPFgQ1T9BSNHdZSD3');
-        
-
-        //  remove this is for temporary end
        }
         // this._observableDataService.checkUser(result.userData);
       }
