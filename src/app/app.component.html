@@ -57,7 +57,7 @@
           <!-- <button mat-menu-item>Info</button> -->
         </mat-menu>
         <button mat-raised-button color="primary" (click)="openDialog()" *ngIf="!isUserLogin">Login</button>
-        <mat-icon class="hm-wallet mt-3" mat-raised-button>account_balance_wallet</mat-icon>
+        <mat-icon class="hm-wallet mt-3" mat-raised-button (click)="wallet();">account_balance_wallet</mat-icon>
         <!-- <mat-icon  mat-raised-button>login</mat-icon> -->
 
         <mat-icon class="hm-cart mt-3" mat-raised-button>shopping_cart</mat-icon>

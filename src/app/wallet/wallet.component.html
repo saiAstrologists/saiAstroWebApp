@@ -1,0 +1,40 @@
+<div class="wallet">
+   <div class="container">
+       <div class="row">
+           <div class="col-10 offset-md-1">
+              <mat-card class="wallet-header">
+                <div class="clearfix">
+                        <div class="float-left">
+                            <div class="wallet-info">
+                                <span class="money-symbol">₹</span>
+                                <span class="amount">2000</span>
+                                <span class="d-block mt-2">SaiAstro Wallet Balance</span>
+                            </div>
+                            <span>
+                                {{walletInfo?.amount}}
+                            </span>
+                        </div>
+                        <div class="float-right">
+                            <button mat-raised-button color="primary" (click)="addWallet()" class="mt-2">Add Money to Wallet</button>
+                        </div>
+                    </div>
+              </mat-card>
+              <mat-card class="add-wallet-money" *ngIf="viewWallet">
+                <div class="wallet-img-holder">
+                    <img src="/assets/images/social/wallet.png" alt="" class="img-fluid">
+                </div>
+                <form [formGroup]="walletForm" class="wallet-form">
+                    <div class="field-wrapper">
+                        <mat-form-field class="example-full-width w-100">
+                              <input matInput placeholder="Enter Amount to be added in wallet" formControlName="walletAmount">
+                        </mat-form-field>
+                    </div>                 
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" [disabled]="walletForm.invalid" (click)="rechargeWallet(walletForm)">Recharge</button>
+                    </div>
+                </form>
+              </mat-card>
+           </div>
+       </div>  
+   </div>
+</div>

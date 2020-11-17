@@ -57,6 +57,7 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 .mat-icon{
     &.hm-wallet {
       margin: 0px 20px;
+      cursor: pointer;
     }
     &.hm-user-icon{
       margin: 0px 10px;

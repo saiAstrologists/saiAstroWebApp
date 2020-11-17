@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AstrologerService } from './astrologer.service';
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { MatDialog } from '../../../../node_modules/@angular/material/dialog';
+import { ConfirmationComponent } from '../../confirmation/confirmation.component';
 @Component({
   selector: 'app-astrologer',
   templateUrl: './astrologer.component.html',
@@ -21,7 +23,7 @@ export class AstrologerComponent implements OnInit {
   userData;
   searchText;
   filter;
-  constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router) { }
+  constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('userData'))
@@ -143,6 +145,8 @@ loadMore(data){
               }
               console.log("call requestBody ", requestBody);
 
+              this.openConfirmation(value, 'Call');
+
               this._commonService.makeCall(requestBody).subscribe((responseData)=>{
                 console.log("makeCall ++++++++++++", responseData);
                 let resonseMessage = responseData.message;
@@ -165,6 +169,9 @@ loadMore(data){
           // remove just for dummy
              sessionStorage.setItem('chatName', element.name);
           // remove just for dummy end
+
+          this.openConfirmation(element, 'Chat');
+
           // this._observableDataService.passAstroDetails(value);
           // this._route.navigate(['home/astrologerChat'])
           this._route.navigate(['/chat']);
@@ -230,5 +237,17 @@ loadMore(data){
 
 
 // }
+
+openConfirmation(userData, type){
+  userData.type = type;
+  const dialogRef = this.dialog.open(ConfirmationComponent, {
+    width: '500px',
+    disableClose: false,
+    data: userData
+  });
+  dialogRef.afterClosed().subscribe(modalResponse => {
+    console.log(modalResponse, 'modal response');
+  })
+}
 
 }

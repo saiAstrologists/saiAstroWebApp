@@ -115,6 +115,10 @@ export class AppComponent implements OnInit {
     this._route.navigate(['home']);
   }
 
+  wallet(){
+    this._route.navigate(['wallet']);
+  }
+
   getIPAddress() {
     this._commonService.getIPAddress().subscribe(res=>{
       this.Ip = res.ip;

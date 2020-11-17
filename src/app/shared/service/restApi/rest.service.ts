@@ -32,6 +32,21 @@ export class RestService {
   };
 
 
+  
+  public createPayment = (route: string, body) => {
+    console.log("route",route,"body",body);
+    return this.http.post('http://116f630ccd2d.ngrok.io' + route, body);
+  };
+
+  public getPayment = (route: string, headerParam: any) =>{
+    return this.http.get('http://116f630ccd2d.ngrok.io'+ route, {params : headerParam})
+  }
+  public patch = (route: string, headerParam: any) =>{
+    console.log('http://116f630ccd2d.ngrok.io'+ route, 'url');
+    return this.http.patch('http://116f630ccd2d.ngrok.io'+ route, {}, {params : headerParam})
+  }
+
+
 
   // public delete = (route: string) => {
   //   return this.http.delete(
