@@ -24,6 +24,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import firebase from 'firebase/app';
 import 'firebase/messaging';
 import { ChatComponent } from './chat/chat.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 
 
@@ -57,7 +59,9 @@ firebase.initializeApp(config);
     SignUpComponent,
     ForgotPasswordComponent,
     SpinnerComponent,
-    ChatComponent
+    ChatComponent,
+    ConfirmationComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,

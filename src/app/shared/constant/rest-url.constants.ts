@@ -22,5 +22,13 @@ export class RestUrl {
 
 
 
+    // payment 
+    public static get placeOrder(): string { return '/place/order'; }
+    public static get walletDetail(): string { return '/get/wallet'; }
+    public static get verifySignature(): string { return '/rayzorpay/verify/signature'; }
+    public static get updateWalletInfo(): string { return '/update/wallet'; }
+
+
+
 
 }
