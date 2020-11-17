@@ -22,6 +22,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 // import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 // import { GoogleLoginProvider } from 'angularx-social-login';
 import firebase from 'firebase/app';
+import 'firebase/messaging';
 import { ChatComponent } from './chat/chat.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { WalletComponent } from './wallet/wallet.component';
@@ -45,6 +46,9 @@ export const config = {
 // messagingSenderId: "<SENDER_ID>",
 
 firebase.initializeApp(config);
+// firebase.messaging().requestPermission().then(response => {
+//   console.log(response, 'response token');
+// })
 
 
 

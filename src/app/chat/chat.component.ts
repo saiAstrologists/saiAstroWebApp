@@ -15,6 +15,8 @@ export class ChatComponent implements OnInit {
   chatList: any = [];
   getFirebaseUserData: any;
   chatName =  '';
+  allChatList: any = [];
+  viewChatScreen: boolean = false;
   @Input() viewChatOption : boolean = true;
   constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService) {
     this.chatForm = new FormGroup({
@@ -41,19 +43,13 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllMessage();
 
-    // just for dummy purpose
-    if(sessionStorage.getItem('chatName')){
-      this.chatName = sessionStorage.getItem('chatName');
-    }
-    // just for dummy purpose end
-
-    this.getWalletInfo();
-    let option = {
-      razorpay_order_id : "order_G28nHfmErWt9o6"
-    }
-    this.updateWallet(option);
+    this.firebaseService.getChatList().then(chatList => {
+      if(chatList){
+        this.allChatList = chatList;
+        console.log(this.allChatList, 'all chat list');
+      }
+    })
   }
 
   getAllMessage(){
@@ -65,6 +61,19 @@ export class ChatComponent implements OnInit {
   sendMessage(){
     this.firebaseService.sendMessages(this.chatForm.value.message);
     this.chatForm.reset();
+  }
+
+  getChatMsgScreen(chatInfo){
+    console.log(chatInfo, 'chat info');
+    this.chatName = chatInfo.name;
+    sessionStorage.setItem('receiverId', chatInfo.id);
+    
+    this.viewChatScreen = true;
+    this.getAllMessage();
+  }
+
+  viewchatListScreen(){
+    this.viewChatScreen = false;
   }
 
 
