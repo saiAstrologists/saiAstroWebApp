@@ -1,0 +1,29 @@
+.wallet {
+    margin: 1.5rem 0;
+    .wallet-header {
+        padding: 2rem 1rem;
+        background-color: whitesmoke;
+    }
+    .money-symbol {
+        margin: 0 0.5rem 0 0;
+    }
+    .money-symbol, .amount {
+        font-size: 35px;
+    }
+    .wallet-img-holder  {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .add-wallet-money {
+        margin: 1rem 0 0;
+        box-shadow: none;
+    }
+    .wallet-form {
+        text-align: center;
+        .field-wrapper {
+            width: 235px;
+            margin: 0 auto;
+        }
+    }
+}
