@@ -35,15 +35,15 @@ export class RestService {
   
   public createPayment = (route: string, body) => {
     console.log("route",route,"body",body);
-    return this.http.post('http://b91cd92745ed.ngrok.io' + route, body);
+    return this.http.post(environment.paymentUrlAddress + route, body);
   };
 
   public getPayment = (route: string, headerParam: any) =>{
-    return this.http.get('http://b91cd92745ed.ngrok.io'+ route, {params : headerParam})
+    return this.http.get(environment.paymentUrlAddress+ route, {params : headerParam})
   }
   public patch = (route: string, headerParam: any) =>{
-    console.log('http://b91cd92745ed.ngrok.io'+ route, 'url');
-    return this.http.patch('http://b91cd92745ed.ngrok.io'+ route, {}, {params : headerParam})
+    console.log(environment.paymentUrlAddress+ route, 'url');
+    return this.http.patch(environment.paymentUrlAddress+ route, {}, {params : headerParam})
   }
 
 
