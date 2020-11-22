@@ -95,7 +95,8 @@ export class AstrologerComponent implements OnInit {
                 profilePic : element.astrologistDetails.profilePic,
                 id : element._id,
                 shortBio : element.astrologistDetails.shortBio,
-                longBio : element.astrologistDetails.longBio
+                longBio : element.astrologistDetails.longBio,
+                firebaseUserId: element.firebaseUserId
               }
               this.astroListing.push(obj)
           })
@@ -166,15 +167,12 @@ loadMore(data){
     if( this.userData != null) {
       if(this.userData.userType == 1) {
         console.log("Can chat ");
-          // remove just for dummy
-             sessionStorage.setItem('chatName', element.name);
-          // remove just for dummy end
 
           this.openConfirmation(element, 'Chat');
 
           // this._observableDataService.passAstroDetails(value);
           // this._route.navigate(['home/astrologerChat'])
-          this._route.navigate(['/chat']);
+          // this._route.navigate(['/chat']);
         } else {
           this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
         }
@@ -247,6 +245,11 @@ openConfirmation(userData, type){
   });
   dialogRef.afterClosed().subscribe(modalResponse => {
     console.log(modalResponse, 'modal response');
+    if(modalResponse){
+      sessionStorage.setItem('receiverId', userData.firebaseUserId);
+      sessionStorage.setItem('chatName', userData.name)
+      this._route.navigate(['/chat']);
+    }
   })
 }
 

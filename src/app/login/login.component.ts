@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
           });
 
 
-          // call firebase service on login end
+          // call firebase servicet on login end
 
 
           // this.isVisible = true;
@@ -98,6 +98,7 @@ export class LoginComponent implements OnInit {
             this.dialogRef.close(responseData.data);
           } else {
             this.dialogRef.close(responseData.data);
+          
           }
 
         } else {
