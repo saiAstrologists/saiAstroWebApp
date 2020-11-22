@@ -13,10 +13,50 @@ export class WalletComponent implements OnInit {
   walletInfo: any;
   viewWallet: boolean = false;
   walletForm: FormGroup;
+  rechargeList = [];
+  selectedRechargeAmount: any;
   constructor(public paymentService: PaymentService) {
     this.walletForm = new FormGroup({
       walletAmount: new FormControl('', [Validators.required])
-    })
+    });
+
+
+    // recharge list
+    this.rechargeList = [
+      {
+        symbol: '₹',
+        amount: 100,
+      },
+      {
+        symbol: '₹',
+        amount: 200
+      },
+      {
+        symbol: '₹',
+        amount: 300
+      },
+      {
+        symbol: '₹',
+        amount: 500
+      },
+      {
+        symbol: '₹',
+        amount: 1000
+      },
+      {
+        symbol: '₹',
+        amount: 2000
+      },
+      {
+        symbol: '₹',
+        amount: 3000
+      },
+      {
+        symbol: '₹',
+        amount: 5000
+      }
+    ];
+    // recharge list end
   }
 
   ngOnInit(): void {
@@ -43,15 +83,18 @@ export class WalletComponent implements OnInit {
 
   rechargeWallet(formData){
     if(formData.valid) {
+      let userData = JSON.parse(sessionStorage.getItem('userData'));
       let reqObj = { 
         "amount": formData.value.walletAmount,
         "currency": "INR",
-        "userId": "balatwo",
+        "userId": userData.userId,
         "recieptId": this.makeOrderid()
      }
 
      
       this.paymentService.orderPlace(reqObj).subscribe(response => {
+        this.walletForm.patchValue({walletAmount: ''});
+        this.selectedRechargeAmount = null;
         console.log(response, 'place order');
         if(response) {
           const options: any = {
@@ -81,6 +124,7 @@ export class WalletComponent implements OnInit {
             // call your backend api to verify payment signature & capture transaction
             if(response) {
               this.verifySignature(response);
+
             }
 
           });
@@ -111,8 +155,9 @@ export class WalletComponent implements OnInit {
   updateWallet(orderInfo){
     if(orderInfo){
       // let params = new HttpParams().set('userId', 'balatwo').set("orderId", orderInfo.razorpay_order_id);
+      let userData = JSON.parse(sessionStorage.getItem('userData'));
       let params = {
-        userId: 'balatwo',
+        userId: userData.userId,
         orderId: orderInfo.razorpay_order_id
       }
       this.paymentService.updateWalletInfo(params).subscribe(response => {
@@ -121,6 +166,16 @@ export class WalletComponent implements OnInit {
       })
     }
   
+  }
+
+
+  selectRechargeAmount(rechargeAmount){
+    if(rechargeAmount){
+      this.selectedRechargeAmount = rechargeAmount.amount;
+      this.walletForm.patchValue({
+        walletAmount: rechargeAmount.amount
+      })
+    }
   }
 
 

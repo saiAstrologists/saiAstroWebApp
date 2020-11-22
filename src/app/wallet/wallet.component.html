@@ -24,6 +24,9 @@
                     <img src="/assets/images/social/wallet.png" alt="" class="img-fluid">
                 </div>
                 <form [formGroup]="walletForm" class="wallet-form">
+                    <div class="recharge-list mb-5">
+                        <span class="list" *ngFor="let list of rechargeList; let i = index" (click)="selectRechargeAmount(list)" [ngClass]="(selectedRechargeAmount == list.amount) ? 'active': '' ">{{list.symbol}} {{list.amount}}</span>
+                    </div>
                     <div class="field-wrapper">
                         <mat-form-field class="example-full-width w-100">
                               <input matInput placeholder="Enter Amount to be added in wallet" formControlName="walletAmount">
