@@ -51,4 +51,9 @@ export class ConfirmationComponent implements OnInit {
     }
   }
 
+
+  connect(){
+    this.dialogRef.close(true);
+  }
+
 }

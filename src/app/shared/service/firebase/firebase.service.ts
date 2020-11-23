@@ -4,6 +4,7 @@ import 'firebase/auth';
 import 'firebase/database';
 import { reject } from '../../../../../node_modules/@types/q';
 import { ObservableDataService } from '../../../observables/behaviourSubject.service';
+import { loginService } from '../../../login/login.service';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class FirebaseService {
   getFirebaseUserData: any;
   allUserList = [];
 
-  constructor(public observableService : ObservableDataService) {
+  constructor(public observableService : ObservableDataService, private _loginService : loginService) {
     console.log(firebase, 'firebase');
     
     if(sessionStorage.getItem('userFirebaseData')){
@@ -52,7 +53,9 @@ export class FirebaseService {
           id: response.user.uid,
           imageURL: '',
           status: '',
-          username: data.name
+          username: data.name,
+          email: data.email,
+          contactNo: data.password
         }
   
         console.log(response.user.uid, 'local id');
@@ -60,6 +63,25 @@ export class FirebaseService {
           console.log(response);
           sessionStorage.setItem('userFirebaseData', JSON.stringify(userData));
           resolve(userData);
+
+          // if session storage userId
+            if(sessionStorage.getItem('userFirebaseData')){
+              let firebaseData = JSON.parse(sessionStorage.getItem('userFirebaseData'));
+              let userData = JSON.parse(sessionStorage.getItem('userData'));
+              if(firebaseData && userData) {
+                let requestObj = {
+                  userId: userData.userId,
+                  firebaseUserId: firebaseData.id
+                }
+    
+                this._loginService.loginFirebase(requestObj).subscribe(response => {
+                  if(response.data && response.data.firebaseUserId){
+                    console.log('firebase login successfully');
+                  }
+                })
+              }
+            }
+            // if session storage userId end
         });
       })
     });

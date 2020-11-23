@@ -29,13 +29,24 @@ import { WalletComponent } from './wallet/wallet.component';
 
 
 
+// export const config = {
+//   apiKey: "AIzaSyCwcgfKu2EkT1E_2uRqf7bloO8P6PHRNO0",
+//   authDomain: "simpleintroslider.firebaseapp.com",
+//   databaseURL: "https://SimpleIntroSlider.firebaseio.com",
+//   projectId: "simpleintroslider",
+//   storageBucket: "",
+//   messagingSenderId: "861357045560"
+// };
+
+
+// firebase astro world 
 export const config = {
-  apiKey: "AIzaSyCwcgfKu2EkT1E_2uRqf7bloO8P6PHRNO0",
-  authDomain: "simpleintroslider.firebaseapp.com",
-  databaseURL: "https://SimpleIntroSlider.firebaseio.com",
-  projectId: "simpleintroslider",
+  apiKey: "AIzaSyCJ_QJQqYDWVzricXXyjtmEef7N7ty25Ms",
+  authDomain: "saisastroworld.firebaseapp.com",
+  databaseURL: "https://SaisAstroworld.firebaseio.com",
+  projectId: "saisastroworld",
   storageBucket: "",
-  messagingSenderId: "861357045560"
+  messagingSenderId: "785274786840"
 };
 
 // apiKey: "<API_KEY>",
@@ -46,10 +57,6 @@ export const config = {
 // messagingSenderId: "<SENDER_ID>",
 
 firebase.initializeApp(config);
-// firebase.messaging().requestPermission().then(response => {
-//   console.log(response, 'response token');
-// })
-
 
 
 @NgModule({

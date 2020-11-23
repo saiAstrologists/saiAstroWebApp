@@ -44,12 +44,25 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.chatListDetail();
+
+
+    // if has receiver id
+    if(sessionStorage.getItem('receiverId') && sessionStorage.getItem('chatName')){
+      this.chatName = sessionStorage.getItem('chatName');
+      this.viewChatScreen = true;
+    }
+    // if has receiver id end
+  }
+
+
+  chatListDetail(){
     this.firebaseService.getChatList().then(chatList => {
       if(chatList){
         this.allChatList = chatList;
         console.log(this.allChatList, 'all chat list');
       }
-    })
+    });
   }
 
   getAllMessage(){
@@ -74,6 +87,8 @@ export class ChatComponent implements OnInit {
 
   viewchatListScreen(){
     this.viewChatScreen = false;
+    sessionStorage.removeItem('chatName');
+    this.chatListDetail();
   }
 
 
