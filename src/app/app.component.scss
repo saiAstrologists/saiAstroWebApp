@@ -181,18 +181,40 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
       color: $white;
     }
   }
-  .footer-bottom {
-    text-align: center;
+  .footer-contact {
+    p {
+      margin-bottom: 30px;
+    }
     .footer-social {
       a {
         padding: 5px 10px;
         font-size: 20px;
+        border: 1px solid #000;
+        margin: 0px 10px;
       }
       a:hover {
         color: $white !important
       }
     }
   }
+  .google-play-store img {
+    width: 100%;
+  }
+  .app-store img {
+    width: 100%;
+  }
+  // .footer-bottom {
+  //   text-align: center;
+  //   .footer-social {
+  //     a {
+  //       padding: 5px 10px;
+  //       font-size: 20px;
+  //     }
+  //     a:hover {
+  //       color: $white !important
+  //     }
+  //   }
+  // }
 
 }
 

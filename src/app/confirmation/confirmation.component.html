@@ -1,6 +1,11 @@
 <div class="confirmation-wrapper">
     <h3>{{modalData?.type}} with {{modalData?.name}}</h3>
-    <h4>Wallet Balance: {{walletBalance}}</h4>
+    <h4>
+      <span *ngIf="modalData?.countryCode == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
+      <span *ngIf="modalData?.countryCode == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+      <span *ngIf="modalData?.countryCode == '+886'"> NT$ </span>
+      {{modalData?.chat}}/Min</h4>
+    <!-- <h4>Wallet Balance: {{walletBalance}}</h4> -->
     <div class="minute-listing">
         <div class="list" *ngFor="let list of minuteLisiting; let i = index" [ngClass]="{'active': selectedIndex == i}" (click)="selectList(list,i)">
             <span>{{list.name}}</span>

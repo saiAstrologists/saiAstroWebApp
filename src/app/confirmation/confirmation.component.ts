@@ -40,6 +40,7 @@ export class ConfirmationComponent implements OnInit {
 
   selectList(listInfo, index){
     this.selectedIndex  = index;
+    console.log("listInfo")
     if(sessionStorage.getItem('walletAmount') && listInfo){
       let totalValue = listInfo.value * 10;
       if(totalValue < parseInt(sessionStorage.getItem('walletAmount'))) {
