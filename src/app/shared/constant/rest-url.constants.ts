@@ -6,6 +6,7 @@ export class RestUrl {
     public static get resetUser(): string { return '/users/resetPwd'; }
     public static get astroCreateProfile(): string { return '/users/updateprofile'; }
     public static get getAstroListingApi(): string { return '/users/getastrologerslist'; }
+    // public static get getAstroListingApi(): string { return '/users/listOfAstrologers'; }
     public static get loginFirebase(): string { return '/users/firebaseId'; }
 
     public static get getAstro(): string { return '/users/listOfAstrologers'; }
@@ -22,7 +23,7 @@ export class RestUrl {
 
 
 
-    // payment 
+    // payment
     public static get placeOrder(): string { return '/place/order'; }
     public static get walletDetail(): string { return '/get/wallet'; }
     public static get verifySignature(): string { return '/rayzorpay/verify/signature'; }

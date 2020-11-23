@@ -32,6 +32,39 @@
             <h1>{{element.name}} <span><mat-icon>verified</mat-icon></span></h1>
             <p>{{element.language}}</p>
             <p>Vedic Astrologer, Gemology</p>
+            <!-- <p>{{userData.countryCode}} NT$</p> -->
+            <p *ngIf="CallBtnFlag"> Call
+              <span *ngIf="userData.countryCode == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+886'"> NT$ </span>
+              {{element.call}}/min</p>
+              <!-- <i [ngClass]="userData.countryCode == '+91' ? 'fa fa-inr' : userData.countryCode == '+1' ? 'fa fa-usd' : null" aria-hidden="true"></i> {{userData.countryCode == '+886'}} ? NT$ : '' </span> {{element.call}}/min</p> -->
+              <!-- Call {{userData.countryCode == '+91'}} ? &#8377; : {{userData.countryCode == '+1'}} ? : &#36; : NT$ {{element.call}}/min</p> -->
+
+
+            <!-- <p>Chat {{element.chat}}/min</p>
+            <p>Report {{element.report}}/min</p>
+            <p>Q&A {{element.questionAnswer}}/min</p> -->
+            <p *ngIf="ChatBtnFlag"> Chat
+              <span *ngIf="userData.countryCode == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+886'"> NT$ </span>
+              {{element.chat}}/min</p>
+
+            <p *ngIf="ReportBtnFlag"> Report
+              <span *ngIf="userData.countryCode == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+886'"> NT$ </span>
+              {{element.report}}</p>
+
+            <p *ngIf="QAndAFlag"> Q&A
+              <span *ngIf="userData.countryCode == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+              <span *ngIf="userData.countryCode == '+886'"> NT$ </span>
+              {{element.questionAnswer}}</p>
+
+
+
             <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" (click)="report(element)">Report</button>
             <button *ngIf="CallBtnFlag" mat-raised-button color="primary" (click)="call(element)">Call</button>
             <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat(element)">Chat</button>

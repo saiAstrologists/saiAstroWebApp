@@ -24,6 +24,18 @@
   </mat-form-field>
 
   <mat-form-field class="form-field-width  mt-2">
+    <mat-label>Select Country Code</mat-label>
+    <mat-select name="countryCode" formControlName="countryCode">
+      <mat-option value="+1" >+1 (USA)</mat-option>
+      <mat-option value="+886" >+886 (Taiwan)</mat-option>
+      <mat-option value="+91" >+91 (India)</mat-option>
+    </mat-select>
+    <mat-error *ngIf="signUpValidateForm.get('countryCode').hasError('required')">
+      Country Code is required!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-width  mt-2">
       <mat-label>Mobile Number</mat-label>
       <input matInput formControlName="contactNo">
       <mat-icon matSuffix class="secondary-text">phone</mat-icon>

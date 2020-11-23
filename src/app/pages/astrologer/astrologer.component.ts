@@ -83,6 +83,7 @@ export class AstrologerComponent implements OnInit {
       let data = responseData.data
       if(data != null && data.length) {
           data.map((element)=>{
+            console.log("element is ", element.price?.call)
               let obj = {
                 contactNo : element.contactNo,
                 countryCode : element.countryCode,
@@ -94,9 +95,14 @@ export class AstrologerComponent implements OnInit {
                 language : element.astrologistDetails.language[0],
                 profilePic : element.astrologistDetails.profilePic,
                 id : element._id,
+                call: element.price != null ? element.price?.call : null,
+                chat: element.price != null ? element.price?.chat : null,
+                report: element.price != null ? element.price?.report : null,
+                questionAnswer: element.price != null ? element.price?.qa : null,
                 shortBio : element.astrologistDetails.shortBio,
                 longBio : element.astrologistDetails.longBio
               }
+
               this.astroListing.push(obj)
           })
           console.log("this.astroData ++++++++++++", this.astroListing);

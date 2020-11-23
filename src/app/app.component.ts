@@ -144,7 +144,7 @@ export class AppComponent implements OnInit {
         this.checkUser = result.userData;
         sessionStorage.setItem('token',result.token);
         sessionStorage.setItem('userData',JSON.stringify(result.userData));
-       let isAdminUser  = this.authService.checkAccess(this.checkUser);
+        let isAdminUser  = this.authService.checkAccess(this.checkUser);
        console.log("isAdminUser ",isAdminUser);
        if(!isAdminUser) {
         this._route.navigate(['dashboard']);

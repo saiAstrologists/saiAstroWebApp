@@ -27,7 +27,8 @@ export class SignUpComponent implements OnInit {
     this.signUpValidateForm = this._formBuilder.group({
       name           : ['', [Validators.required]],
       email          : ['', [Validators.required, Validators.email]],
-      contactNo          : ['', [Validators.required, this.mobileNumber]],
+      countryCode    : ['', [Validators.required]],
+      contactNo      : ['', [Validators.required, this.mobileNumber]],
       password       : ['', [Validators.required, this.passwordPattern]],
       userType          : ['', [Validators.required]]
     });
@@ -57,9 +58,9 @@ export class SignUpComponent implements OnInit {
 
           // fire base register
           let firebaseLoginReq = {
-            email: responseData.body.userData.email,
-            password: responseData.body.userData.contactNo,
-            name: responseData.body.userData.name
+            email: this.signUpValidateForm.value.email,
+            password: this.signUpValidateForm.value.contactNo,
+            name: this.signUpValidateForm.value.name
           }
           this.firebaseService.signInFirebase(firebaseLoginReq);
           // fire base register end
