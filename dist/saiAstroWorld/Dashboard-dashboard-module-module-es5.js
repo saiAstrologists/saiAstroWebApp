@@ -129,20 +129,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     function AstroQuestionComponent_td_64_Template(rf, ctx) {
       if (rf & 1) {
-        var _r200 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r204 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 46);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstroQuestionComponent_td_64_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r200);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r204);
 
-          var row_r198 = ctx.$implicit;
+          var row_r202 = ctx.$implicit;
 
-          var ctx_r199 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r203 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          var _r182 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+          var _r186 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-          return ctx_r199.editQuestion(_r182, row_r198);
+          return ctx_r203.editQuestion(_r186, row_r202);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
@@ -175,11 +175,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var i_r202 = ctx.index;
+        var i_r206 = ctx.index;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r202 + 1, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r206 + 1, " ");
       }
     }
 
@@ -203,11 +203,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r203 = ctx.$implicit;
+        var row_r207 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r203.reportSubType, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r207.reportSubType, "");
       }
     }
 
@@ -231,11 +231,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r204 = ctx.$implicit;
+        var row_r208 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r204.firstName, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r208.firstName, " ");
       }
     }
 
@@ -259,11 +259,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r205 = ctx.$implicit;
+        var row_r209 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r205.mobileNumber, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r209.mobileNumber, " ");
       }
     }
 
@@ -295,11 +295,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        var _r184 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](59);
+        var _r188 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](59);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("No data matching the filter \"", _r184.value, "\"");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("No data matching the filter \"", _r188.value, "\"");
       }
     }
 
@@ -535,7 +535,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       consts: [[1, "drawer-container"], ["position", "end", "disableClose", "", 3, "mode"], ["questionSideNav", ""], ["mat-mini-fab", "", "color", "primary", "aria-label", "Close Menu", 1, "close-drawer", 3, "click"], [1, "form-wrapper"], [1, "separator", "mb-5"], [1, "edit-form-title", "text"], ["name", "validateForm", "novalidate", "", 3, "formGroup"], [1, "form-field-width"], ["matInput", "", "formControlName", "firstName", "required", ""], ["matInput", "", "formControlName", "lastName", "required", ""], ["matInput", "", "formControlName", "mobileNumber", "required", ""], ["matInput", "", "formControlName", "reportSubType", "required", ""], ["matInput", "", "formControlName", "employment", "required", ""], ["matInput", "", "formControlName", "comment", "required", ""], [1, "form-field-full-width"], ["matInput", "", "formControlName", "message", "maxlength", "2000", "required", "", 3, "keyup"], ["message", ""], ["align", "start"], [1, "mt-5"], ["mat-raised-button", "", "color", "primary", "aria-label", "LOGIN", 1, "submit-button", "mt-3", "mr-5", 3, "disabled", "click"], ["mat-stroked-button", "", "color", "warn", 1, "mt-3", 3, "click"], [1, "container", "wrapper-box"], ["mat-mini-fab", "", "color", "primary", "routerLink", "/dashboard", 1, "my-3"], [1, "separator", "mb-1"], [1, "dashboard-title", "text"], ["matInput", "", "placeholder", "Ex. Mia", 3, "keyup"], ["input", ""], [1, "mat-elevation-z8", "mb-5"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["matColumnDef", "edit"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["class", "edit-report", "mat-cell", "", "data-label", "Edit", 3, "click", 4, "matCellDef"], ["matColumnDef", "srNo"], ["mat-cell", "", "data-label", "SrNo.", 4, "matCellDef"], ["matColumnDef", "reportSubType"], ["mat-cell", "", "data-label", "Report Type", 4, "matCellDef"], ["matColumnDef", "firstName"], ["mat-cell", "", "data-label", "Name", 4, "matCellDef"], ["matColumnDef", "mobileNumber"], ["mat-cell", "", "data-label", "Mobile Number", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [3, "pageSizeOptions"], ["mat-header-cell", "", "mat-sort-header", ""], ["mat-cell", "", "data-label", "Edit", 1, "edit-report", 3, "click"], ["mat-cell", "", "data-label", "SrNo."], ["mat-cell", "", "data-label", "Report Type"], ["mat-cell", "", "data-label", "Name"], ["mat-cell", "", "data-label", "Mobile Number"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"]],
       template: function AstroQuestionComponent_Template(rf, ctx) {
         if (rf & 1) {
-          var _r207 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r211 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-sidenav-container", 0);
 
@@ -544,11 +544,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstroQuestionComponent_Template_button_click_3_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r207);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r211);
 
-            var _r182 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+            var _r186 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-            return ctx.closeDrawer(_r182);
+            return ctx.closeDrawer(_r186);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-icon");
@@ -656,11 +656,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "textarea", 16, 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function AstroQuestionComponent_Template_textarea_keyup_38_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r207);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r211);
 
-            var _r183 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39);
+            var _r187 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39);
 
-            return ctx.count(_r183.value);
+            return ctx.count(_r187.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1108,20 +1108,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     function AstroReportComponent_td_64_Template(rf, ctx) {
       if (rf & 1) {
-        var _r174 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r178 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 46);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstroReportComponent_td_64_Template_td_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r174);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r178);
 
-          var row_r172 = ctx.$implicit;
+          var row_r176 = ctx.$implicit;
 
-          var ctx_r173 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r177 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          var _r156 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+          var _r160 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-          return ctx_r173.editQuestion(_r156, row_r172);
+          return ctx_r177.editQuestion(_r160, row_r176);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-icon");
@@ -1154,11 +1154,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var i_r176 = ctx.index;
+        var i_r180 = ctx.index;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r176 + 1, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r180 + 1, " ");
       }
     }
 
@@ -1182,11 +1182,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r177 = ctx.$implicit;
+        var row_r181 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r177.reportSubType, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r181.reportSubType, "");
       }
     }
 
@@ -1210,11 +1210,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r178 = ctx.$implicit;
+        var row_r182 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r178.firstName, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r182.firstName, " ");
       }
     }
 
@@ -1238,11 +1238,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var row_r179 = ctx.$implicit;
+        var row_r183 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r179.mobileNumber, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", row_r183.mobileNumber, " ");
       }
     }
 
@@ -1274,11 +1274,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        var _r158 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](59);
+        var _r162 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](59);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("No data matching the filter \"", _r158.value, "\"");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("No data matching the filter \"", _r162.value, "\"");
       }
     }
 
@@ -1514,7 +1514,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       consts: [[1, "drawer-container"], ["position", "end", "disableClose", "", 3, "mode"], ["reportSideNav", ""], ["mat-mini-fab", "", "color", "primary", "aria-label", "Close Menu", 1, "close-drawer", 3, "click"], [1, "form-wrapper"], [1, "separator", "mb-5"], [1, "edit-form-title", "text"], ["name", "validateForm", "novalidate", "", 3, "formGroup"], [1, "form-field-width"], ["matInput", "", "formControlName", "firstName", "required", ""], ["matInput", "", "formControlName", "lastName", "required", ""], ["matInput", "", "formControlName", "mobileNumber", "required", ""], ["matInput", "", "formControlName", "reportSubType", "required", ""], ["matInput", "", "formControlName", "employment", "required", ""], ["matInput", "", "formControlName", "comment", "required", ""], [1, "form-field-full-width"], ["matInput", "", "formControlName", "message", "maxlength", "4000", "required", "", 3, "keyup"], ["message", ""], ["align", "start"], [1, "mt-5"], ["mat-raised-button", "", "color", "primary", "aria-label", "LOGIN", 1, "submit-button", "mt-3", "mr-5", 3, "disabled", "click"], ["mat-stroked-button", "", "color", "warn", 1, "mt-3", 3, "click"], [1, "container", "wrapper-box"], ["mat-mini-fab", "", "color", "primary", "routerLink", "/dashboard", 1, "my-3"], [1, "separator", "mb-1"], [1, "dashboard-title", "text"], ["matInput", "", "placeholder", "Ex. Mia", 3, "keyup"], ["input", ""], [1, "mat-elevation-z8", "mb-5"], ["mat-table", "", "matSort", "", 3, "dataSource"], ["matColumnDef", "edit"], ["mat-header-cell", "", "mat-sort-header", "", 4, "matHeaderCellDef"], ["class", "edit-report", "mat-cell", "", "data-label", "Edit", 3, "click", 4, "matCellDef"], ["matColumnDef", "srNo"], ["mat-cell", "", "data-label", "SrNo.", 4, "matCellDef"], ["matColumnDef", "reportSubType"], ["mat-cell", "", "data-label", "Report Type", 4, "matCellDef"], ["matColumnDef", "firstName"], ["mat-cell", "", "data-label", "Name", 4, "matCellDef"], ["matColumnDef", "mobileNumber"], ["mat-cell", "", "data-label", "Mobile Number", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["class", "mat-row", 4, "matNoDataRow"], [3, "pageSizeOptions"], ["mat-header-cell", "", "mat-sort-header", ""], ["mat-cell", "", "data-label", "Edit", 1, "edit-report", 3, "click"], ["mat-cell", "", "data-label", "SrNo."], ["mat-cell", "", "data-label", "Report Type"], ["mat-cell", "", "data-label", "Name"], ["mat-cell", "", "data-label", "Mobile Number"], ["mat-header-row", ""], ["mat-row", ""], [1, "mat-row"], ["colspan", "4", 1, "mat-cell"]],
       template: function AstroReportComponent_Template(rf, ctx) {
         if (rf & 1) {
-          var _r181 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r185 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-sidenav-container", 0);
 
@@ -1523,11 +1523,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstroReportComponent_Template_button_click_3_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r181);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r185);
 
-            var _r156 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
+            var _r160 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](2);
 
-            return ctx.closeDrawer(_r156);
+            return ctx.closeDrawer(_r160);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-icon");
@@ -1635,11 +1635,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "textarea", 16, 17);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keyup", function AstroReportComponent_Template_textarea_keyup_38_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r181);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r185);
 
-            var _r157 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39);
+            var _r161 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39);
 
-            return ctx.count(_r157.value);
+            return ctx.count(_r161.value);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

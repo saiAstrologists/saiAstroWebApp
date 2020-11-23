@@ -16451,11 +16451,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var item_r155 = ctx.$implicit;
+        var item_r159 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r155);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r159);
       }
     }
 
@@ -16706,7 +16706,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
     /*! ng2-search-filter */
     "./node_modules/ng2-search-filter/__ivy_ngcc__/ng2-search-filter.js");
 
-    function AstrologerComponent_div_22_div_1_p_15_span_2_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_15_span_1_span_2_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16716,7 +16716,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_15_span_3_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_15_span_1_span_3_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16726,13 +16726,53 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_15_span_4_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_15_span_1_span_4_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " NT$ ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
+
+    function AstrologerComponent_div_22_div_1_p_15_span_1_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Call ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_15_span_1_span_2_Template, 2, 0, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_15_span_1_span_3_Template, 2, 0, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AstrologerComponent_div_22_div_1_p_15_span_1_span_4_Template, 2, 0, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
+
+        var ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r83.userData.countryCode == "+91");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r83.userData.countryCode == "+1");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r83.userData.countryCode == "+886");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r74.call, "/min ");
       }
     }
 
@@ -16740,43 +16780,21 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Call ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_15_span_2_Template, 2, 0, "span", 19);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_15_span_3_Template, 2, 0, "span", 19);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AstrologerComponent_div_22_div_1_p_15_span_4_Template, 2, 0, "span", 19);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_15_span_1_Template, 6, 4, "span", 19);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-
-        var ctx_r75 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r75.userData.countryCode == "+91");
+        var ctx_r75 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r75.userData.countryCode == "+1");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r75.userData.countryCode == "+886");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r74.call, "/min");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r75.CallBtnFlag);
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_16_span_2_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_16_span_1_span_2_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16786,7 +16804,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_16_span_3_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_16_span_1_span_3_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16796,7 +16814,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_16_span_4_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_16_span_1_span_4_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16806,17 +16824,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_16_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_16_span_1_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Chat ");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_16_span_2_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_16_span_1_span_2_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_16_span_3_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_16_span_1_span_3_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AstrologerComponent_div_22_div_1_p_16_span_4_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AstrologerComponent_div_22_div_1_p_16_span_1_span_4_Template, 2, 0, "span", 19);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
 
@@ -16824,21 +16842,21 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
 
-        var ctx_r76 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+        var ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r76.userData.countryCode == "+91");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r88.userData.countryCode == "+91");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r76.userData.countryCode == "+1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r88.userData.countryCode == "+1");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r76.userData.countryCode == "+886");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r88.userData.countryCode == "+886");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -16846,7 +16864,25 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_17_span_1_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_16_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_16_span_1_Template, 6, 4, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r76 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r76.ChatBtnFlag);
+      }
+    }
+
+    function AstrologerComponent_div_22_div_1_p_17_span_1_span_1_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16856,7 +16892,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_17_span_2_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_17_span_1_span_2_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16866,7 +16902,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_17_span_3_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_17_span_1_span_3_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16876,15 +16912,15 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_17_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_17_span_1_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_17_span_1_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_17_span_1_span_1_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_17_span_2_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_17_span_1_span_2_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_17_span_3_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_17_span_1_span_3_Template, 2, 0, "span", 19);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
 
@@ -16892,21 +16928,21 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
 
-        var ctx_r77 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r77.userData.countryCode == "+91");
+        var ctx_r93 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r77.userData.countryCode == "+1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r93.userData.countryCode == "+91");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r77.userData.countryCode == "+886");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r93.userData.countryCode == "+1");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r93.userData.countryCode == "+886");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -16914,7 +16950,25 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_18_span_1_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_17_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_17_span_1_Template, 5, 4, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r77 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r77.ReportBtnFlag);
+      }
+    }
+
+    function AstrologerComponent_div_22_div_1_p_18_span_1_span_1_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16924,7 +16978,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_18_span_2_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_18_span_1_span_2_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16934,7 +16988,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_18_span_3_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_18_span_1_span_3_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -16944,15 +16998,15 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function AstrologerComponent_div_22_div_1_p_18_Template(rf, ctx) {
+    function AstrologerComponent_div_22_div_1_p_18_span_1_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_18_span_1_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_18_span_1_span_1_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_18_span_2_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AstrologerComponent_div_22_div_1_p_18_span_1_span_2_Template, 2, 0, "span", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_18_span_3_Template, 2, 0, "span", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AstrologerComponent_div_22_div_1_p_18_span_1_span_3_Template, 2, 0, "span", 19);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
 
@@ -16960,21 +17014,21 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+        var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
 
-        var ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r78.userData.countryCode == "+91");
+        var ctx_r98 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r78.userData.countryCode == "+1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r98.userData.countryCode == "+91");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r78.userData.countryCode == "+886");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r98.userData.countryCode == "+1");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r98.userData.countryCode == "+886");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -16982,20 +17036,38 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
+    function AstrologerComponent_div_22_div_1_p_18_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, AstrologerComponent_div_22_div_1_p_18_span_1_Template, 5, 4, "span", 19);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r78 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r78.QAndAFlag);
+      }
+    }
+
     function AstrologerComponent_div_22_div_1_button_19_Template(rf, ctx) {
       if (rf & 1) {
-        var _r101 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r105 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_22_div_1_button_19_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r101);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r105);
 
           var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
-          var ctx_r99 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r99.report(element_r74);
+          return ctx_r103.report(element_r74);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Report");
@@ -17006,18 +17078,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_div_22_div_1_button_20_Template(rf, ctx) {
       if (rf & 1) {
-        var _r104 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r108 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_22_div_1_button_20_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r104);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r108);
 
           var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
-          var ctx_r102 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r106 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r102.call(element_r74);
+          return ctx_r106.call(element_r74);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Call");
@@ -17028,18 +17100,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_div_22_div_1_button_21_Template(rf, ctx) {
       if (rf & 1) {
-        var _r107 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r111 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_22_div_1_button_21_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r107);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r111);
 
           var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
-          var ctx_r105 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r109 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r105.chat(element_r74);
+          return ctx_r109.chat(element_r74);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Chat");
@@ -17050,18 +17122,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_div_22_div_1_button_22_Template(rf, ctx) {
       if (rf & 1) {
-        var _r110 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r114 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 23);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_22_div_1_button_22_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r110);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r114);
 
           var element_r74 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
 
-          var ctx_r108 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r108.question(element_r74);
+          return ctx_r112.question(element_r74);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Ask Question");
@@ -17072,7 +17144,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_div_22_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r116 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 14);
 
@@ -17083,13 +17155,13 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 16);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_22_div_1_Template_div_click_3_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r112);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r116);
 
           var element_r74 = ctx.$implicit;
 
-          var ctx_r111 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r115 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r111.detailPage(element_r74);
+          return ctx_r115.detailPage(element_r74);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 17);
@@ -17126,13 +17198,13 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, AstrologerComponent_div_22_div_1_p_15_Template, 6, 4, "p", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, AstrologerComponent_div_22_div_1_p_15_Template, 2, 1, "p", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, AstrologerComponent_div_22_div_1_p_16_Template, 6, 4, "p", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, AstrologerComponent_div_22_div_1_p_16_Template, 2, 1, "p", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, AstrologerComponent_div_22_div_1_p_17_Template, 5, 4, "p", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, AstrologerComponent_div_22_div_1_p_17_Template, 2, 1, "p", 19);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, AstrologerComponent_div_22_div_1_p_18_Template, 5, 4, "p", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, AstrologerComponent_div_22_div_1_p_18_Template, 2, 1, "p", 19);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, AstrologerComponent_div_22_div_1_button_19_Template, 2, 0, "button", 20);
 
@@ -17170,19 +17242,19 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r73.CallBtnFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r73.userData == null ? null : ctx_r73.userData.countryCode) != null);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r73.ChatBtnFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r73.userData == null ? null : ctx_r73.userData.countryCode) != null);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r73.ReportBtnFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r73.userData == null ? null : ctx_r73.userData.countryCode) != null);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r73.QAndAFlag);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r73.userData == null ? null : ctx_r73.userData.countryCode) != null);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -17224,7 +17296,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_div_23_Template(rf, ctx) {
       if (rf & 1) {
-        var _r114 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r118 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 24);
 
@@ -17259,11 +17331,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 27);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_div_23_Template_button_click_12_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r114);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r118);
 
-          var ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r117 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r113.goBack();
+          return ctx_r117.goBack();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon");
@@ -17378,18 +17450,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function AstrologerComponent_section_24_Template(rf, ctx) {
       if (rf & 1) {
-        var _r116 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r120 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 29);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 30);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AstrologerComponent_section_24_Template_button_click_1_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r116);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
 
-          var ctx_r115 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r119 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r115.getAstroListing(1);
+          return ctx_r119.getAstroListing(1);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Load More ");
@@ -19366,7 +19438,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function QuestionAndAnswerComponent_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r120 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r124 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
 
@@ -19377,11 +19449,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_3_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r119 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r123 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r119.questionAndAnswerForm("Education");
+          return ctx_r123.questionAndAnswerForm("Education");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1");
@@ -19409,11 +19481,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_10_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r121 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r125 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r121.questionAndAnswerForm("Love & Relationship");
+          return ctx_r125.questionAndAnswerForm("Love & Relationship");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h1");
@@ -19441,11 +19513,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_17_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r122 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r126 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r122.questionAndAnswerForm("Child Name");
+          return ctx_r126.questionAndAnswerForm("Child Name");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "h1");
@@ -19473,11 +19545,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_24_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r123 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r127 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r123.questionAndAnswerForm("Career & Business");
+          return ctx_r127.questionAndAnswerForm("Career & Business");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h1");
@@ -19509,11 +19581,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_32_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r124 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r128 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r124.questionAndAnswerForm("Match Making");
+          return ctx_r128.questionAndAnswerForm("Match Making");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "h1");
@@ -19541,11 +19613,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_39_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r125 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r129 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r125.questionAndAnswerForm("Travel & Foreign Settlement");
+          return ctx_r129.questionAndAnswerForm("Travel & Foreign Settlement");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "h1");
@@ -19573,11 +19645,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_46_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r126 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r130 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r126.questionAndAnswerForm("Child Birth");
+          return ctx_r130.questionAndAnswerForm("Child Birth");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "h1");
@@ -19605,11 +19677,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_53_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r127 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r127.questionAndAnswerForm("Ask any question on one topic");
+          return ctx_r131.questionAndAnswerForm("Ask any question on one topic");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "h1");
@@ -19637,11 +19709,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_div_1_Template_mat_card_click_60_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r120);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r124);
 
-          var ctx_r128 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r132 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r128.questionAndAnswerForm("2020 Detailed Yearly");
+          return ctx_r132.questionAndAnswerForm("2020 Detailed Yearly");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "h1");
@@ -19692,7 +19764,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function QuestionAndAnswerComponent_mat_card_2_Template(rf, ctx) {
       if (rf & 1) {
-        var _r132 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r136 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 9);
 
@@ -19835,11 +19907,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "button", 28);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuestionAndAnswerComponent_mat_card_2_Template_button_click_47_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r132);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
 
-          var ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r131.submitForm(ctx_r131.validateForm.value);
+          return ctx_r135.submitForm(ctx_r135.validateForm.value);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48);
@@ -19854,31 +19926,31 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var ctx_r118 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r122 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r118.reportType, " Question Form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r122.reportType, " Question Form");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r118.validateForm);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r122.validateForm);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r118.validateForm.get("contactNo").hasError("required"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r122.validateForm.get("contactNo").hasError("required"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r118.validateForm.get("contactNo").hasError("required") && ctx_r118.validateForm.get("contactNo").hasError("mobileErr"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r122.validateForm.get("contactNo").hasError("required") && ctx_r122.validateForm.get("contactNo").hasError("mobileErr"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r118.validateForm.invalid);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r122.validateForm.invalid);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Ask ", ctx_r118.astroData.name, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Ask ", ctx_r122.astroData.name, "");
       }
     }
 
@@ -20260,7 +20332,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function ReportListingComponent_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r136 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r140 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
 
@@ -20271,11 +20343,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_3_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r139 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r135.reportForm("Education Report");
+          return ctx_r139.reportForm("Education Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1");
@@ -20309,11 +20381,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_12_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r137 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r141 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r137.reportForm("Love & Relationship Report");
+          return ctx_r141.reportForm("Love & Relationship Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "h1");
@@ -20347,11 +20419,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_21_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r138 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r142 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r138.reportForm("Child Name Report");
+          return ctx_r142.reportForm("Child Name Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "h1");
@@ -20385,11 +20457,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_30_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r139 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r143 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r139.reportForm("Career & Business Report");
+          return ctx_r143.reportForm("Career & Business Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "h1");
@@ -20427,11 +20499,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_40_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r140 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r144 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r140.reportForm("Match Making Report");
+          return ctx_r144.reportForm("Match Making Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "h1");
@@ -20465,11 +20537,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_49_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r141 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r145 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r141.reportForm("Travel & Foreign Settlement Report");
+          return ctx_r145.reportForm("Travel & Foreign Settlement Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "h1");
@@ -20503,11 +20575,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_58_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r142 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r146 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r142.reportForm("Child Birth Report");
+          return ctx_r146.reportForm("Child Birth Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "h1");
@@ -20541,11 +20613,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_67_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r143 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r147 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r143.reportForm("Ask any question on one topic Report");
+          return ctx_r147.reportForm("Ask any question on one topic Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "h1");
@@ -20579,11 +20651,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "mat-card", 6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_div_1_Template_mat_card_click_76_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r136);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r140);
 
-          var ctx_r144 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r148 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r144.reportForm("2020 Detailed Yearly Report");
+          return ctx_r148.reportForm("2020 Detailed Yearly Report");
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "h1");
@@ -20670,7 +20742,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
     function ReportListingComponent_mat_card_2_Template(rf, ctx) {
       if (rf & 1) {
-        var _r153 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r157 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 9);
 
@@ -21043,11 +21115,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "button", 52);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReportListingComponent_mat_card_2_Template_button_click_125_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r153);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r157);
 
-          var ctx_r152 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r156 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r152.submitForm(ctx_r152.validateForm.value);
+          return ctx_r156.submitForm(ctx_r156.validateForm.value);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](126);
@@ -21062,63 +21134,63 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
 
       if (rf & 2) {
-        var _r147 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](41);
+        var _r151 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](41);
 
-        var _r148 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](53);
+        var _r152 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](53);
 
-        var ctx_r134 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r138 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r134.reportType, " Intake Form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx_r138.reportType, " Intake Form");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r134.validateForm);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r138.validateForm);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r134.validateForm.get("contactNo").hasError("required"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r138.validateForm.get("contactNo").hasError("required"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r134.validateForm.get("contactNo").hasError("required") && ctx_r134.validateForm.get("contactNo").hasError("mobileErr"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r138.validateForm.get("contactNo").hasError("required") && ctx_r138.validateForm.get("contactNo").hasError("mobileErr"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matDatepicker", _r147);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matDatepicker", _r151);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r147);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("for", _r151);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngxTimepicker", _r148);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngxTimepicker", _r152);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("theme", ctx_r134.darkTheme);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("theme", ctx_r138.darkTheme);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r134.validateForm.get("place_of_birth_city").hasError("required"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r138.validateForm.get("place_of_birth_city").hasError("required"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r134.validateForm.get("place_of_birth_state").hasError("required"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r138.validateForm.get("place_of_birth_state").hasError("required"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r134.validateForm.get("place_of_birth_country").hasError("required"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r138.validateForm.get("place_of_birth_country").hasError("required"));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](51);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r134.validateForm.invalid);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r138.validateForm.invalid);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Ask ", ctx_r134.astroData.name, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Ask ", ctx_r138.astroData.name, "");
       }
     }
 
