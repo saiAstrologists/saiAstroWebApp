@@ -73,11 +73,29 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   position: absolute;
   right: 12px;
   a {
-    padding: 5px 10px;
-    font-size: 20px;
+
+    padding: 10px 13px;
+    font-size: 12px;
+    border: 1px solid $primar;
+    /* margin: 0px 10px; */
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 51%;
+    &.facebook{
+      background: #3b5998;
+    }
+    &.instagram{
+      background: #db2f7b;
+    }
+    &.twitter{
+      background: #007bb5;
+    }
+    &.youtube{
+      background: red;
+    }
   }
   a:hover {
-    color: $primar !important
+    border: 1px solid $white !important
   }
 }
 
@@ -185,16 +203,31 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
     p {
       margin-bottom: 30px;
     }
-    .footer-social {
-      a {
-        padding: 5px 10px;
-        font-size: 20px;
-        border: 1px solid #000;
-        margin: 0px 10px;
+  }
+  .footer-social {
+    a {
+      padding: 10px 14px;
+      font-size: 15px;
+      border: 1px solid #fdfdfd;
+      /* margin: 0px 10px; */
+      margin-right: 5px;
+      color: #fff;
+      border-radius: 51%;
+      &.facebook{
+        background: #3b5998;
       }
-      a:hover {
-        color: $white !important
+      &.instagram{
+        background: #db2f7b;
       }
+      &.twitter{
+        background: #007bb5;
+      }
+      &.youtube{
+        background: red;
+      }
+    }
+    a:hover {
+      border: 1px solid #000 !important
     }
   }
   .google-play-store img {
@@ -244,11 +277,18 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   .toolbar-wrapper span img{
     width : 100%;
   }
-
   .side-bar-quick-link {
     display: block;
-
   }
+
+    .footer-social {
+      a {
+        padding: 7px 11px !important;
+        font-size: 15px !important;
+        margin-right: 0px !important;
+      }
+    }
+
 }
 
 @media (max-width: 640px) {

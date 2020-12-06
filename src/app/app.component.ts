@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
   isAstrologerLoggedIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
   AdminLoginHideFlag
-  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog, private _route : Router, private _observableDataService : ObservableDataService){
+  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog,
+     private _route : Router, private _observableDataService : ObservableDataService){
     this.messaging = new FormGroup({
       typing: new FormControl('')
     })
@@ -179,7 +180,7 @@ export class AppComponent implements OnInit {
 
   talkToAstro(){
     // if(this.checkUser != null) {
-      console.log("QA report");
+      console.log("talkToAstro");
       this._observableDataService.checkUserOperation('Call');
       this._route.navigate(['home/astrologer']);
     // } else {
@@ -189,7 +190,7 @@ export class AppComponent implements OnInit {
 
   chatToAstro(){
     // if(this.checkUser != null) {
-      console.log("QA report");
+      console.log("chatToAstro");
       this._observableDataService.checkUserOperation('Chat');
       this._route.navigate(['home/astrologer']);
     // } else {

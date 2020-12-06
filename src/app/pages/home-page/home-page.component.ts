@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import {HomeService} from './home-page.service'
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
 import { ObservableDataService } from '../../observables/behaviourSubject.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -38,7 +39,8 @@ export class HomePageComponent implements OnInit {
   astroData = [];
   userData;
   isVisible : boolean = false;
-  constructor(private _service : HomeService,private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
+  constructor(private _service : HomeService, private _route : Router, private _commonService: CommonService,
+     private _observableDataService : ObservableDataService) { }
 
 
 
@@ -116,7 +118,8 @@ export class HomePageComponent implements OnInit {
 }
 
 hmViewAllAstrologer(){
-
+  this._observableDataService.checkUserOperation('Call');
+  this._route.navigate(['home/astrologer']);
 }
 
 }

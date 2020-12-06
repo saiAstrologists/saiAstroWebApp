@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -44,6 +44,10 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   users: UserData[];
 
   characters = 0;
+  wordCount: any;
+
+  @ViewChild("text") text: ElementRef;
+  words: any;
 
 
   constructor(private _authService : AuthService, private _commonService: CommonService, private _astroReportService : AstroReportService, private _authenticationService : AuthenticationService, private _formBuilder: FormBuilder) { }
@@ -64,6 +68,12 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource(this.users);
     this.userData = this._authenticationService.getUser();
     this.getReportByAstrologer();
+  }
+
+  wordCounter() {
+    //alert(this.text.nativeElement.value)
+    this.wordCount = this.text ? this.text.nativeElement.value.split(/\s+/) : 0;
+    this.words = this.wordCount ? this.wordCount.length : 0;
   }
 
   ngAfterViewInit() {
