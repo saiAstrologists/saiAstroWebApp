@@ -6,6 +6,9 @@ $primary : #f9a825;
 $white : #fff;
 $black: #000;
 
+hr {
+  border-top : 1px solid $primary;
+}
 .carousel {
   background:$primary;
 }

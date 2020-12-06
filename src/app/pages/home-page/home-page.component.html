@@ -96,118 +96,7 @@
   </div>
   <!-- /.carousel -->
 
-  <section class="hm-horoscope-wrapper mb-5">
-    <div class="container">
-        <div class="hm-horoscope-header mb-5">
-          <h1 class="mt-5 mb-1"><b>DAILY HOROSCOPE</b></h1>
-          <div class="separator home">
-            <span class="text"> Your daily zodiac sign reading free</span>
-          </div>
-        </div>
-        <div class="row hm-horoscope-block my-4">
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/arise.png">
-              <h4><b>Mar 21 - Apr 19</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/taurus.png">
-                <h4><b>Apr 20 - May 20</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-             <a href="#"> <img src="../../../assets//images/zodiac/gemini.png">
-              <h4><b>May 21 - Jun 20</b></h4>
-            </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/cancer.png">
-              <h4><b>June 21 - July 22</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/leo.png">
-              <h4><b>July 23 - Aug 22</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/virgo.png">
-              <h4><b>Aug 23 - Sep 22</b></h4>
-              </a>
-            </div>
-        </div>
-        <div class="row hm-horoscope-block">
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/libra.png">
-              <h4><b>Sep 23 - Oct 22</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/scorpio.png">
-              <h4><b>Oct 23 - Nov 21</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/sagittarius.png">
-              <h4><b>Nov 22 - Dec 21</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/capricorn.png">
-              <h4><b>Dec 22 - Jan 19</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/aquarius.png">
-              <h4><b>Jan 20 - Feb 18</b></h4>
-              </a>
-            </div>
-            <div class="col no-gutter">
-              <a href="#"><img src="../../../assets//images/zodiac/pisces.png">
-              <h4><b>Feb 19 - Mar 20</b></h4>
-              </a>
-            </div>
-        </div>
-
-
-
-        <!-- <div class="hm-horoscope-block d-flex flex-row justify-content-center">
-          <div class="p-2"><img src="../../../assets//images/zodiac/arise.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/taurus.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/gemini.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/cancer.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/leo.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/virgo.png"></div>
-        </div>
-
-        <div class="hm-horoscope-block d-flex flex-row justify-content-center">
-          <div class="p-2"><img src="../../../assets//images/zodiac/libra.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/scorpio.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/sagittarius.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/capricorn.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/aquarius.png"></div>
-          <div class="p-2"><img src="../../../assets//images/zodiac/pisces.png"></div>
-        </div> -->
-    </div>
-  </section>
-
-  <section class="hm-about-us pt-4 pb-5">
-    <div class="container">
-      <div class="hm-about-us-block mb-5">
-        <h1 class="mb-0"><b>About</b></h1>
-        <div class="separator home">
-          <span class="text">Us</span>
-        </div>
-      </div>
-      <p> AstroWorld is the best astrology website for online Astrology predictions. Talk to Astrologer on call and
-    get answers to all your worries by seeing the future life through Astrology Kundli Predictions from the
-    best Astrologers from all over the world. Get best future predictions related to Marriage, love life,
-    Career or Health over call, chat, query or report.</p>
-  </div>
-</section>
-
-
-
+<!-- Start Home Astrologer list -->
 <section class="hm-astrologer-wrapper py-5">
   <div class="container">
     <div class="hm-astrologer-header mb-5">
@@ -215,6 +104,7 @@
       <div class="separator home">
         <span class="text">Our Astrologer</span>
       </div>
+      <span class="float-right"><button mat-raised-button color="primary" (click)="hmViewAllAstrologer()">View All</button></span>
     </div>
     <owl-carousel-o [options]="customOptions">
       <ng-template carouselSlide *ngFor="let astro of astroData">
@@ -333,8 +223,123 @@
   <!-- </div> -->
   </div>
 </section>
+<!-- End Home Astrologer list -->
 
-<section class="testimonial-wrapper py-5">
+  <section class="hm-about-us pt-4 pb-5">
+    <div class="container">
+      <div class="hm-about-us-block mb-5">
+        <h1 class="mb-0"><b>About</b></h1>
+        <div class="separator home">
+          <span class="text">Us</span>
+        </div>
+      </div>
+      <p> AstroWorld is the best astrology website for online Astrology predictions. Talk to Astrologer on call and
+    get answers to all your worries by seeing the future life through Astrology Kundli Predictions from the
+    best Astrologers from all over the world. Get best future predictions related to Marriage, love life,
+    Career or Health over call, chat, query or report.</p>
+  </div>
+</section>
+
+  <!-- Start DAILY HOROSCOPE -->
+  <section class="hm-horoscope-wrapper mb-5">
+    <div class="container">
+        <div class="hm-horoscope-header mb-5">
+          <h1 class="mt-5 mb-1"><b>DAILY HOROSCOPE</b></h1>
+          <div class="separator home">
+            <span class="text"> Your daily zodiac sign reading free</span>
+          </div>
+        </div>
+        <div class="row hm-horoscope-block my-4">
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/arise.png">
+              <h4><b>Mar 21 - Apr 19</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/taurus.png">
+                <h4><b>Apr 20 - May 20</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+             <a href="#"> <img src="../../../assets//images/zodiac/gemini.png">
+              <h4><b>May 21 - Jun 20</b></h4>
+            </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/cancer.png">
+              <h4><b>June 21 - July 22</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/leo.png">
+              <h4><b>July 23 - Aug 22</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/virgo.png">
+              <h4><b>Aug 23 - Sep 22</b></h4>
+              </a>
+            </div>
+        </div>
+        <div class="row hm-horoscope-block">
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/libra.png">
+              <h4><b>Sep 23 - Oct 22</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/scorpio.png">
+              <h4><b>Oct 23 - Nov 21</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/sagittarius.png">
+              <h4><b>Nov 22 - Dec 21</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/capricorn.png">
+              <h4><b>Dec 22 - Jan 19</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/aquarius.png">
+              <h4><b>Jan 20 - Feb 18</b></h4>
+              </a>
+            </div>
+            <div class="col no-gutter">
+              <a href="#"><img src="../../../assets//images/zodiac/pisces.png">
+              <h4><b>Feb 19 - Mar 20</b></h4>
+              </a>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="hm-horoscope-block d-flex flex-row justify-content-center">
+          <div class="p-2"><img src="../../../assets//images/zodiac/arise.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/taurus.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/gemini.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/cancer.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/leo.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/virgo.png"></div>
+        </div>
+
+        <div class="hm-horoscope-block d-flex flex-row justify-content-center">
+          <div class="p-2"><img src="../../../assets//images/zodiac/libra.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/scorpio.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/sagittarius.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/capricorn.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/aquarius.png"></div>
+          <div class="p-2"><img src="../../../assets//images/zodiac/pisces.png"></div>
+        </div> -->
+    </div>
+  </section>
+<!-- End DAILY HOROSCOPE -->
+
+<hr>
+
+<section class="testimonial-wrapper">
 <div class="container">
   <div class="hm-horoscope-header mb-5">
     <h1 class="mt-5 mb-1"><b>Testimonials</b></h1>
