@@ -18013,35 +18013,47 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
     /* harmony import */
 
 
-    var src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! src/app/shared/service/commonService/common.service */
     "./src/app/shared/service/commonService/common.service.ts");
     /* harmony import */
 
 
-    var _observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../observables/behaviourSubject.service */
     "./src/app/observables/behaviourSubject.service.ts");
     /* harmony import */
 
 
-    var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/material/button */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+    /* harmony import */
+
+
+    var ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ngx-owl-carousel-o */
     "./node_modules/ngx-owl-carousel-o/__ivy_ngcc__/fesm2015/ngx-owl-carousel-o.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    function HomePageComponent_147_ng_template_0_Template(rf, ctx) {
+    function HomePageComponent_56_ng_template_0_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 61);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 63);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 62);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 64);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 63);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 65);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h1");
 
@@ -18087,39 +18099,49 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function HomePageComponent_147_Template(rf, ctx) {
+    function HomePageComponent_56_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, HomePageComponent_147_ng_template_0_Template, 9, 4, "ng-template", 60);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, HomePageComponent_56_ng_template_0_Template, 9, 4, "ng-template", 59);
       }
     }
 
-    function HomePageComponent_ng_template_158_Template(rf, ctx) {
+    function HomePageComponent_ng_template_152_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 64);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 66);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 65);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 67);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 66);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 68);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 67);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 69);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " More than an astrologer, he is a friend I needed most in tough times. He just doesn't tell you your past, he can read your future as well. He gave me a solution, which no psychiatrist could ever give. I will forever be thankful for him for bringing light at the end of tunnel. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " More than an astrologer, he is a friend I needed most in tough times. He just doesn't tell you your past, he can read your future as well. ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 70);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "He gave me a solution, which no psychiatrist could ever give. I will forever be thankful for him for bringing light at the end of tunnel.");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "footer", 68);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "b");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Satwik Mishra ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "cite", 69);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "footer", 71);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Ex-Advisor to the Member of Parliament");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "b");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Satwik Mishra ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "cite", 72);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Ex-Advisor to the Member of Parliament");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18133,33 +18155,43 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function HomePageComponent_ng_template_159_Template(rf, ctx) {
+    function HomePageComponent_ng_template_153_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 64);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 66);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 70);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 73);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 66);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 68);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 67);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 69);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " I am not a believer in Astrology but Suvajit is the reason of my growing faith in it. I have consulted him for my husband career and everything has turned out to be positive. He listens to you with utmost patience and when you speak with him it just feels like you are speaking to a friend. I have recommended him to my close family members who are equally happy with him.Keep doing the good work! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " I am not a believer in Astrology but Suvajit is the reason of my growing faith in it. I have consulted him for my husband career and everything ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 70);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " has turned out to be positive. He listens to you with utmost patience and when you speak with him it just feels like you are speaking to a friend. I have recommended him to my close family members who are equally happy with him.Keep doing the good work!");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "footer", 68);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "b");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Arnima Singh ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "cite", 69);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "footer", 71);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " Works at McAfee");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "b");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Arnima Singh ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "cite", 72);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " Works at McAfee");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18173,33 +18205,43 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function HomePageComponent_ng_template_160_Template(rf, ctx) {
+    function HomePageComponent_ng_template_154_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 64);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 66);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 71);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 74);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 66);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 68);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 67);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 69);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Dr. Suvajit is the reason for why I have a strong belief in Vedic Astrology. He is good at what he does. I would have recommended him to everyone whosoever needs his help and guidance. There are only few people on earth whom you bank upon and Dr. Suvajit is the one of them. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Dr. Suvajit is the reason for why I have a strong belief in Vedic Astrology. He is good at what he does. I would have recommended ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 70);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " him to everyone whosoever needs his help and guidance. There are only few people on earth whom you bank upon and Dr. Suvajit is the one of them.");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "footer", 68);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "b");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Ankur Prajapati ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "cite", 69);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "footer", 71);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " Cyber Security Technology Specialist at Darktrace ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "b");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Ankur Prajapati ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "cite", 72);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " Cyber Security Technology Specialist at Darktrace ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18213,15 +18255,15 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
       }
     }
 
-    function HomePageComponent_ng_template_161_Template(rf, ctx) {
+    function HomePageComponent_ng_template_155_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 64);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 66);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 72);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 75);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 66);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 68);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 67);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "blockquote", 69);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
 
@@ -18229,7 +18271,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "footer", 68);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "footer", 71);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "b");
 
@@ -18237,7 +18279,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "cite", 69);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "cite", 72);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Electrical Engineering Draftsman at IES");
 
@@ -18256,10 +18298,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
     var HomePageComponent =
     /*#__PURE__*/
     function () {
-      function HomePageComponent(_service, _commonService, _observableDataService) {
+      function HomePageComponent(_service, _route, _commonService, _observableDataService) {
         _classCallCheck(this, HomePageComponent);
 
         this._service = _service;
+        this._route = _route;
         this._commonService = _commonService;
         this._observableDataService = _observableDataService;
         this.customOptions = {
@@ -18370,21 +18413,28 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
             this._commonService.tostMessage("Login is required!");
           }
         }
+      }, {
+        key: "hmViewAllAstrologer",
+        value: function hmViewAllAstrologer() {
+          this._observableDataService.checkUserOperation('Call');
+
+          this._route.navigate(['home/astrologer']);
+        }
       }]);
 
       return HomePageComponent;
     }();
 
     HomePageComponent.ɵfac = function HomePageComponent_Factory(t) {
-      return new (t || HomePageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_home_page_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_3__["ObservableDataService"]));
+      return new (t || HomePageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_home_page_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_4__["ObservableDataService"]));
     };
 
     HomePageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: HomePageComponent,
       selectors: [["app-home-page"]],
-      decls: 162,
+      decls: 168,
       vars: 3,
-      consts: [["id", "carousel", "data-ride", "carousel", "data-interval", "6000", 1, "carousel", "slide", "carousel-fade"], [1, "carousel-indicators"], ["data-target", "#carousel", "data-slide-to", "0", 1, "active"], ["data-target", "#carousel", "data-slide-to", "1"], ["data-target", "#carousel", "data-slide-to", "2"], ["data-target", "#carousel", "data-slide-to", "3"], ["role", "listbox", 1, "carousel-inner"], [1, "carousel-item", "active"], ["srcset", "../../../assets/images/banner/qualified-astrologer.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/qualified-astrologer.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/qualified-astrologer.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/qualified-astrologer.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], [1, "carousel-item"], ["srcset", "../../../assets/images/banner/astrology-service.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/astrology-service.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/astrology-service.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/astrology-service.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["srcset", "../../../assets/images/banner/recharge-wallet.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/recharge-wallet.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/recharge-wallet.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/recharge-wallet.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["srcset", "../../../assets/images/banner/private-and-confidential.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/private-and-confidential.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/private-and-confidential.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/private-and-confidential.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["href", "#carousel", "role", "button", "data-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "sr-only"], ["href", "#carousel", "role", "button", "data-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"], [1, "hm-horoscope-wrapper", "mb-5"], [1, "container"], [1, "hm-horoscope-header", "mb-5"], [1, "mt-5", "mb-1"], [1, "separator", "home"], [1, "text"], [1, "row", "hm-horoscope-block", "my-4"], [1, "col", "no-gutter"], ["href", "#"], ["src", "../../../assets//images/zodiac/arise.png"], ["src", "../../../assets//images/zodiac/taurus.png"], ["src", "../../../assets//images/zodiac/gemini.png"], ["src", "../../../assets//images/zodiac/cancer.png"], ["src", "../../../assets//images/zodiac/leo.png"], ["src", "../../../assets//images/zodiac/virgo.png"], [1, "row", "hm-horoscope-block"], ["src", "../../../assets//images/zodiac/libra.png"], ["src", "../../../assets//images/zodiac/scorpio.png"], ["src", "../../../assets//images/zodiac/sagittarius.png"], ["src", "../../../assets//images/zodiac/capricorn.png"], ["src", "../../../assets//images/zodiac/aquarius.png"], ["src", "../../../assets//images/zodiac/pisces.png"], [1, "hm-about-us", "pt-4", "pb-5"], [1, "hm-about-us-block", "mb-5"], [1, "mb-0"], [1, "hm-astrologer-wrapper", "py-5"], [1, "hm-astrologer-header", "mb-5"], [3, "options"], [4, "ngFor", "ngForOf"], [1, "testimonial-wrapper", "py-5"], ["carouselSlide", ""], [1, "slide", "astrologer-img", "cardShadow", "my-3", "mr-3", "p-3", "bg-white", "rounded"], [3, "src"], [1, "astro-content"], [1, "slide", "testimonial-img", "cardShadow", "my-3", "mr-3", "p-3", "bg-white", "rounded"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/satwik-150x150-1.jpeg"], [1, "testimonial-content"], [1, "blockquote"], [1, "blockquote-footer"], ["title", "Source Title"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/Arnima-150x150-1.jpg"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/Ankur-150x150-1.jpg"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/rima-150x150-1.jpeg"]],
+      consts: [["id", "carousel", "data-ride", "carousel", "data-interval", "6000", 1, "carousel", "slide", "carousel-fade"], [1, "carousel-indicators"], ["data-target", "#carousel", "data-slide-to", "0", 1, "active"], ["data-target", "#carousel", "data-slide-to", "1"], ["data-target", "#carousel", "data-slide-to", "2"], ["data-target", "#carousel", "data-slide-to", "3"], ["role", "listbox", 1, "carousel-inner"], [1, "carousel-item", "active"], ["srcset", "../../../assets/images/banner/qualified-astrologer.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/qualified-astrologer.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/qualified-astrologer.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/qualified-astrologer.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], [1, "carousel-item"], ["srcset", "../../../assets/images/banner/astrology-service.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/astrology-service.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/astrology-service.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/astrology-service.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["srcset", "../../../assets/images/banner/recharge-wallet.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/recharge-wallet.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/recharge-wallet.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/recharge-wallet.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["srcset", "../../../assets/images/banner/private-and-confidential.jpg", "media", "(min-width: 1400px)"], ["srcset", "../../../assets/images/banner/1400_500/private-and-confidential.jpg", "media", "(min-width: 769px)"], ["srcset", "../../../assets/images/banner/800_500/private-and-confidential.jpg", "media", "(min-width: 577px)"], ["srcset", "../../../assets/images/banner/600_400/private-and-confidential.jpg", "alt", "responsive image", 1, "d-block", "img-fluid"], ["href", "#carousel", "role", "button", "data-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "sr-only"], ["href", "#carousel", "role", "button", "data-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"], [1, "hm-astrologer-wrapper", "py-5"], [1, "container"], [1, "hm-astrologer-header", "mb-5"], [1, "mt-5", "mb-1"], [1, "separator", "home"], [1, "text"], [1, "float-right"], ["mat-raised-button", "", "color", "primary", 3, "click"], [3, "options"], [4, "ngFor", "ngForOf"], [1, "hm-horoscope-wrapper", "mb-5"], [1, "hm-horoscope-header", "mb-5"], [1, "row", "hm-horoscope-block", "my-4"], [1, "col", "no-gutter"], ["href", "#"], ["src", "../../../assets//images/zodiac/arise.png"], ["src", "../../../assets//images/zodiac/taurus.png"], ["src", "../../../assets//images/zodiac/gemini.png"], ["src", "../../../assets//images/zodiac/cancer.png"], ["src", "../../../assets//images/zodiac/leo.png"], ["src", "../../../assets//images/zodiac/virgo.png"], [1, "row", "hm-horoscope-block"], ["src", "../../../assets//images/zodiac/libra.png"], ["src", "../../../assets//images/zodiac/scorpio.png"], ["src", "../../../assets//images/zodiac/sagittarius.png"], ["src", "../../../assets//images/zodiac/capricorn.png"], ["src", "../../../assets//images/zodiac/aquarius.png"], ["src", "../../../assets//images/zodiac/pisces.png"], [1, "testimonial-wrapper", "mb-5"], ["carouselSlide", ""], [1, "hm-about-us", "pt-4", "pb-5"], [1, "hm-about-us-block", "mb-5"], [1, "mb-0"], [1, "slide", "astrologer-img", "cardShadow", "my-3", "mr-3", "p-3", "bg-white", "rounded"], [3, "src"], [1, "astro-content"], [1, "slide", "testimonial-img", "cardShadow", "my-3", "mr-3", "p-3", "bg-white", "rounded"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/satwik-150x150-1.jpeg"], [1, "testimonial-content"], [1, "blockquote"], [1, "text-truncate"], [1, "blockquote-footer"], ["title", "Source Title"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/Arnima-150x150-1.jpg"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/Ankur-150x150-1.jpg"], ["src", "//www.saiastrofuture.com/wp-content/uploads/2020/06/rima-150x150-1.jpeg"]],
       template: function HomePageComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -18521,7 +18571,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "DAILY HOROSCOPE");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Astologer's");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18531,27 +18581,31 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "span", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, " Your daily zodiac sign reading free");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Our Astrologer");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "span", 36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "button", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HomePageComponent_Template_button_click_53_listener() {
+            return ctx.hmViewAllAstrologer();
+          });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "View All");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](55, "img", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "owl-carousel-o", 38);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "Mar 21 - Apr 19");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](56, HomePageComponent_56_Template, 1, 0, undefined, 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18559,40 +18613,50 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](57, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "section", 40);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](61, "img", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 41);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "h1", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "Apr 20 - May 20");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "DAILY HOROSCOPE");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 34);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "span", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " Your daily zodiac sign reading free");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 42);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](67, "img", 41);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](70, "img", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "May 21 - Jun 20");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "b");
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Mar 21 - Apr 19");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -18601,17 +18665,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "img", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](76, "img", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "June 21 - July 22");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Apr 20 - May 20");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18621,17 +18685,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](79, "img", 43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](82, "img", 47);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "July 23 - Aug 22");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, "May 21 - Jun 20");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18640,20 +18704,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "div", 37);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](85, "img", 44);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](88, "img", 48);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, "Aug 23 - Sep 22");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, "June 21 - July 22");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18662,20 +18724,18 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "div", 45);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](92, "img", 46);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](94, "img", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, "Sep 23 - Oct 22");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, "July 23 - Aug 22");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18685,17 +18745,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](98, "img", 47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](100, "img", 50);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, "Oct 23 - Nov 21");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "Aug 23 - Sep 22");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18704,18 +18764,22 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "div", 51);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](104, "img", 48);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](107, "img", 52);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, "Nov 22 - Dec 21");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, "Sep 23 - Oct 22");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18725,17 +18789,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](110, "img", 49);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](113, "img", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "Dec 22 - Jan 19");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](116, "Oct 23 - Nov 21");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18745,17 +18809,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](116, "img", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](119, "img", 54);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](119, "Jan 20 - Feb 18");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122, "Nov 22 - Dec 21");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18765,17 +18829,17 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "div", 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "a", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](122, "img", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](125, "img", 55);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "h4");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](125, "Feb 19 - Mar 20");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](128, "Dec 22 - Jan 19");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18785,43 +18849,45 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "section", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](131, "img", 56);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "div", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "div", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "h1", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](134, "Jan 20 - Feb 18");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](131, "About");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "div", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "span", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "a", 44);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](134, "Us");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](137, "img", 57);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](138, "h4");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "b");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](140, "Feb 19 - Mar 20");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, " AstroWorld is the best astrology website for online Astrology predictions. Talk to Astrologer on call and get answers to all your worries by seeing the future life through Astrology Kundli Predictions from the best Astrologers from all over the world. Get best future predictions related to Marriage, love life, Career or Health over call, chat, query or report.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18829,81 +18895,85 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "section", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](141, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](138, "div", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "section", 58);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "div", 56);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "h1", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "div", 41);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](141, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](145, "h1", 33);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](142, "Astologer's");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "b");
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147, "Testimonials");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "span", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "span", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](145, "Our Astrologer");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](150, "What Clients Are Saying");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "owl-carousel-o", 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](152, HomePageComponent_ng_template_152_Template, 14, 0, "ng-template", 59);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "owl-carousel-o", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](153, HomePageComponent_ng_template_153_Template, 14, 0, "ng-template", 59);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](147, HomePageComponent_147_Template, 1, 0, undefined, 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](154, HomePageComponent_ng_template_154_Template, 14, 0, "ng-template", 59);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](155, HomePageComponent_ng_template_155_Template, 11, 0, "ng-template", 59);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](156, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "section", 59);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "section", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "div", 31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "div", 31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](150, "div", 32);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "div", 61);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "h1", 33);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "h1", 62);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "b");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "b");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, "Testimonials");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "About");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](155, "span", 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "span", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](156, "What Clients Are Saying");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](165, "Us");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "owl-carousel-o", 57);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](158, HomePageComponent_ng_template_158_Template, 11, 0, "ng-template", 60);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](159, HomePageComponent_ng_template_159_Template, 11, 0, "ng-template", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](160, HomePageComponent_ng_template_160_Template, 11, 0, "ng-template", 60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](161, HomePageComponent_ng_template_161_Template, 11, 0, "ng-template", 60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](167, " AstroWorld is the best astrology website for online Astrology predictions. Talk to Astrologer on call and get answers to all your worries by seeing the future life through Astrology Kundli Predictions from the best Astrologers from all over the world. Get best future predictions related to Marriage, love life, Career or Health over call, chat, query or report.");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -18913,7 +18983,7 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](146);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx.customOptions);
 
@@ -18921,13 +18991,13 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.astroData);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](95);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("options", ctx.customOptions);
         }
       },
-      directives: [ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_4__["CarouselComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_4__["CarouselSlideDirective"]],
-      styles: [".carousel[_ngcontent-%COMP%] {\n  background: #f9a825;\n}\n\n.carousel-item[_ngcontent-%COMP%]   .img-fluid[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.carousel-item[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n}\n.hm-horoscope-header[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 50%;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:hover {\n  opacity: 0.5;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  margin-top: 10px;\n}\n.hm-about-us[_ngcontent-%COMP%] {\n  background-color: #f9a825;\n  color: #000;\n}\n.hm-about-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 20px;\n  line-height: 1.5;\n}\n.hm-about-us-block[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .slide.astrologer-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 150px;\n  height: 150px;\n  margin: auto;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .astro-content[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .astro-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 30%;\n  margin: auto;\n  border-radius: 50%;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   .testimonial-content[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 12px 7px;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   .testimonial-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 17px;\n  line-height: 27px;\n}\n@media (max-width: 640px) {\n  .hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 80%;\n  }\n  .hm-horoscope-block[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n    font-size: 9px !important;\n  }\n\n  .hm-about-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: 17px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaG9tZS1wYWdlL0M6XFxTYWlBc3Ryb1dvcmxkLTJcXHNhaUFzdHJvV29ybGRHaXRIdWJcXHNhaUFzdHJvV2ViQXBwL3NyY1xcYXBwXFxwYWdlc1xcaG9tZS1wYWdlXFxob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0NBQUE7QUFRQTtFQUNFLG1CQUxTO0FDQ1g7QURPQTs7Q0FBQTtBQUdBO0VBQ0UsV0FBQTtBQ0pGO0FET0E7O0NBQUE7QUFHQTtFQUNFLGNBQUE7RUFDQSxXQUFBO0FDSkY7QURPQTtFQUNFLGtCQUFBO0FDSkY7QURRRTtFQUNFLGtCQUFBO0FDTEo7QURPRTtFQUNFLHFCQUFBO0FDTEo7QURPRTtFQUNBLFVBQUE7QUNMRjtBRE9FO0VBQ0UsWUFBQTtBQ0xKO0FET0U7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0FDTEo7QURTQTtFQUNFLHlCQS9DUztFQWdEVCxXQTlDTTtBQ3dDUjtBRE9FO0VBQ0UsZUFBQTtFQUNBLGdCQUFBO0FDTEo7QURTQTtFQUNFLGtCQUFBO0FDTkY7QURTQTtFQUNHLGtCQUFBO0FDTkg7QURRSTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7QUNOTjtBRFVJO0VBQ0UsZUFBQTtBQ1JOO0FEVUk7RUFDRSxlQUFBO0FDUk47QURlRTtFQUNFLFVBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7QUNaSjtBRGNFO0VBQ0Usa0JBQUE7RUFDQSxpQkFBQTtBQ1pKO0FEY0k7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUNaTjtBRG9EQTtFQUVJO0lBQ0UsVUFBQTtFQ2xESjtFRG9ESTtJQUNFLHlCQUFBO0VDbEROOztFRHNEQTtJQUNFLGVBQUE7RUNuREY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG5SZW1vdmVzIHdoaXRlIGdhcCBiZXR3ZWVuIHNsaWRlcyAtIGNoYWduZ2UgdG8gYmFzZSBjb2xvciBvZiBzbGlkZSBpbWFnZXNcclxuKi9cclxuXHJcbiRwcmltYXJ5IDogI2Y5YTgyNTtcclxuJHdoaXRlIDogI2ZmZjtcclxuJGJsYWNrOiAjMDAwO1xyXG5cclxuLmNhcm91c2VsIHtcclxuICBiYWNrZ3JvdW5kOiRwcmltYXJ5O1xyXG59XHJcblxyXG4vKlxyXG5Gb3JjZXMgaW1hZ2UgdG8gYmUgMTAwJSB3aWR0aCBhbmQgbm90IG1heCB3aWR0aCBvZiAxMDAlXHJcbiovXHJcbi5jYXJvdXNlbC1pdGVtIC5pbWctZmx1aWQge1xyXG4gIHdpZHRoOjEwMCU7XHJcbn1cclxuXHJcbi8qXHJcbmFuY2hvcnMgYXJlIGlubGluZSBzbyB5b3UgbmVlZCBvdCBtYWtlIHRoZW0gYmxvY2sgdG8gZ28gZnVsbCB3aWR0aFxyXG4qL1xyXG4uY2Fyb3VzZWwtaXRlbSBhIHtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICB3aWR0aDoxMDAlO1xyXG59XHJcblxyXG4uaG0taG9yb3Njb3BlLWhlYWRlciB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uaG0taG9yb3Njb3BlLWJsb2NrIHtcclxuICBkaXYge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuICBhIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICB9XHJcbiAgaW1ne1xyXG4gIHdpZHRoOiA1MCVcclxuICB9XHJcbiAgaW1nOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMC41O1xyXG4gIH1cclxuICBoNHtcclxuICAgIGZvbnQtc2l6ZTogMTNweCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcbn1cclxuXHJcbi5obS1hYm91dC11c3tcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAkcHJpbWFyeTtcclxuICBjb2xvcjogJGJsYWNrO1xyXG4gIHAge1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICB9XHJcbn1cclxuXHJcbi5obS1hYm91dC11cy1ibG9ja3tcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5obS1hc3Ryb2xvZ2VyLXdyYXBwZXIge1xyXG4gICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgLnNsaWRlLmFzdHJvbG9nZXItaW1nIHtcclxuICAgIGltZ3tcclxuICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgICBtYXJnaW46IGF1dG87XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgbWFyZ2luLWJvdHRvbTogMjVweDtcclxuICAgIH1cclxuICB9XHJcbiAgLmFzdHJvLWNvbnRlbnR7XHJcbiAgICBoMXtcclxuICAgICAgZm9udC1zaXplOiAxN3B4O1xyXG4gICAgfVxyXG4gICAgcCB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIH1cclxuICB9XHJcblxyXG59XHJcblxyXG4uc2xpZGUudGVzdGltb25pYWwtaW1nIHtcclxuICBpbWcge1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICB9XHJcbiAgLnRlc3RpbW9uaWFsLWNvbnRlbnQge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogMTJweCA3cHg7XHJcblxyXG4gICAgcCB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgICAgbGluZS1oZWlnaHQ6IDI3cHg7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5cclxuXHJcbi8vIC5vd2wtdGhlbWUgLm93bC1uYXYgLm93bC1uZXh0IHtcclxuLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbi8vICAgdG9wOiAxMjFweDtcclxuLy8gICByaWdodDogLTI0cHg7XHJcbi8vIH1cclxuXHJcbi8vIC5vd2wtdGhlbWUgLm93bC1uYXYgIC5vd2wtcHJldiB7XHJcbi8vICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4vLyAgIHRvcDogMTIzcHg7XHJcbi8vICAgbGVmdDogLTM0cHg7XHJcbi8vIH1cclxuXHJcbi8vIC5obS1hc3Ryb2xvZ2VyLXdyYXBwZXJ7XHJcbi8vICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4vLyAgIC5hc3Ryb19pbWcgaW1nIHtcclxuLy8gICAgIHdpZHRoOjEwMCU7XHJcbi8vICAgfVxyXG4vLyAgIHB7XHJcbi8vICAgICBmb250LXNpemU6IDE1cHg7XHJcbi8vICAgICBmb250LXdlaWdodDogNzAwO1xyXG4vLyAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuLy8gICB9XHJcblxyXG4vLyB9XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XHJcblxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHtcclxuXHJcbn1cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA2NDBweCkge1xyXG4gIC5obS1ob3Jvc2NvcGUtYmxvY2sge1xyXG4gICAgaW1ne1xyXG4gICAgICB3aWR0aDogODAlXHJcbiAgICAgIH1cclxuICAgICAgaDR7XHJcbiAgICAgICAgZm9udC1zaXplOiA5cHggIWltcG9ydGFudDtcclxuICAgICAgfVxyXG4gIH1cclxuXHJcbiAgLmhtLWFib3V0LXVzIHB7XHJcbiAgICBmb250LXNpemU6IDE3cHg7XHJcbiAgfVxyXG5cclxufVxyXG4iLCIvKlxuUmVtb3ZlcyB3aGl0ZSBnYXAgYmV0d2VlbiBzbGlkZXMgLSBjaGFnbmdlIHRvIGJhc2UgY29sb3Igb2Ygc2xpZGUgaW1hZ2VzXG4qL1xuLmNhcm91c2VsIHtcbiAgYmFja2dyb3VuZDogI2Y5YTgyNTtcbn1cblxuLypcbkZvcmNlcyBpbWFnZSB0byBiZSAxMDAlIHdpZHRoIGFuZCBub3QgbWF4IHdpZHRoIG9mIDEwMCVcbiovXG4uY2Fyb3VzZWwtaXRlbSAuaW1nLWZsdWlkIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi8qXG5hbmNob3JzIGFyZSBpbmxpbmUgc28geW91IG5lZWQgb3QgbWFrZSB0aGVtIGJsb2NrIHRvIGdvIGZ1bGwgd2lkdGhcbiovXG4uY2Fyb3VzZWwtaXRlbSBhIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaG0taG9yb3Njb3BlLWhlYWRlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmhtLWhvcm9zY29wZS1ibG9jayBkaXYge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGltZyB7XG4gIHdpZHRoOiA1MCU7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGltZzpob3ZlciB7XG4gIG9wYWNpdHk6IDAuNTtcbn1cbi5obS1ob3Jvc2NvcGUtYmxvY2sgaDQge1xuICBmb250LXNpemU6IDEzcHggIWltcG9ydGFudDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLmhtLWFib3V0LXVzIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y5YTgyNTtcbiAgY29sb3I6ICMwMDA7XG59XG4uaG0tYWJvdXQtdXMgcCB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDEuNTtcbn1cblxuLmhtLWFib3V0LXVzLWJsb2NrIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4uaG0tYXN0cm9sb2dlci13cmFwcGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmhtLWFzdHJvbG9nZXItd3JhcHBlciAuc2xpZGUuYXN0cm9sb2dlci1pbWcgaW1nIHtcbiAgd2lkdGg6IDE1MHB4O1xuICBoZWlnaHQ6IDE1MHB4O1xuICBtYXJnaW46IGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgbWFyZ2luLWJvdHRvbTogMjVweDtcbn1cbi5obS1hc3Ryb2xvZ2VyLXdyYXBwZXIgLmFzdHJvLWNvbnRlbnQgaDEge1xuICBmb250LXNpemU6IDE3cHg7XG59XG4uaG0tYXN0cm9sb2dlci13cmFwcGVyIC5hc3Ryby1jb250ZW50IHAge1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5zbGlkZS50ZXN0aW1vbmlhbC1pbWcgaW1nIHtcbiAgd2lkdGg6IDMwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG59XG4uc2xpZGUudGVzdGltb25pYWwtaW1nIC50ZXN0aW1vbmlhbC1jb250ZW50IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAxMnB4IDdweDtcbn1cbi5zbGlkZS50ZXN0aW1vbmlhbC1pbWcgLnRlc3RpbW9uaWFsLWNvbnRlbnQgcCB7XG4gIGZvbnQtc2l6ZTogMTdweDtcbiAgbGluZS1oZWlnaHQ6IDI3cHg7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA2NDBweCkge1xuICAuaG0taG9yb3Njb3BlLWJsb2NrIGltZyB7XG4gICAgd2lkdGg6IDgwJTtcbiAgfVxuICAuaG0taG9yb3Njb3BlLWJsb2NrIGg0IHtcbiAgICBmb250LXNpemU6IDlweCAhaW1wb3J0YW50O1xuICB9XG5cbiAgLmhtLWFib3V0LXVzIHAge1xuICAgIGZvbnQtc2l6ZTogMTdweDtcbiAgfVxufSJdfQ== */"]
+      directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_6__["CarouselComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], ngx_owl_carousel_o__WEBPACK_IMPORTED_MODULE_6__["CarouselSlideDirective"]],
+      styles: ["hr[_ngcontent-%COMP%] {\n  border-top: 1px solid #f9a825;\n}\n.carousel[_ngcontent-%COMP%] {\n  background: #f9a825;\n}\n\n.carousel-item[_ngcontent-%COMP%]   .img-fluid[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n.carousel-item[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n}\n.hm-horoscope-header[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 50%;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:hover {\n  opacity: 0.5;\n}\n.hm-horoscope-block[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  font-size: 13px !important;\n  margin-top: 10px;\n}\n.hm-about-us[_ngcontent-%COMP%] {\n  color: #000;\n}\n.hm-about-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 20px;\n  line-height: 1.5;\n}\n.hm-about-us-block[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%] {\n  text-align: center;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .slide.astrologer-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 150px;\n  height: 150px;\n  margin: auto;\n  border-radius: 50%;\n  margin-bottom: 25px;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .astro-content[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 17px;\n}\n.hm-astrologer-wrapper[_ngcontent-%COMP%]   .astro-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 30%;\n  margin: auto;\n  border-radius: 50%;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   .testimonial-content[_ngcontent-%COMP%] {\n  padding: 12px 7px;\n}\n.slide.testimonial-img[_ngcontent-%COMP%]   .testimonial-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 17px;\n  line-height: 27px;\n}\n@media (max-width: 640px) {\n  .hm-horoscope-block[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 80%;\n  }\n  .hm-horoscope-block[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n    font-size: 9px !important;\n  }\n\n  .hm-about-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: 17px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvaG9tZS1wYWdlL0M6XFxTYWlBc3Ryb1dvcmxkLTJcXHNhaUFzdHJvV29ybGRHaXRIdWJcXHNhaUFzdHJvV2ViQXBwL3NyY1xcYXBwXFxwYWdlc1xcaG9tZS1wYWdlXFxob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0NBQUE7QUFRQTtFQUNFLDZCQUFBO0FDSkY7QURNQTtFQUNFLG1CQVJTO0FDS1g7QURNQTs7Q0FBQTtBQUdBO0VBQ0UsV0FBQTtBQ0hGO0FETUE7O0NBQUE7QUFHQTtFQUNFLGNBQUE7RUFDQSxXQUFBO0FDSEY7QURNQTtFQUNFLGtCQUFBO0FDSEY7QURPRTtFQUNFLGtCQUFBO0FDSko7QURNRTtFQUNFLHFCQUFBO0FDSko7QURNRTtFQUNBLFVBQUE7QUNKRjtBRE1FO0VBQ0UsWUFBQTtBQ0pKO0FETUU7RUFDRSwwQkFBQTtFQUNBLGdCQUFBO0FDSko7QURRQTtFQUVFLFdBakRNO0FDMkNSO0FET0U7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7QUNMSjtBRFNBO0VBQ0Usa0JBQUE7QUNORjtBRFNBO0VBQ0csa0JBQUE7QUNOSDtBRFFJO0VBQ0UsWUFBQTtFQUNBLGFBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtBQ05OO0FEVUk7RUFDRSxlQUFBO0FDUk47QURVSTtFQUNFLGVBQUE7QUNSTjtBRGVFO0VBQ0UsVUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtBQ1pKO0FEY0U7RUFFRSxpQkFBQTtBQ2JKO0FEZUk7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUNiTjtBRHFEQTtFQUVJO0lBQ0UsVUFBQTtFQ25ESjtFRHFESTtJQUNFLHlCQUFBO0VDbkROOztFRHVEQTtJQUNFLGVBQUE7RUNwREY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG5SZW1vdmVzIHdoaXRlIGdhcCBiZXR3ZWVuIHNsaWRlcyAtIGNoYWduZ2UgdG8gYmFzZSBjb2xvciBvZiBzbGlkZSBpbWFnZXNcclxuKi9cclxuXHJcbiRwcmltYXJ5IDogI2Y5YTgyNTtcclxuJHdoaXRlIDogI2ZmZjtcclxuJGJsYWNrOiAjMDAwO1xyXG5cclxuaHIge1xyXG4gIGJvcmRlci10b3AgOiAxcHggc29saWQgJHByaW1hcnk7XHJcbn1cclxuLmNhcm91c2VsIHtcclxuICBiYWNrZ3JvdW5kOiRwcmltYXJ5O1xyXG59XHJcblxyXG4vKlxyXG5Gb3JjZXMgaW1hZ2UgdG8gYmUgMTAwJSB3aWR0aCBhbmQgbm90IG1heCB3aWR0aCBvZiAxMDAlXHJcbiovXHJcbi5jYXJvdXNlbC1pdGVtIC5pbWctZmx1aWQge1xyXG4gIHdpZHRoOjEwMCU7XHJcbn1cclxuXHJcbi8qXHJcbmFuY2hvcnMgYXJlIGlubGluZSBzbyB5b3UgbmVlZCBvdCBtYWtlIHRoZW0gYmxvY2sgdG8gZ28gZnVsbCB3aWR0aFxyXG4qL1xyXG4uY2Fyb3VzZWwtaXRlbSBhIHtcclxuICBkaXNwbGF5OiBibG9jaztcclxuICB3aWR0aDoxMDAlO1xyXG59XHJcblxyXG4uaG0taG9yb3Njb3BlLWhlYWRlciB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uaG0taG9yb3Njb3BlLWJsb2NrIHtcclxuICBkaXYge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuICBhIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICB9XHJcbiAgaW1ne1xyXG4gIHdpZHRoOiA1MCVcclxuICB9XHJcbiAgaW1nOmhvdmVye1xyXG4gICAgb3BhY2l0eTogMC41O1xyXG4gIH1cclxuICBoNHtcclxuICAgIGZvbnQtc2l6ZTogMTNweCAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICB9XHJcbn1cclxuXHJcbi5obS1hYm91dC11c3tcclxuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiAkcHJpbWFyeTtcclxuICBjb2xvcjogJGJsYWNrO1xyXG4gIHAge1xyXG4gICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICB9XHJcbn1cclxuXHJcbi5obS1hYm91dC11cy1ibG9ja3tcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5obS1hc3Ryb2xvZ2VyLXdyYXBwZXIge1xyXG4gICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgLnNsaWRlLmFzdHJvbG9nZXItaW1nIHtcclxuICAgIGltZ3tcclxuICAgICAgd2lkdGg6IDE1MHB4O1xyXG4gICAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgICBtYXJnaW46IGF1dG87XHJcbiAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgbWFyZ2luLWJvdHRvbTogMjVweDtcclxuICAgIH1cclxuICB9XHJcbiAgLmFzdHJvLWNvbnRlbnR7XHJcbiAgICBoMXtcclxuICAgICAgZm9udC1zaXplOiAxN3B4O1xyXG4gICAgfVxyXG4gICAgcCB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIH1cclxuICB9XHJcblxyXG59XHJcblxyXG4uc2xpZGUudGVzdGltb25pYWwtaW1nIHtcclxuICBpbWcge1xyXG4gICAgd2lkdGg6IDMwJTtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICB9XHJcbiAgLnRlc3RpbW9uaWFsLWNvbnRlbnQge1xyXG4gICAgLy8gdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogMTJweCA3cHg7XHJcblxyXG4gICAgcCB7XHJcbiAgICAgIGZvbnQtc2l6ZTogMTdweDtcclxuICAgICAgbGluZS1oZWlnaHQ6IDI3cHg7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG5cclxuXHJcbi8vIC5vd2wtdGhlbWUgLm93bC1uYXYgLm93bC1uZXh0IHtcclxuLy8gICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbi8vICAgdG9wOiAxMjFweDtcclxuLy8gICByaWdodDogLTI0cHg7XHJcbi8vIH1cclxuXHJcbi8vIC5vd2wtdGhlbWUgLm93bC1uYXYgIC5vd2wtcHJldiB7XHJcbi8vICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4vLyAgIHRvcDogMTIzcHg7XHJcbi8vICAgbGVmdDogLTM0cHg7XHJcbi8vIH1cclxuXHJcbi8vIC5obS1hc3Ryb2xvZ2VyLXdyYXBwZXJ7XHJcbi8vICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4vLyAgIC5hc3Ryb19pbWcgaW1nIHtcclxuLy8gICAgIHdpZHRoOjEwMCU7XHJcbi8vICAgfVxyXG4vLyAgIHB7XHJcbi8vICAgICBmb250LXNpemU6IDE1cHg7XHJcbi8vICAgICBmb250LXdlaWdodDogNzAwO1xyXG4vLyAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuLy8gICB9XHJcblxyXG4vLyB9XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7XHJcblxyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHtcclxuXHJcbn1cclxuXHJcbkBtZWRpYSAobWF4LXdpZHRoOiA2NDBweCkge1xyXG4gIC5obS1ob3Jvc2NvcGUtYmxvY2sge1xyXG4gICAgaW1ne1xyXG4gICAgICB3aWR0aDogODAlXHJcbiAgICAgIH1cclxuICAgICAgaDR7XHJcbiAgICAgICAgZm9udC1zaXplOiA5cHggIWltcG9ydGFudDtcclxuICAgICAgfVxyXG4gIH1cclxuXHJcbiAgLmhtLWFib3V0LXVzIHB7XHJcbiAgICBmb250LXNpemU6IDE3cHg7XHJcbiAgfVxyXG5cclxufVxyXG4iLCIvKlxuUmVtb3ZlcyB3aGl0ZSBnYXAgYmV0d2VlbiBzbGlkZXMgLSBjaGFnbmdlIHRvIGJhc2UgY29sb3Igb2Ygc2xpZGUgaW1hZ2VzXG4qL1xuaHIge1xuICBib3JkZXItdG9wOiAxcHggc29saWQgI2Y5YTgyNTtcbn1cblxuLmNhcm91c2VsIHtcbiAgYmFja2dyb3VuZDogI2Y5YTgyNTtcbn1cblxuLypcbkZvcmNlcyBpbWFnZSB0byBiZSAxMDAlIHdpZHRoIGFuZCBub3QgbWF4IHdpZHRoIG9mIDEwMCVcbiovXG4uY2Fyb3VzZWwtaXRlbSAuaW1nLWZsdWlkIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi8qXG5hbmNob3JzIGFyZSBpbmxpbmUgc28geW91IG5lZWQgb3QgbWFrZSB0aGVtIGJsb2NrIHRvIGdvIGZ1bGwgd2lkdGhcbiovXG4uY2Fyb3VzZWwtaXRlbSBhIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaG0taG9yb3Njb3BlLWhlYWRlciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmhtLWhvcm9zY29wZS1ibG9jayBkaXYge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGltZyB7XG4gIHdpZHRoOiA1MCU7XG59XG4uaG0taG9yb3Njb3BlLWJsb2NrIGltZzpob3ZlciB7XG4gIG9wYWNpdHk6IDAuNTtcbn1cbi5obS1ob3Jvc2NvcGUtYmxvY2sgaDQge1xuICBmb250LXNpemU6IDEzcHggIWltcG9ydGFudDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbn1cblxuLmhtLWFib3V0LXVzIHtcbiAgY29sb3I6ICMwMDA7XG59XG4uaG0tYWJvdXQtdXMgcCB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDEuNTtcbn1cblxuLmhtLWFib3V0LXVzLWJsb2NrIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4uaG0tYXN0cm9sb2dlci13cmFwcGVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmhtLWFzdHJvbG9nZXItd3JhcHBlciAuc2xpZGUuYXN0cm9sb2dlci1pbWcgaW1nIHtcbiAgd2lkdGg6IDE1MHB4O1xuICBoZWlnaHQ6IDE1MHB4O1xuICBtYXJnaW46IGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgbWFyZ2luLWJvdHRvbTogMjVweDtcbn1cbi5obS1hc3Ryb2xvZ2VyLXdyYXBwZXIgLmFzdHJvLWNvbnRlbnQgaDEge1xuICBmb250LXNpemU6IDE3cHg7XG59XG4uaG0tYXN0cm9sb2dlci13cmFwcGVyIC5hc3Ryby1jb250ZW50IHAge1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5zbGlkZS50ZXN0aW1vbmlhbC1pbWcgaW1nIHtcbiAgd2lkdGg6IDMwJTtcbiAgbWFyZ2luOiBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG59XG4uc2xpZGUudGVzdGltb25pYWwtaW1nIC50ZXN0aW1vbmlhbC1jb250ZW50IHtcbiAgcGFkZGluZzogMTJweCA3cHg7XG59XG4uc2xpZGUudGVzdGltb25pYWwtaW1nIC50ZXN0aW1vbmlhbC1jb250ZW50IHAge1xuICBmb250LXNpemU6IDE3cHg7XG4gIGxpbmUtaGVpZ2h0OiAyN3B4O1xufVxuXG5AbWVkaWEgKG1heC13aWR0aDogNjQwcHgpIHtcbiAgLmhtLWhvcm9zY29wZS1ibG9jayBpbWcge1xuICAgIHdpZHRoOiA4MCU7XG4gIH1cbiAgLmhtLWhvcm9zY29wZS1ibG9jayBoNCB7XG4gICAgZm9udC1zaXplOiA5cHggIWltcG9ydGFudDtcbiAgfVxuXG4gIC5obS1hYm91dC11cyBwIHtcbiAgICBmb250LXNpemU6IDE3cHg7XG4gIH1cbn0iXX0= */"]
     });
     /*@__PURE__*/
 
@@ -18943,9 +19013,11 @@ function _createClass2(Constructor, protoProps, staticProps) { if (protoProps) _
         return [{
           type: _home_page_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"]
         }, {
-          type: src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
         }, {
-          type: _observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_3__["ObservableDataService"]
+          type: src_app_shared_service_commonService_common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]
+        }, {
+          type: _observables_behaviourSubject_service__WEBPACK_IMPORTED_MODULE_4__["ObservableDataService"]
         }];
       }, null);
     })();
