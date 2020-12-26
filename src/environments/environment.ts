@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   urlAddress: 'https://apisaiastroworld.com',
-  paymentUrlAddress: 'http://apisaiastroworld/payment'
+  paymentUrlAddress: 'https://apisaiastroworld.com/payment'
   // urlAddress: 'http://ec2-3-21-75-140.us-east-2.compute.amazonaws.com:3000',
   // paymentUrlAddress: 'http://ec2-3-21-75-140.us-east-2.compute.amazonaws.com:3001'
 };
