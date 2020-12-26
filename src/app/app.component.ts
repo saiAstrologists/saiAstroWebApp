@@ -158,6 +158,7 @@ export class AppComponent implements OnInit {
          this._route.navigate(['dashboard']);
        } else {
          console.log("else condition !!!!!");
+         this.home();
        }
       }
     });

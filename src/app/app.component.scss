@@ -77,10 +77,17 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
     padding: 10px 13px;
     font-size: 12px;
     border: 1px solid $primar;
-    /* margin: 0px 10px; */
+    border-radius: 51%;
     margin-right: 5px;
     color: #fff;
-    border-radius: 51%;
+    &.home{
+      color: #000;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 7px 10px;
+      border: 1px solid #000000;
+      border-radius: 6%;
+    }
     &.facebook{
       background: #3b5998;
     }

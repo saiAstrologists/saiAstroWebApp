@@ -32,7 +32,9 @@ export class AstrologerComponent implements OnInit {
   filter;
   skillArray = [];
   languageArray = [];
+  expArray = [];
   expFilter;
+  searchedByFilter: boolean = false;
 
   constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService,
     private _observableDataService : ObservableDataService,  private _route : Router, private dialog: MatDialog) { }
@@ -86,8 +88,11 @@ export class AstrologerComponent implements OnInit {
 
     let pagination = pageNo != null ? pageNo + 1 : 1;
     console.log("pagination ++", pagination);
-
-    this._service.getAstroListingApi({page : pagination}).subscribe((responseData)=>{
+    if(this.searchedByFilter) {
+        this.filterOperation()
+        this.astroListing = [];
+    } else {
+      this._service.getAstroListingApi({page : pagination}).subscribe((responseData)=>{
 
       console.log("responseData ++++++++++++", responseData);
       let resonseMessage = responseData.message;
@@ -133,11 +138,10 @@ export class AstrologerComponent implements OnInit {
       this._commonService.tostMessage(resonseMessage);
      }
    })
-}
+    }
+  }
 
-loadMore(data){
 
-}
 
   report(value) {
     if( this.userData != null) {
@@ -225,6 +229,7 @@ loadMore(data){
 
   fetchBySkill(filterValue,index) {
     console.log("fetchByExpertise ",filterValue," ",index);
+    this.astroListing = [];
     if(this.skillArray.length > 0){
     let checkSkill = this.skillArray.find(element => {
       return element == filterValue;
@@ -248,6 +253,7 @@ loadMore(data){
 
   fetchByLanguage(filterValue,index){
     console.log("fetchByExpertise ",filterValue," ",index);
+    this.astroListing = [];
     if(this.languageArray.length > 0){
       let checkSkill = this.languageArray.find((element, index) => {
        return element == filterValue;
@@ -269,9 +275,35 @@ loadMore(data){
 
   fetchByExperience(filterValue,index){
     console.log("fetchByExpertise ",filterValue," ",index);
-    this.expFilter = filterValue;
-    console.log("expFilter splice is  ",this.expFilter)
-    this.filterOperation();
+    this.astroListing = [];
+    if(this.expArray.length > 0) {
+      let checkSkill = this.expArray.find((element, index) => {
+       return element == filterValue;
+      })
+    console.log("checkSkill ",checkSkill);
+
+      if(checkSkill && checkSkill != null) {
+        let indexof =  this.expArray.indexOf(checkSkill.toString())
+        this.expArray.splice(indexof,1)
+        console.log("expArray ",this.expArray);
+        this.expFilter = this.expArray.length > 0 ? Math.max(...this.expArray) : '';
+        console.log("expFilter 1st condition ",this.expFilter);
+        this.filterOperation();
+      } else {
+        this.expArray.push(filterValue);
+        this.expFilter = Math.max(...this.expArray);
+        console.log("expFilter 2nd condition ",this.expFilter);
+        this.filterOperation();
+      }
+    } else {
+      this.expArray.push(filterValue);
+      this.expFilter = Math.max(...this.expArray);
+      console.log("expFilter else ",this.expFilter);
+
+      this.filterOperation();
+    }
+
+
   }
 
   fetchByPrice(filterValue){
@@ -284,11 +316,61 @@ loadMore(data){
       "skills":this.skillArray,
       "experience":this.expFilter ? this.expFilter : ''
     }
+    if(filter.languages.length > 0 || filter.skills.length > 0 || filter.experience != ''){
+      console.log("filter is  ",filter)
+      // here pagination condition we have to add..................
+      this.searchedByFilter = true;
 
-    console.log("filter is  ",filter)
-    this._service.getAstroByFilterSkill(filter).subscribe((responseData)=>{
-      console.log("responseData is  ",responseData)
-    })
+      this._service.getAstroByFilterSkill(filter).subscribe((responseData)=>{
+        console.log("responseData is  ",responseData)
+
+        let resonseMessage = responseData.message;
+        if(responseData.status == 200){
+         // this.astroData = responseData.data
+         let filterData = responseData.data
+         if(filterData != null && filterData.length) {
+             filterData.map((element)=>{
+              //  console.log("element is ", element.price?.call)
+                 let obj = {
+                   contactNo : element.contactNo,
+                   countryCode : element.countryCode,
+                   userId: element.userId,
+                   email : element.email,
+                   name : element.name,
+                   userType : element.userType,
+                   experience : element.astrologistDetails.experience,
+                   language : element.astrologistDetails.language,
+                   profilePic : element.astrologistDetails.profilePic,
+                   skills: element.astrologistDetails.skills,
+                   id : element._id,
+                   call: element.price != null ? element.price.call : null,
+                   chat: element.price != null ? element.price.chat : null,
+                   report: element.price != null ? element.price.report : null,
+                   questionAnswer: element.price != null ? element.price.qa : null,
+                   shortBio : element.astrologistDetails.shortBio,
+                   longBio : element.astrologistDetails.longBio,
+                   firebaseUserId: element.firebaseUserId,
+                   activeStatus: element.activeStatus
+                 }
+
+                 this.astroListing.push(obj)
+             })
+             console.log("Filter this.astroData ++++++++++++", this.astroListing);
+             } else {
+                  this._commonService.tostMessage("No More Astrologer Found!");
+               }
+            } else if(responseData.status == 300) {
+                this._commonService.tostMessage(resonseMessage);
+                this._authService.logOut();
+            } else {
+                this._commonService.tostMessage(resonseMessage);
+            }
+
+      })
+    } else {
+      this.searchedByFilter = !this.searchedByFilter;
+      this.getAstroListing(null)
+    }
   }
 
 //   makeCall(value){

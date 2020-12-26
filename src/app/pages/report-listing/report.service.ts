@@ -14,7 +14,7 @@ export class ReportService {
 
 
   submitReport(data): Observable<any> {
-    return this._profileUpdateService.createFormData(RestUrl.submitReport,data)
+    return this.restService.create(RestUrl.submitReport,data)
   }
 
 
