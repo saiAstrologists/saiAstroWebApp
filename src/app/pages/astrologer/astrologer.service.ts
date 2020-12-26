@@ -17,6 +17,9 @@ export class AstrologerService {
     return this.restService.create(RestUrl.getAstroListingApi,data)
   }
 
+  getAstroByFilterSkill(data): Observable<any>{
+    return this.restService.create(RestUrl.getAstroByFilterSkill,data)
+  }
 
 
 }

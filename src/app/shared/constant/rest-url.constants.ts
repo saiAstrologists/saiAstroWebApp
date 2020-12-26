@@ -29,6 +29,11 @@ export class RestUrl {
     public static get verifySignature(): string { return '/rayzorpay/verify/signature'; }
     public static get updateWalletInfo(): string { return '/update/wallet'; }
 
+    //Filters
+    public static get getAstroByFilterSkill(): string { return '/users/filter'; }
+
+
+
 
 
 
