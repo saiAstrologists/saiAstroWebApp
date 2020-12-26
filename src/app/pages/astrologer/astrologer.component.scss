@@ -52,6 +52,9 @@ $black: #000;
 }
 }
 .astrologer-listing-wrapper{
+  .mat-card {
+    min-height: 191px;
+  }
   img{
     width: 80px;
     height: 80px;
@@ -71,6 +74,7 @@ $black: #000;
     font-size: 12px;
     font-weight: bold;
     margin-right: 5px;
+    margin-top: 5px;
   }
 }
 
@@ -97,6 +101,25 @@ $black: #000;
   text-align: center;
   button{
     border: 1px solid red;
+  }
+}
+
+.astrologer-data {
+  h1 {
+    margin-bottom: 5px;
+  }
+  p {
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
+  button.mat-raised-button {
+    background-color: #1aa260;
+    &.Offline {
+      background-color: grey;
+    }
+    &.Bussy {
+      background-color: red;
+    }
   }
 }
 

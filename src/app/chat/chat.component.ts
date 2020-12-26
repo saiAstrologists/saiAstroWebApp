@@ -4,6 +4,7 @@ import { FirebaseService } from '../shared/service/firebase/firebase.service';
 import { ObservableDataService } from '../observables/behaviourSubject.service';
 import { PaymentService } from '../shared/service/payment/payment.service';
 import { HttpParams } from '../../../node_modules/@angular/common/http';
+import { ChatService } from './chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -18,7 +19,8 @@ export class ChatComponent implements OnInit {
   allChatList: any = [];
   viewChatScreen: boolean = false;
   @Input() viewChatOption : boolean = true;
-  constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService) {
+  timer: any;
+  constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService, private chatService: ChatService) {
     this.chatForm = new FormGroup({
       message: new FormControl('', Validators.required)
     }); 
@@ -48,9 +50,11 @@ export class ChatComponent implements OnInit {
 
 
     // if has receiver id
-    if(sessionStorage.getItem('receiverId') && sessionStorage.getItem('chatName')){
-      this.chatName = sessionStorage.getItem('chatName');
+    if(sessionStorage.getItem('receiverId') && sessionStorage.getItem('chatUserDetail')){
+      let chatUserData = JSON.parse(sessionStorage.getItem('chatUserDetail'));
+      this.chatName = chatUserData ? chatUserData.name: '';
       this.viewChatScreen = true;
+      this.startTimer();
     }
     // if has receiver id end
   }
@@ -83,10 +87,14 @@ export class ChatComponent implements OnInit {
     
     this.viewChatScreen = true;
     this.getAllMessage();
+
+  this.startTimer();
   }
 
   viewchatListScreen(){
     this.viewChatScreen = false;
+    clearInterval(this.timer);
+    this.deductChatAmount();
     sessionStorage.removeItem('chatName');
     this.chatListDetail();
   }
@@ -181,7 +189,24 @@ export class ChatComponent implements OnInit {
   
   }
 
-
+  startTimer(){
+    let sec = 0;
+    let min = 0;
+    // start timer
+    this.timer = setInterval(() => {
+      sec++;
+      if(sec > 59){
+        sec = 0;
+        min++;
+      }
+      let chatTime = (((min && min < 10) ? '0'+min : min)+ ':' + ((sec && sec < 10) ? '0' + sec : sec));
+      localStorage.setItem('time', min.toString());
+      console.log(chatTime, 'chat time');
+      return chatTime;
+      
+    }, 1000);
+    // start timer end
+  }
 
   // make order id
   makeOrderid() {
@@ -199,4 +224,24 @@ export class ChatComponent implements OnInit {
     return result;
  }
   // make order id end
+
+  ngOnDestroy(){
+    clearInterval(this.timer);
+    this.deductChatAmount();
+  }
+
+  deductChatAmount(){
+    let userData = JSON.parse(sessionStorage.getItem('userData'));
+    let chatUserData = JSON.parse(sessionStorage.getItem('chatUserDetail'));
+    let reqObj = {
+      type: 'chat',
+      minutes: localStorage.getItem('time') ? parseInt(localStorage.getItem('time')): '',
+      userId: userData.userId,
+      astrologerId: chatUserData.userId
+    }
+    this.chatService.deductChatBalance(reqObj).subscribe(response => {
+      console.log(response, 'chat response');
+      localStorage.removeItem('time');
+    })
+  }
 }
