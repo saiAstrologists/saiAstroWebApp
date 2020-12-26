@@ -37,7 +37,7 @@
 
         <span class="example-spacer"></span>
         <span class="highlight-menu"><a href="javascript:;" (click)="talkToAstro()">Talk to Astrologer</a></span>
-        <span class="highlight-menu"><a href="javascript:;" (click)="chatToAstro()">Chat with Astrologer</a></span>
+        <span class="highlight-menu font-weight-bold"><a href="javascript:;" (click)="chatToAstro()">Chat with Astrologer</a></span>
         <span class="highlight-menu"><a href="javascript:;" (click)="viewReport()">Get Reports</a></span>
         <span class="highlight-menu"><a href="javascript:;" (click)="viewQA()">Ask Question</a></span>
         <span><a href="javascript:;">Horoscope 2020</a> </span>
@@ -76,16 +76,16 @@
 
           <div class="example-button-row">
 
-            <button matTooltip="Chat" matTooltipPosition="left"  mat-mini-fab (click)="chatToAstro()" aria-label="chat icon">
+            <button matTooltip="Chat" class="chat" matTooltipPosition="left"  mat-mini-fab (click)="chatToAstro()" aria-label="chat icon">
               <mat-icon>chat</mat-icon>
             </button>
-            <button matTooltip="Call" matTooltipPosition="before" mat-mini-fab (click)="talkToAstro()"  aria-label="call icon">
+            <button matTooltip="Call" class="call" matTooltipPosition="before" mat-mini-fab (click)="talkToAstro()"  aria-label="call icon">
               <mat-icon>phone</mat-icon>
             </button>
-            <button matTooltip="Report" matTooltipPosition="before" mat-mini-fab  (click)="viewReport()" aria-label="report icon">
+            <button matTooltip="Report" class="report" matTooltipPosition="before" mat-mini-fab  (click)="viewReport()" aria-label="report icon">
               <mat-icon>assignment</mat-icon>
             </button>
-            <button matTooltip="Ask Question" matTooltipPosition="before" mat-mini-fab (click)="viewQA()"  aria-label="Q&A icon">
+            <button matTooltip="Ask Question" class="qtsans" matTooltipPosition="before" mat-mini-fab (click)="viewQA()"  aria-label="Q&A icon">
               <i class="fa fa-question" aria-hidden="true"></i>
             </button>
           </div>

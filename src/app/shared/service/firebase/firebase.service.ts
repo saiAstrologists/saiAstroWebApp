@@ -222,7 +222,7 @@ export class FirebaseService {
               createChatListObj['name'] = userData ? userData.username : null;
               createChatListObj['id'] = userData ? userData.id : null;
               createChatListObj['imageURL'] = userData ? userData.imageURL : null;
-              createChatListObj['shortName'] = this.getShortName(userData.username);
+              createChatListObj['shortName'] = userData ? this.getShortName(userData.username): null;
               createChatListObj['color'] = Math.floor(Math.random()*16777215).toString(16);
               chatList.push(createChatListObj);
             }

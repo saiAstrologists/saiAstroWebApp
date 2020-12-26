@@ -92,16 +92,18 @@ export class AstrologerComponent implements OnInit {
                 name : element.name,
                 userType : element.userType,
                 experience : element.astrologistDetails.experience,
-                language : element.astrologistDetails.language[0],
+                language : element.astrologistDetails.language,
                 profilePic : element.astrologistDetails.profilePic,
+                skills: element.astrologistDetails.skills,
                 id : element._id,
-                call: element.price != null ? element.price?.call : null,
-                chat: element.price != null ? element.price?.chat : null,
-                report: element.price != null ? element.price?.report : null,
-                questionAnswer: element.price != null ? element.price?.qa : null,
+                call: element.price != null ? element.price.call : null,
+                chat: element.price != null ? element.price.chat : null,
+                report: element.price != null ? element.price.report : null,
+                questionAnswer: element.price != null ? element.price.qa : null,
                 shortBio : element.astrologistDetails.shortBio,
                 longBio : element.astrologistDetails.longBio,
-                firebaseUserId: element.firebaseUserId
+                firebaseUserId: element.firebaseUserId,
+                activeStatus: element.activeStatus
               }
 
               this.astroListing.push(obj)
@@ -253,7 +255,7 @@ openConfirmation(userData, type){
     console.log(modalResponse, 'modal response');
     if(modalResponse){
       sessionStorage.setItem('receiverId', userData.firebaseUserId);
-      sessionStorage.setItem('chatName', userData.name)
+      sessionStorage.setItem('chatUserDetail', JSON.stringify(userData));
       this._route.navigate(['/chat']);
     }
   })

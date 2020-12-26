@@ -249,6 +249,25 @@ z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
   //   }
   // }
 
+
+}
+
+.example-button-row {
+  button {
+    color: #fff;
+  }
+  .chat {
+    background-color: #f34235;
+  }
+  .call {
+    background-color: #88bf43;
+  }
+  .report {
+    background-color: #e8a709;
+  }
+  .qtsans {
+    background-color: #01bad2;
+  }
 }
 
 
