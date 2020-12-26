@@ -31,6 +31,10 @@ export class RestUrl {
     public static get deductBalance(): string { return '/users/deductbalance'; }
 
 
+    //blog
+    public static get blogList(): string { return '/users/blog'; }
+
+
 
 
 

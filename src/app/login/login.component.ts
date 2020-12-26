@@ -7,6 +7,7 @@ import {CommonService} from '../shared/service/commonService/common.service'
 import { Router } from '@angular/router';
 import { SocialAuthService } from "angularx-social-login";
 import { FirebaseService } from '../shared/service/firebase/firebase.service';
+import { HttpParams } from '../../../node_modules/@angular/common/http';
 // import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 // import { SocialUser } from "angularx-social-login";
 
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
       otp : ['', Validators.required]
      });
 
+
     //  this.authService.authState.subscribe((user) => {
     //   this.user = user;
     //   this.loggedIn = (user != null);
@@ -63,6 +65,8 @@ export class LoginComponent implements OnInit {
         let responseBody = responseData.data;
 
         if(responseData.status == 200) {
+
+          this.getBlogList(responseData.data.userData.userId);
 
           // call firebase service on login
           let firebaseLoginReq = {
@@ -168,6 +172,18 @@ passwordPattern = (control: FormControl): {[s: string]: boolean} => {
   }else{
     return { passErr: true, error: true };
   }
+}
+
+getBlogList(userId){
+  if(userId) {
+    // let params = new HttpParams().set('userId', userId);
+    this._loginService.blogList().subscribe(response => {
+      if(response){
+        console.log(response, 'blog list');
+        
+      }        
+    })
+  } 
 }
 
 }

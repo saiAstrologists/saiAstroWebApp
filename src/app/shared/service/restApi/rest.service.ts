@@ -46,6 +46,10 @@ export class RestService {
     return this.http.patch(environment.paymentUrlAddress+ route, {}, {params : headerParam})
   }
 
+  public getByParams = (route: string, headerParam: any) =>{
+    return this.http.get(environment.urlAddress+ route, {params : headerParam})
+  }
+
 
 
   // public delete = (route: string) => {
