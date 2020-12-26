@@ -20,7 +20,6 @@
       </mat-form-field> -->
       <!-- <input class="form-control" type="text" > -->
     </div>
-<<<<<<< HEAD
     <div class="row">
     <div class="col-md-3 filter-section">
       <h2>Filter <span><mat-icon>filter_alt</mat-icon></span></h2>
@@ -161,68 +160,6 @@
               <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat(element)">Chat</button>
               <button *ngIf="QAndAFlag" mat-raised-button color="primary" (click)="question(element)">Ask Question</button>
             </div>
-=======
-    <div class="row astrologer-listing-wrapper" *ngIf="!this.isDetailPage">
-
-      <div class="col-md-4 my-3" *ngFor="let element of astroListing | filter:searchText">
-        <mat-card>
-        <div class="row">
-          <div class="col-4">
-            <div class="img-holder" (click)="detailPage(element)">
-              <img src="{{element.profilePic ? element.profilePic : '../../../assets//images/user/default-user.jpg'}}">
-            </div>
-            <!-- <div class="rating"></div> -->
-          </div>
-          <div class="col-8 astrologer-data">
-            <h1>{{element.name}} <span><mat-icon>verified</mat-icon></span></h1>
-            <p>{{element.language}}</p>
-            <p>{{element.skills}}</p>
-            <!-- <p>{{userData.countryCode}} NT$</p> -->
-            <p *ngIf="userData?.countryCode || element?.countryCode">
-              <span *ngIf="CallBtnFlag"> Call
-              <span *ngIf="(userData?.countryCode || element?.countryCode) == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-              <span *ngIf="(userData?.countryCode || element?.countryCode) == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
-              <span *ngIf="(userData?.countryCode || element?.countryCode) == '+886'"> NT$ </span>
-              {{element.call}}/min
-              </span>
-            </p>
-              <!-- <i [ngClass]="userData.countryCode == '+91' ? 'fa fa-inr' : userData.countryCode == '+1' ? 'fa fa-usd' : null" aria-hidden="true"></i> {{userData.countryCode == '+886'}} ? NT$ : '' </span> {{element.call}}/min</p> -->
-              <!-- Call {{userData.countryCode == '+91'}} ? &#8377; : {{userData.countryCode == '+1'}} ? : &#36; : NT$ {{element.call}}/min</p> -->
-
-            <p *ngIf="userData?.countryCode || element?.countryCode">
-            <span *ngIf="ChatBtnFlag"> Chat
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+886'"> NT$ </span>
-              {{element.chat}}/min</span>
-            </p>
-
-            <p *ngIf="userData?.countryCode || element?.countryCode">
-            <span *ngIf="ReportBtnFlag">
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+886'"> NT$ </span>
-              {{element.report}}/report</span>
-            </p>
-
-            <p *ngIf="userData?.countryCode || element?.countryCode">
-            <span *ngIf="QAndAFlag">
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+91'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+1'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
-                <span *ngIf="(userData?.countryCode || element?.countryCode) == '+886'"> NT$ </span>
-              {{element.questionAnswer}}/Q&A</span>
-              </p>
-
-              <p class="experience" *ngIf="element?.experience">
-                Exp : {{element.experience}}
-              </p>
-
-
-            <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="report(element)">Report</button>
-            <button *ngIf="CallBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="call(element)">Call</button>
-            <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="chat(element)">Chat</button>
-            <button *ngIf="QAndAFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="question(element)">Ask Question</button>
->>>>>>> 56c561e99f7e86c3c8f56d85810074b22fabba04
           </div>
         </mat-card>
         </div>
