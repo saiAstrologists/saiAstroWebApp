@@ -7,6 +7,7 @@ import {CommonService} from '../shared/service/commonService/common.service'
 import { Router } from '@angular/router';
 import { SocialAuthService } from "angularx-social-login";
 import { FirebaseService } from '../shared/service/firebase/firebase.service';
+import { HttpParams } from '../../../node_modules/@angular/common/http';
 // import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 // import { SocialUser } from "angularx-social-login";
 
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.otpForm = this._formBuilder.group({
       otp : ['', Validators.required]
      });
+
 
     //  this.authService.authState.subscribe((user) => {
     //   this.user = user;
@@ -165,5 +167,6 @@ passwordPattern = (control: FormControl): {[s: string]: boolean} => {
     return { passErr: true, error: true };
   }
 }
+
 
 }

@@ -206,6 +206,11 @@ export class AppComponent implements OnInit {
     // }
   }
 
+  viewBlog(){
+    this._route.navigate(['blog']);
+    this.sidenav.close();
+  }
+
 
   logOut(){
     this.authService.logOut();

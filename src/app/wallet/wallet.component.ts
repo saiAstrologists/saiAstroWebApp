@@ -98,7 +98,8 @@ export class WalletComponent implements OnInit {
         console.log(response, 'place order');
         if(response) {
           const options: any = {
-            key: 'rzp_test_ZeUhqzQZ4q0Gbg',
+            // key: 'rzp_test_ZeUhqzQZ4q0Gbg',
+            key: 'rzp_test_9fwXLvcXeE9B1v',
             amount: response['amount'], // amount should be in paise format to display Rs 1255 without decimal point
             currency: response['currency'],
             name: '', // company name or product name

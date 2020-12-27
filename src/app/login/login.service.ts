@@ -20,5 +20,4 @@ export class loginService {
   loginFirebase(data): Observable<any> {
     return this.restService.create(RestUrl.loginFirebase, data)
   }
-
 }

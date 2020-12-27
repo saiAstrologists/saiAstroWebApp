@@ -1,0 +1,9 @@
+.blog-detail-wrapper {
+    margin: 3rem 0 0;
+    .blog-main-view {
+        p > img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

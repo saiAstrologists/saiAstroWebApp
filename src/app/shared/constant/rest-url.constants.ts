@@ -34,6 +34,9 @@ export class RestUrl {
     //Filters
     public static get getAstroByFilterSkill(): string { return '/users/filter'; }
 
+    // blog
+    public static get blogList(): string { return '/users/blog'; }
+
 
 
 
