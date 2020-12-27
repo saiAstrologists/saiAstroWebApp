@@ -66,8 +66,6 @@ export class LoginComponent implements OnInit {
 
         if(responseData.status == 200) {
 
-          this.getBlogList(responseData.data.userData.userId);
-
           // call firebase service on login
           let firebaseLoginReq = {
             email: responseBody.userData.email,
@@ -170,16 +168,5 @@ passwordPattern = (control: FormControl): {[s: string]: boolean} => {
   }
 }
 
-getBlogList(userId){
-  if(userId) {
-    // let params = new HttpParams().set('userId', userId);
-    this._loginService.blogList().subscribe(response => {
-      if(response){
-        console.log(response, 'blog list');
-        
-      }        
-    })
-  } 
-}
 
 }

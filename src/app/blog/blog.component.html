@@ -1,0 +1,14 @@
+<div class="blog-wrapper">
+    <div class="container">
+        <div class="blog-listing">
+            <div class="row">
+                <div class="col-md-4 list" *ngFor="let list of blogList; let i = index">
+                    <mat-card class="blog-view" (click)="viewBlogDetail(list)">
+                        <h3>{{list.blogTitle}}</h3>
+                        <div class="blog-detail" [innerHtml]="list.blogBody"></div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

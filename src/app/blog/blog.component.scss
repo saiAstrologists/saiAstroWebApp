@@ -1,0 +1,32 @@
+.blog-wrapper {
+    margin-top: 3rem;
+}
+.blog-listing {
+    .blog-view {
+        min-height: 370PX;
+        max-height: 370PX;
+        overflow: hidden;
+        margin: 0 0 2rem;
+        background-color: #fff;
+        cursor: pointer;
+        h3 {
+            font-weight: 700;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .blog-detail {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            img {
+                max-width: 100% ;
+                width: 100% ;
+                height: auto;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

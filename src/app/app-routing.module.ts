@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'home' , loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)},
   { path: 'dashboard' , loadChildren: () => import('./Dashboard/dashboard-module.module').then(m => m.DashboardModuleModule)},
+  { path: 'blog' , loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)},
   { path: 'wallet' , component: WalletComponent}
 
 
