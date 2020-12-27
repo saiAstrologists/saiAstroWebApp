@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ObservableDataService } from 'src/app/observables/behaviourSubject.service';
 import { Router } from '@angular/router';
 import { AstrologerService } from './astrologer.service';
@@ -6,6 +6,7 @@ import { CommonService } from 'src/app/shared/service/commonService/common.servi
 import { AuthService } from 'src/app/auth/auth.service';
 import { MatDialog } from '../../../../node_modules/@angular/material/dialog';
 import { ConfirmationComponent } from '../../confirmation/confirmation.component';
+import {MatAccordion} from '@angular/material/expansion';
 @Component({
   selector: 'app-astrologer',
   templateUrl: './astrologer.component.html',
@@ -13,20 +14,34 @@ import { ConfirmationComponent } from '../../confirmation/confirmation.component
 })
 export class AstrologerComponent implements OnInit {
 
+  @ViewChild(MatAccordion) accordion: MatAccordion;
   ReportBtnFlag : boolean = false;
   ChatBtnFlag : boolean = false;
   CallBtnFlag : boolean = false;
   QAndAFlag : boolean = false;
   astroListing = [];
+  expertise = ['Vedic Astrology','Nadi Astrology','Gemology','Nummerology','Vastu','Fengshui','KP Astrology','Prashna Kundali'];
+  languages = ['Bangla','English','Gujarati','Hindi','Kannada','Marathi','Tamil','Telugu','Punjabi','Malayalam','Marwari'];
+  experience = ['10','20','m20'];
+  // price = ['High to low','Low to high'];
   isDetailPage : boolean = false;
   detailData;
   userData;
+  countryCode;
   searchText;
   filter;
-  constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService, private _observableDataService : ObservableDataService,  private _route : Router, private dialog: MatDialog) { }
+  skillArray = [];
+  languageArray = [];
+  expArray = [];
+  expFilter;
+  searchedByFilter: boolean = false;
+
+  constructor(private _service : AstrologerService, private _authService : AuthService, private _commonService: CommonService,
+    private _observableDataService : ObservableDataService,  private _route : Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('userData'))
+    this.countryCode = sessionStorage.getItem('CC')
 
     this._observableDataService.checkUserOperationFlag.subscribe((ObserveData) => {
         console.log("ObserveData +++++++ ", ObserveData);
@@ -73,8 +88,11 @@ export class AstrologerComponent implements OnInit {
 
     let pagination = pageNo != null ? pageNo + 1 : 1;
     console.log("pagination ++", pagination);
-
-    this._service.getAstroListingApi({page : pagination}).subscribe((responseData)=>{
+    if(this.searchedByFilter) {
+        this.filterOperation()
+        this.astroListing = [];
+    } else {
+      this._service.getAstroListingApi({page : pagination}).subscribe((responseData)=>{
 
       console.log("responseData ++++++++++++", responseData);
       let resonseMessage = responseData.message;
@@ -120,11 +138,10 @@ export class AstrologerComponent implements OnInit {
       this._commonService.tostMessage(resonseMessage);
      }
    })
-}
+    }
+  }
 
-loadMore(data){
 
-}
 
   report(value) {
     if( this.userData != null) {
@@ -141,7 +158,6 @@ loadMore(data){
   }
 
   call(value) {
-
     console.log(" this.userData ------>> ",this.userData);
     console.log(" call value ------>> ",value);
     if( this.userData != null) {
@@ -161,7 +177,6 @@ loadMore(data){
                 let resonseMessage = responseData.message;
                 this._commonService.tostMessage(resonseMessage);
             })
-
       } else {
         this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
       }
@@ -171,7 +186,6 @@ loadMore(data){
   }
 
   chat(element){
-
     if( this.userData != null) {
       if(this.userData.userType == 1) {
         console.log("Can chat ");
@@ -187,7 +201,6 @@ loadMore(data){
       } else {
         this._commonService.tostMessage("Login is required!");
       }
-
   }
 
   question(value){
@@ -210,10 +223,155 @@ loadMore(data){
     this.isDetailPage = !this.isDetailPage;
   }
 
-  goBack(){
+  goBack() {
     this.isDetailPage = !this.isDetailPage;
   }
 
+  fetchBySkill(filterValue,index) {
+    console.log("fetchByExpertise ",filterValue," ",index);
+    this.astroListing = [];
+    if(this.skillArray.length > 0){
+    let checkSkill = this.skillArray.find(element => {
+      return element == filterValue;
+    })
+    if(checkSkill && checkSkill != null){
+      let indexof =  this.skillArray.indexOf(checkSkill.toString())
+      this.skillArray.splice(indexof,1)
+      console.log("skillArray splice is  ",this.skillArray)
+      this.filterOperation();
+    } else {
+      this.skillArray.push(filterValue);
+      console.log("skillArray is  ",this.skillArray)
+      this.filterOperation();
+    }
+  } else {
+      this.skillArray.push(filterValue);
+      this.filterOperation();
+    }
+  }
+
+
+  fetchByLanguage(filterValue,index){
+    console.log("fetchByExpertise ",filterValue," ",index);
+    this.astroListing = [];
+    if(this.languageArray.length > 0){
+      let checkSkill = this.languageArray.find((element, index) => {
+       return element == filterValue;
+      })
+      if(checkSkill && checkSkill != null) {
+        let indexof =  this.languageArray.indexOf(checkSkill.toString())
+        this.languageArray.splice(indexof,1)
+        this.filterOperation();
+      } else {
+        this.languageArray.push(filterValue);
+        this.filterOperation();
+      }
+    } else {
+      this.languageArray.push(filterValue);
+      this.filterOperation();
+    }
+  }
+
+
+  fetchByExperience(filterValue,index){
+    console.log("fetchByExpertise ",filterValue," ",index);
+    this.astroListing = [];
+    if(this.expArray.length > 0) {
+      let checkSkill = this.expArray.find((element, index) => {
+       return element == filterValue;
+      })
+    console.log("checkSkill ",checkSkill);
+
+      if(checkSkill && checkSkill != null) {
+        let indexof =  this.expArray.indexOf(checkSkill.toString())
+        this.expArray.splice(indexof,1)
+        console.log("expArray ",this.expArray);
+        this.expFilter = this.expArray.length > 0 ? Math.max(...this.expArray) : '';
+        console.log("expFilter 1st condition ",this.expFilter);
+        this.filterOperation();
+      } else {
+        this.expArray.push(filterValue);
+        this.expFilter = Math.max(...this.expArray);
+        console.log("expFilter 2nd condition ",this.expFilter);
+        this.filterOperation();
+      }
+    } else {
+      this.expArray.push(filterValue);
+      this.expFilter = Math.max(...this.expArray);
+      console.log("expFilter else ",this.expFilter);
+
+      this.filterOperation();
+    }
+
+
+  }
+
+  fetchByPrice(filterValue){
+    console.log("fetchByPrice ",filterValue)
+  }
+
+  filterOperation() {
+    let filter = {
+      "languages":this.languageArray,
+      "skills":this.skillArray,
+      "experience":this.expFilter ? this.expFilter : ''
+    }
+    if(filter.languages.length > 0 || filter.skills.length > 0 || filter.experience != ''){
+      console.log("filter is  ",filter)
+      // here pagination condition we have to add..................
+      this.searchedByFilter = true;
+
+      this._service.getAstroByFilterSkill(filter).subscribe((responseData)=>{
+        console.log("responseData is  ",responseData)
+
+        let resonseMessage = responseData.message;
+        if(responseData.status == 200){
+         // this.astroData = responseData.data
+         let filterData = responseData.data
+         if(filterData != null && filterData.length) {
+             filterData.map((element)=>{
+              //  console.log("element is ", element.price?.call)
+                 let obj = {
+                   contactNo : element.contactNo,
+                   countryCode : element.countryCode,
+                   userId: element.userId,
+                   email : element.email,
+                   name : element.name,
+                   userType : element.userType,
+                   experience : element.astrologistDetails.experience,
+                   language : element.astrologistDetails.language,
+                   profilePic : element.astrologistDetails.profilePic,
+                   skills: element.astrologistDetails.skills,
+                   id : element._id,
+                   call: element.price != null ? element.price.call : null,
+                   chat: element.price != null ? element.price.chat : null,
+                   report: element.price != null ? element.price.report : null,
+                   questionAnswer: element.price != null ? element.price.qa : null,
+                   shortBio : element.astrologistDetails.shortBio,
+                   longBio : element.astrologistDetails.longBio,
+                   firebaseUserId: element.firebaseUserId,
+                   activeStatus: element.activeStatus
+                 }
+
+                 this.astroListing.push(obj)
+             })
+             console.log("Filter this.astroData ++++++++++++", this.astroListing);
+             } else {
+                  this._commonService.tostMessage("No More Astrologer Found!");
+               }
+            } else if(responseData.status == 300) {
+                this._commonService.tostMessage(resonseMessage);
+                this._authService.logOut();
+            } else {
+                this._commonService.tostMessage(resonseMessage);
+            }
+
+      })
+    } else {
+      this.searchedByFilter = !this.searchedByFilter;
+      this.getAstroListing(null)
+    }
+  }
 
 //   makeCall(value){
 //     this.userData = JSON.parse(sessionStorage.getItem('userData'))

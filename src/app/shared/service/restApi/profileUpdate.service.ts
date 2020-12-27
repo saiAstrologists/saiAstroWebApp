@@ -20,7 +20,10 @@ export class ProfileUpdateService {
 
   public createProfile = (route: string, body) => {
     console.log("route",route," createProfile body",body);
-    return this.http.post(environment.urlAddress + route, body);
+    let setHeaders = new HttpHeaders({
+      'Authorization':  this.getAuthenticatedToken,
+    })
+    return this.http.post(environment.urlAddress + route, body, {headers : setHeaders});
   };
 
   public createFormData = (route: string, body) => {
@@ -36,7 +39,12 @@ export class ProfileUpdateService {
 
   public getIPAddress = (route: string) => {
     console.log("**GET getIPAddress **", "route",route);
-    return this.http.get(route);
+    let setHeaders = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+    // return this.http.get(route,{headers : setHeaders});
+    return this.http.get(route,{headers : setHeaders, responseType : 'json'});
+
   };
 
   handleError(error) {

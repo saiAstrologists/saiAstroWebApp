@@ -14,7 +14,7 @@ export class AstroRegistrationComponent implements OnInit {
 
   validateForm: FormGroup;
   portalFlag: boolean = false;
-  skillList: string[] = ['Vedic Astrology', 'Nadi Astrology', 'Vastu', 'Gemology'];
+  skillList: string[] = ['Vedic Astrologe', 'Nadi', 'Vastu', 'Gemology'];
   languageList: string[] = ['English', 'Hindi', 'Tamil', 'Marathi', 'Punjabi'];
   ProfileToUpload: File = null;
   IdProofToUpload: File = null;
@@ -80,7 +80,7 @@ export class AstroRegistrationComponent implements OnInit {
         this.validateForm.controls[key].updateValueAndValidity();
       }
 
-      console.log("submit Form ",value);
+      console.log("submit Form ",typeof value.language );
       // this._route.navigate(['/profile']);
       const formData: FormData = new FormData();
       this.ProfileToUpload = value.profilePic._files[0]
@@ -101,7 +101,7 @@ export class AstroRegistrationComponent implements OnInit {
       formData.append('experience', value.experience);
       formData.append('gender', value.gender);
       formData.append('ifsc', value.ifsc);
-      formData.append('language', value.language);
+      formData.append('language', JSON.stringify(value.language));
       formData.append('longBio', value.longBio);
       formData.append('monthlyEarning', value.monthlyEarning);
       formData.append('name', this.validateForm.controls['name'].value);

@@ -87,10 +87,7 @@ export class LoginComponent implements OnInit {
               })
             }
           });
-
-
           // call firebase servicet on login end
-
 
           // this.isVisible = true;
           this._commonService.tostMessage(resonseMessage)
@@ -98,11 +95,10 @@ export class LoginComponent implements OnInit {
           if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined') {
               console.log(responseBody, 'response body');
             // this.firebaseService.loginFirebase()
-            this.router.navigate(['astroRegistration']);
             this.dialogRef.close(responseData.data);
           } else {
             this.dialogRef.close(responseData.data);
-          
+
           }
 
         } else {

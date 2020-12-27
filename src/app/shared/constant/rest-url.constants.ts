@@ -31,8 +31,12 @@ export class RestUrl {
     public static get deductBalance(): string { return '/users/deductbalance'; }
 
 
-    //blog
+    //Filters
+    public static get getAstroByFilterSkill(): string { return '/users/filter'; }
+
+    // blog
     public static get blogList(): string { return '/users/blog'; }
+
 
 
 

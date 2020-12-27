@@ -7,6 +7,7 @@ import { CommonService } from 'src/app/shared/service/commonService/common.servi
 import { RegexConstant } from 'src/app/shared/constant/regex-constant';
 import { AuthenticationService } from 'src/app/shared/service/authentication/authentication.service';
 import { ReportService } from './report.service'
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-report-listing',
   templateUrl: './report-listing.component.html',
@@ -14,7 +15,7 @@ import { ReportService } from './report.service'
 })
 export class ReportListingComponent implements OnInit {
 
-  constructor(private _reportService: ReportService,private _authenticationService : AuthenticationService ,private _formBuilder: FormBuilder, private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
+  constructor(private authService: AuthService, private _reportService: ReportService,private _authenticationService : AuthenticationService ,private _formBuilder: FormBuilder, private _commonService: CommonService, private _observableDataService : ObservableDataService) { }
   validateForm: FormGroup;
   isVisible : boolean = true;
   astroData;
@@ -84,34 +85,56 @@ submitForm(value) {
   }
   console.log("value ",value);
 
-  const formData: FormData = new FormData();
-  formData.append('userId', this.userData._id );
-  formData.append('astrologerId', this.astroData.id );
-  formData.append('reportSubType', this.reportType );
-  formData.append('firstName', value.first_name );
-  formData.append('lastName', value.last_name );
-  formData.append('mobileNumber', value.contactNo );
-  formData.append('gender', value.gender );
-  formData.append('dob', value.dob );
-  formData.append('dobTime', value.tob);
-  formData.append('city', value.place_of_birth_city );
-  formData.append('state', value.place_of_birth_state );
-  formData.append('country', value.place_of_birth_country );
-  formData.append('maritalStatus', value.martial );
-  formData.append('employment', value.employed );
-  formData.append('language', value.language );
-  formData.append('comment', value.comment);
+  // const formData: FormData = new FormData();
+  // formData.append('userId', this.userData._id );
+  // formData.append('astrologerId', this.astroData.id );
+  // formData.append('reportSubType', this.reportType );
+  // formData.append('firstName', value.first_name );
+  // formData.append('lastName', value.last_name );
+  // formData.append('mobileNumber', value.contactNo );
+  // formData.append('gender', value.gender );
+  // formData.append('dob', value.dob );
+  // formData.append('dobTime', value.tob);
+  // formData.append('city', value.place_of_birth_city );
+  // formData.append('state', value.place_of_birth_state );
+  // formData.append('country', value.place_of_birth_country );
+  // formData.append('maritalStatus', value.martial );
+  // formData.append('employment', value.employed );
+  // formData.append('language', value.language );
+  // formData.append('comment', value.comment);
 
-  console.log("+++++++=formData ",formData);
+  // console.log("+++++++=formData ",formData);
+
+  let formValue = {
+    userId : this.userData._id ,
+    astrologerId : this.astroData.id,
+    reportSubType : this.reportType,
+    firstName : value.first_name,
+    lastName : value.last_name,
+    mobileNumber : value.contactNo,
+    gender : value.gender,
+    dob : value.dob,
+    dobTime : value.tob,
+    city : value.place_of_birth_city,
+    state : value.place_of_birth_state,
+    country : value.place_of_birth_country,
+    maritalStatus : value.martial,
+    employment : value.employed,
+    language : value.language,
+    comment : value.comment
+  }
 
 
-  this._reportService.submitReport(formData).subscribe((responseData)=>{
+  this._reportService.submitReport(formValue).subscribe((responseData)=>{
     console.log("responseDataa ",responseData);
     let resonseMessage = responseData.message;
     if(responseData.status == 200) {
 
       this._commonService.tostMessage("Report submited successfully, "+this.astroData.name+" will soon get back to you");
 
+    } else if(responseData.status == 300){
+      this._commonService.tostMessage(resonseMessage);
+       this.authService.logOut();
     } else {
       this._commonService.tostMessage(resonseMessage);
     }

@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import { RestService } from './shared/service/restApi/rest.service';
 
 
 @Component({
@@ -33,11 +34,11 @@ export class AppComponent implements OnInit {
   isUserLogin : boolean = false;
   checkUser;
   reason = '';
-  Ip;
+  countryCode;
   isAstrologerLoggedIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
   AdminLoginHideFlag
-  constructor(private _commonService: CommonService, private authService: AuthService, public dialog: MatDialog,
+  constructor(private _commonService: CommonService, private _restService : RestService, private authService: AuthService, public dialog: MatDialog,
      private _route : Router, private _observableDataService : ObservableDataService){
     this.messaging = new FormGroup({
       typing: new FormControl('')
@@ -122,8 +123,12 @@ export class AppComponent implements OnInit {
 
   getIPAddress() {
     this._commonService.getIPAddress().subscribe(res=>{
-      this.Ip = res.ip;
-      console.log("Res is ===>>> ",this.Ip);
+      this.countryCode = res.countryCode;
+      console.log("Res is ===>>> ",res);
+      sessionStorage.setItem("CC",this.countryCode);
+      // if(this.countryCode != null){
+      //   console.log("Will send countrycode once get !")
+      // }
     });
   }
 
@@ -147,11 +152,14 @@ export class AppComponent implements OnInit {
         sessionStorage.setItem('userData',JSON.stringify(result.userData));
         let isAdminUser  = this.authService.checkAccess(this.checkUser);
        console.log("isAdminUser ",isAdminUser);
-       if(!isAdminUser) {
-        this._route.navigate(['dashboard']);
-       }else {
+       if(!result.profileUpdated && typeof result.profileUpdated != 'undefined') {
+        this._route.navigate(['home/astroRegistration']);
+       } else if(!isAdminUser){
+         this._route.navigate(['dashboard']);
+       } else {
+         console.log("else condition !!!!!");
+         this.home();
        }
-        // this._observableDataService.checkUser(result.userData);
       }
     });
   }

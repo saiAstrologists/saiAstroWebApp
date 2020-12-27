@@ -31,8 +31,11 @@ export class RestService {
     return this.http.get(environment.urlAddress + route);
   };
 
+  public getIPAddress = (route: string) => {
+    console.log("**GET getIPAddress **", "route",route);
+    return this.http.get(route);
+  };
 
-  
   public createPayment = (route: string, body) => {
     console.log("route",route,"body",body);
     return this.http.post(environment.paymentUrlAddress + route, body);

@@ -43,8 +43,11 @@ export class CommonService {
     return this.restService.create(RestUrl.makeCall, data)
   }
 
+  // getIPAddress(): Observable<any> {
+  //   return this.ipAddressService.getIPAddress("http://api.ipify.org?format=json");
+  // }
   getIPAddress(): Observable<any> {
-    return this.ipAddressService.getIPAddress("http://api.ipify.org?format=json");
+    return this.restService.getIPAddress("https://extreme-ip-lookup.com/json/?callback");
   }
 
 

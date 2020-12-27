@@ -10,7 +10,7 @@ import { AuthGuard } from '../auth/canActivateAuth.gaurd'
 
 const routes: Routes = [
 
-  {path: '', component: AstrologerDashboardComponent},
+  {path: '', component: AstrologerDashboardComponent,canActivate: [AuthGuard]},
   {path: 'astroReport', component: AstroReportComponent, canActivate: [AuthGuard]},
   {path: 'astroQuestion', component: AstroQuestionComponent, canActivate: [AuthGuard]},
 
