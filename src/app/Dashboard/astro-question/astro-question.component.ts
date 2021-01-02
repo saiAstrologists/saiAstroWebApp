@@ -31,7 +31,7 @@ export interface UserData {
   styleUrls: ['./astro-question.component.scss']
 })
 export class AstroQuestionComponent implements OnInit {
-  displayedColumns: string[] = ['edit','srNo', 'reportSubType', 'firstName', 'mobileNumber'];
+  displayedColumns: string[] = ['edit','srNo', 'reportSubType', 'firstName', 'mobileNumber', 'actions'];
   dataSource: MatTableDataSource<UserData>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -42,9 +42,22 @@ export class AstroQuestionComponent implements OnInit {
   selectedUser;
   users: UserData[];
   characters = 0;
+  statusTypeList: any = [];
 
 
-  constructor(private _authService : AuthService, private _formBuilder: FormBuilder, private _authenticationService : AuthenticationService, private _commonService: CommonService, private _astroReportService : QuestionReportService) { }
+  constructor(private _authService : AuthService, private _formBuilder: FormBuilder, private _authenticationService : AuthenticationService, private _commonService: CommonService, private _astroReportService : QuestionReportService) {
+    this.statusTypeList = [
+      {
+       id: 1,
+       name: 'Accept'
+      },
+      {
+        id: 2,
+        name: 'Reject'
+      }
+ 
+     ]
+  }
 
   ngOnInit(): void {
 
@@ -157,11 +170,15 @@ export class AstroQuestionComponent implements OnInit {
       formData.append('queryId', this.selectedUser._id);
       formData.append('reportType', this.selectedUser.reportType);
 
-      this._astroReportService.replyReports(formData).subscribe((responseData)=>{
+      this._astroReportService.replyReports(formData).subscribe( async (responseData)=>{
         console.log("responseDataa ",responseData);
         let resonseMessage = responseData.message;
         if(responseData.status == 200) {
           this._commonService.tostMessage(resonseMessage);
+          let deducted = await this.deductions();
+          if(deducted){
+            console.log(deducted, 'deducted');
+          }
           this.validateForm.reset();
           this.sidenav.close();
         } else if(responseData.status == 300){
@@ -189,6 +206,25 @@ export class AstroQuestionComponent implements OnInit {
   closeDrawer(reference){
     reference.toggle();
     this.validateForm.reset();
+  }
+
+
+  statusChange(statusEvent, rowData){
+    console.log(statusEvent, rowData, this.sidenav.toggle());
+    this.selectedUser = rowData;
+  }
+
+  deductions(){
+    let promise = new Promise((resolve) => {
+      let req = {
+
+      }
+      this._astroReportService.deductQtsAnsBalance(req).subscribe(response => {
+        return resolve(response);
+      })
+    });
+
+    return promise;
   }
 
 }
