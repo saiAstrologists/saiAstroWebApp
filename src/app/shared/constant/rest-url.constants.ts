@@ -20,6 +20,7 @@ export class RestUrl {
     public static get getReportByAstroId(): string { return '/users/getreports'; }
     public static get getQuestionByAstroId(): string { return '/users/getquestions'; }
     public static get replyReports(): string { return '/users/respondReport'; }
+    public static get acceptRejectReq(): string { return '/users/acceptqueryrequest'; }
 
 
 

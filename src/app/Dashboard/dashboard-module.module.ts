@@ -8,6 +8,7 @@ import { AuthGuard } from '../auth/canActivateAuth.gaurd';
 import { AstroReportComponent } from './astro-report/astro-report.component';
 import { EditReportComponent } from './astro-report/edit-report/edit-report.component';
 import { AstroQuestionComponent } from './astro-question/astro-question.component';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 
 
 
@@ -16,7 +17,8 @@ import { AstroQuestionComponent } from './astro-question/astro-question.componen
     AstrologerDashboardComponent,
     AstroReportComponent,
     EditReportComponent,
-    AstroQuestionComponent
+    AstroQuestionComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     DashboardRoutingModule,

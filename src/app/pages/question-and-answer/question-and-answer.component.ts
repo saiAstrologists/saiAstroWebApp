@@ -60,15 +60,26 @@ export class QuestionAndAnswerComponent implements OnInit {
       this.validateForm.controls[key].updateValueAndValidity();
     }
 
-    const formData: FormData = new FormData();
-    formData.append('userId', this.userData._id );
-    formData.append('astrologerId', this.astroData.id );
-    formData.append('reportSubType', this.reportType );
-    formData.append('firstName', value.first_name );
-    formData.append('lastName', value.last_name );
-    formData.append('mobileNumber', value.contactNo );
-    formData.append('employment', value.employed );
-    formData.append('comment', value.comment );
+    // const formData: FormData = new FormData();
+    // formData.append('userId', this.userData._id );
+    // formData.append('astrologerId', this.astroData.id );
+    // formData.append('reportSubType', this.reportType );
+    // formData.append('firstName', value.first_name );
+    // formData.append('lastName', value.last_name );
+    // formData.append('mobileNumber', value.contactNo );
+    // formData.append('employment', value.employed );
+    // formData.append('comment', value.comment );
+
+    let formData = {
+      userId: this.userData._id,
+      astrologerId: this.astroData.id,
+      reportSubType: this.reportType,
+      firstName: value.first_name,
+      lastName: value.last_name,
+      mobileNumber: value.contactNo,
+      employment: value.employed,
+      comment: value.comment
+    }
 
     console.log("+++++++=formData ",formData);
 

@@ -25,6 +25,9 @@ export class QuestionReportService {
   deductQtsAnsBalance(data){
     return this.restService.create(RestUrl.deductBalance, data);
   }
+  acceptReject(data){
+    return this.restService.create(RestUrl.acceptRejectReq, data)
+  }
 
 
 }

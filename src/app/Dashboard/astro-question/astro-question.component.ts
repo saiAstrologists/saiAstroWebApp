@@ -8,6 +8,8 @@ import { AuthenticationService } from 'src/app/shared/service/authentication/aut
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
+import { MatDialog } from '../../../../node_modules/@angular/material/dialog';
 
 
 export interface UserData {
@@ -45,7 +47,7 @@ export class AstroQuestionComponent implements OnInit {
   statusTypeList: any = [];
 
 
-  constructor(private _authService : AuthService, private _formBuilder: FormBuilder, private _authenticationService : AuthenticationService, private _commonService: CommonService, private _astroReportService : QuestionReportService) {
+  constructor(private _authService : AuthService, private _formBuilder: FormBuilder, private _authenticationService : AuthenticationService, private _commonService: CommonService, private _astroReportService : QuestionReportService, private _dialog: MatDialog) {
     this.statusTypeList = [
       {
        id: 1,
@@ -69,7 +71,7 @@ export class AstroQuestionComponent implements OnInit {
       // gender: [{value : null, disabled: true}, [Validators.required]],
       reportSubType: [{value : null, disabled: true}, [Validators.required]],
       employment: [{value : null, disabled: true}, [Validators.required]],
-      message: [null, [Validators.required]]
+      message: [null, [Validators.required]],
     });
 
     this.dataSource = new MatTableDataSource(this.users);
@@ -109,7 +111,8 @@ export class AstroQuestionComponent implements OnInit {
               mobileNumber: everyData.mobileNumber,
               reportSubType: everyData.reportSubType,
               reportType: everyData.reportType,
-              userId: everyData.userId
+              userId: everyData.userId,
+              isAnswered: everyData.isAnswered
             });
             this.users = obj;
           })
@@ -175,10 +178,14 @@ export class AstroQuestionComponent implements OnInit {
         let resonseMessage = responseData.message;
         if(responseData.status == 200) {
           this._commonService.tostMessage(resonseMessage);
-          let deducted = await this.deductions();
-          if(deducted){
-            console.log(deducted, 'deducted');
+          let userData = JSON.parse(sessionStorage.getItem('userData'));
+          let acceptRejectRequest = {
+              "userId": userData.userId,
+              "queryId": this.selectedUser._id,
+	            "isRequestAccpted": 'true'
           }
+          let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
+          let deducted = await this.deductions();
           this.validateForm.reset();
           this.sidenav.close();
         } else if(responseData.status == 300){
@@ -210,16 +217,50 @@ export class AstroQuestionComponent implements OnInit {
 
 
   statusChange(statusEvent, rowData){
-    console.log(statusEvent, rowData, this.sidenav.toggle());
-    this.selectedUser = rowData;
+    if(statusEvent && statusEvent.value == 'Accept'){
+      this.selectedUser = rowData;
+      this.sidenav.toggle();
+    }else if(statusEvent && statusEvent.value == 'Reject') {
+      const dialogRef = this._dialog.open(ConfirmationModalComponent, {
+        width: '400px',
+      });
+      dialogRef.afterClosed().subscribe(modalResponse => {
+        if(modalResponse == 'Y') {
+          let userData = JSON.parse(sessionStorage.getItem('userData'));
+          let acceptRejectRequest = {
+              "userId": userData.userId,
+              "queryId": rowData._id,
+	            "isRequestAccpted": 'false'
+          }
+          this.acceptReject(acceptRejectRequest).then(response => {
+            console.log(response, 'response');
+            
+          })
+        }else {
+          statusEvent.source.writeValue(null);
+        }
+      })
+    }
   }
 
   deductions(){
     let promise = new Promise((resolve) => {
       let req = {
-
+        "type":"qa" || 'report',
+        "userId":"",
+        "astrologerId": ''    
       }
       this._astroReportService.deductQtsAnsBalance(req).subscribe(response => {
+        return resolve(response);
+      })
+    });
+
+    return promise;
+  }
+
+  acceptReject(reqData){
+    let promise = new Promise((resolve) => {      
+      this._astroReportService.acceptReject(reqData).subscribe(response => {
         return resolve(response);
       })
     });
