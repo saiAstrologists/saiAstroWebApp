@@ -121,7 +121,7 @@
               <mat-form-field appearance="fill">
                 <mat-label>Status</mat-label>
                 <!-- value="{{row.isApplicationAccepted == null  ? null : element.isApplicationAccepted ? 'Approve': 'Reject'}}" -->
-                <mat-select (selectionChange)="statusChange($event, row)" [value]="row.isAnswered ? 'Accept': null" [disabled]="row.isAnswered">
+                <mat-select (selectionChange)="statusChange($event, row)" [value]="row.isAnswered ? 'Accept': 'Reject'" [disabled]="row.isAnswered">
                   <mat-option *ngFor="let statusType of statusTypeList" [value]="statusType.name">
                     {{statusType.name}}
                   </mat-option>

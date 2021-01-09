@@ -8,6 +8,8 @@ import { AuthenticationService } from 'src/app/shared/service/authentication/aut
 import { CommonService } from 'src/app/shared/service/commonService/common.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatDialog } from '../../../../node_modules/@angular/material/dialog';
+import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
 
 export interface UserData {
   _id: string;
@@ -31,7 +33,7 @@ export interface UserData {
   styleUrls: ['./astro-report.component.scss']
 })
 export class AstroReportComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['edit','srNo', 'reportSubType', 'firstName', 'mobileNumber'];
+  displayedColumns: string[] = ['edit','srNo', 'reportSubType', 'firstName', 'mobileNumber', 'actions'];
   dataSource: MatTableDataSource<UserData>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -48,9 +50,22 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
 
   @ViewChild("text") text: ElementRef;
   words: any;
+  statusTypeList: any = [];
 
 
-  constructor(private _authService : AuthService, private _commonService: CommonService, private _astroReportService : AstroReportService, private _authenticationService : AuthenticationService, private _formBuilder: FormBuilder) { }
+  constructor(private _authService : AuthService, private _commonService: CommonService, private _astroReportService : AstroReportService, private _authenticationService : AuthenticationService, private _formBuilder: FormBuilder, private _dialog: MatDialog) {
+    this.statusTypeList = [
+      {
+       id: 1,
+       name: 'Accept'
+      },
+      {
+        id: 2,
+        name: 'Reject'
+      }
+ 
+     ]
+  }
 
   ngOnInit(): void {
 
@@ -165,11 +180,22 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
       formData.append('queryId', this.selectedUser._id);
       formData.append('reportType', this.selectedUser.reportType);
 
-      this._astroReportService.replyReports(formData).subscribe((responseData)=>{
+      this._astroReportService.replyReports(formData).subscribe( async (responseData)=>{
         console.log("responseDataa ",responseData);
         let resonseMessage = responseData.message;
         if(responseData.status == 200) {
           this._commonService.tostMessage(resonseMessage);
+          let userData = JSON.parse(sessionStorage.getItem('userData'));
+          let acceptRejectRequest = {
+              "userId": userData.userId,
+              "queryId": this.selectedUser._id,
+	            "isRequestAccpted": 'true'
+          }
+          let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
+          if(acceptRejectRes) {
+            this.deductions();
+          }
+
           this.validateForm.reset();
           this.sidenav.close();
         } else if(responseData.status == 300){
@@ -198,6 +224,59 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   closeDrawer(reference){
     reference.toggle();
     this.validateForm.reset();
+  }
+
+  statusChange(statusEvent, rowData){
+    if(statusEvent && statusEvent.value == 'Accept'){
+      this.selectedUser = rowData;
+      this.sidenav.toggle();
+    }else if(statusEvent && statusEvent.value == 'Reject') {
+      const dialogRef = this._dialog.open(ConfirmationModalComponent, {
+        width: '400px',
+      });
+      dialogRef.afterClosed().subscribe(modalResponse => {
+        if(modalResponse == 'Y') {
+          let userData = JSON.parse(sessionStorage.getItem('userData'));
+          let acceptRejectRequest = {
+              "userId": userData.userId,
+              "queryId": rowData._id,
+	            "isRequestAccpted": 'false'
+          }
+          this.acceptReject(acceptRejectRequest).then(response => {
+            console.log(response, 'response');
+            
+          })
+        }else {
+          statusEvent.source.writeValue(null);
+        }
+      })
+    }
+  }
+
+
+  deductions(){
+    let promise = new Promise((resolve) => {
+      let req = {
+        "type": 'report',
+        "userId":  this.selectedUser.userId,
+        "astrologerId": this.selectedUser.astrologerId   
+      }
+      this._astroReportService.deductQtsAnsBalance(req).subscribe(response => {
+        return resolve(response);
+      })
+    });
+
+    return promise;
+  }
+
+  acceptReject(reqData){
+    let promise = new Promise((resolve) => {      
+      this._astroReportService.acceptReject(reqData).subscribe(response => {
+        return resolve(response);
+      })
+    });
+
+    return promise;
   }
 
 }

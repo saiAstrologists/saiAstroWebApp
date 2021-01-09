@@ -93,6 +93,8 @@ submitForm(value) {
   // formData.append('firstName', value.first_name );
   // formData.append('lastName', value.last_name );
   // formData.append('mobileNumber', value.contactNo );
+  // formData.append('employment', value.employed );
+  // formData.append('comment', value.comment);
   // formData.append('gender', value.gender );
   // formData.append('dob', value.dob );
   // formData.append('dobTime', value.tob);
@@ -100,9 +102,7 @@ submitForm(value) {
   // formData.append('state', value.place_of_birth_state );
   // formData.append('country', value.place_of_birth_country );
   // formData.append('maritalStatus', value.martial );
-  // formData.append('employment', value.employed );
   // formData.append('language', value.language );
-  // formData.append('comment', value.comment);
 
   // console.log("+++++++=formData ",formData);
 

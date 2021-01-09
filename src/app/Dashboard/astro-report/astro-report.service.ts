@@ -22,4 +22,11 @@ export class AstroReportService {
     return this._profileUpdateService.createFormData(RestUrl.replyReports, data)
   }
 
+  deductQtsAnsBalance(data){
+    return this.restService.create(RestUrl.deductBalance, data);
+  }
+  acceptReject(data){
+    return this.restService.create(RestUrl.acceptRejectReq, data)
+  }
+
 }
