@@ -185,7 +185,9 @@ export class AstroQuestionComponent implements OnInit {
 	            "isRequestAccpted": 'true'
           }
           let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
-          let deducted = await this.deductions();
+          if(acceptRejectRes) {
+            this.deductions();
+          }
           this.validateForm.reset();
           this.sidenav.close();
         } else if(responseData.status == 300){
@@ -247,8 +249,8 @@ export class AstroQuestionComponent implements OnInit {
     let promise = new Promise((resolve) => {
       let req = {
         "type":"qa" || 'report',
-        "userId":"",
-        "astrologerId": ''    
+        "userId":  this.selectedUser.userId,
+        "astrologerId": this.selectedUser.astrologerId   
       }
       this._astroReportService.deductQtsAnsBalance(req).subscribe(response => {
         return resolve(response);
