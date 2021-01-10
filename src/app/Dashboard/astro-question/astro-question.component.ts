@@ -248,7 +248,7 @@ export class AstroQuestionComponent implements OnInit {
   deductions(){
     let promise = new Promise((resolve) => {
       let req = {
-        "type":"qa" || 'report',
+        "type":"qa",
         "userId":  this.selectedUser.userId,
         "astrologerId": this.selectedUser.astrologerId   
       }

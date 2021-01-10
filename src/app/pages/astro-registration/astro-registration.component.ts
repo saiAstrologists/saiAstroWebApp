@@ -134,6 +134,8 @@ export class AstroRegistrationComponent implements OnInit {
         } else {
           alert(resonseMessage);
         }
+        }, error => {
+          console.log(error, 'error');
         })
   }
 

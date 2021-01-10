@@ -120,7 +120,8 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
               mobileNumber: everyData.mobileNumber,
               reportSubType: everyData.reportSubType,
               reportType: everyData.reportType,
-              userId: everyData.userId
+              userId: everyData.userId,
+              isAnswered: everyData.isAnswered
             });
             this.users = obj;
           })
