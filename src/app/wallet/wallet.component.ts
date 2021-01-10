@@ -67,7 +67,7 @@ export class WalletComponent implements OnInit {
     if(sessionStorage.getItem('userData')){
       let userData = JSON.parse(sessionStorage.getItem('userData'));
 
-      let params = new HttpParams().set('userId', userData.userId);
+      let params = new HttpParams().set('userId', userData.userId).set('wallet','');
 
       this.paymentService.walletInfo(params).subscribe(response => {
         if(response){
