@@ -71,7 +71,9 @@ export class WalletComponent implements OnInit {
 
       this.paymentService.walletInfo(params).subscribe(response => {
         if(response){
-          this.walletInfo = response;
+          console.log(response, 'wallet info response'); 
+          this.walletInfo = response[0];
+          sessionStorage.setItem('wallet_id', this.walletInfo._id);
         }
       })
     }
@@ -88,7 +90,8 @@ export class WalletComponent implements OnInit {
         "amount": formData.value.walletAmount,
         "currency": "INR",
         "userId": userData.userId,
-        "recieptId": this.makeOrderid()
+        "recieptId": this.makeOrderid(),
+        "id": sessionStorage.getItem('wallet_id') || null 
      }
 
      
