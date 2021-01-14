@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { SocialAuthService } from "angularx-social-login";
 import { FirebaseService } from '../shared/service/firebase/firebase.service';
 import { HttpParams } from '../../../node_modules/@angular/common/http';
+import { PaymentService } from '../shared/service/payment/payment.service';
 // import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 // import { SocialUser } from "angularx-social-login";
 
@@ -24,8 +25,7 @@ export class LoginComponent implements OnInit {
   // user: SocialUser;
   // loggedIn: boolean;
 
-  constructor( private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService, public firebaseService: FirebaseService
-   ) { }
+  constructor( private router: Router, private _commonService: CommonService, private _formBuilder: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private _loginService : loginService, public firebaseService: FirebaseService, private _paymentService: PaymentService) { }
 
   ngOnInit(): void {
     this.validateForm = this._formBuilder.group({
@@ -88,7 +88,11 @@ export class LoginComponent implements OnInit {
           // call firebase servicet on login end
 
           // this.isVisible = true;
-          this._commonService.tostMessage(resonseMessage)
+          this._commonService.tostMessage(resonseMessage);
+
+          // get wallet info
+          this.getWalletInfo(responseBody.userData.userId);
+          // get wallet info end
 
           if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined') {
               console.log(responseBody, 'response body');
@@ -168,5 +172,16 @@ passwordPattern = (control: FormControl): {[s: string]: boolean} => {
   }
 }
 
+
+getWalletInfo(userId){
+  if(userId){
+    let params = new HttpParams().set('userId', userId).set('wallet','wallet_amount');
+    this._paymentService.walletInfo(params).subscribe(response => {
+      if(response && response['length']){
+        sessionStorage.setItem('walletAmount', response[0].amount);
+      }
+    })
+  }
+}
 
 }

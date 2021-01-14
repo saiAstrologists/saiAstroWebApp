@@ -7,14 +7,14 @@
       {{modalData?.chat}}/Min</h4>
     <!-- <h4>Wallet Balance: {{walletBalance}}</h4> -->
     <div class="minute-listing">
-        <div class="list" *ngFor="let list of minuteLisiting; let i = index" [ngClass]="{'active': selectedIndex == i}" (click)="selectList(list,i)">
+        <div class="list" *ngFor="let list of minuteLisiting; let i = index" [ngClass]="{'active': selectedValue == list.value}" (click)="selectList(list,i)">
             <span>{{list.name}}</span>
         </div>
     </div>
-    <p *ngIf="isValid">
+    <p *ngIf="rechargeWallet">
       To make this connection you required to add sufficient amount in the wallet
     </p>
     <div class="text-center">
-        <button mat-raised-button color="primary" [disabled]="isValid" (click)="connect();">Connect</button>
+        <button mat-raised-button color="primary" [disabled]="!isValid" (click)="connect();">Connect</button>
     </div>
 </div>

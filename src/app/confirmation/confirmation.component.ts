@@ -8,9 +8,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '../../../node_modules/@angular/ma
 })
 export class ConfirmationComponent implements OnInit {
   minuteLisiting: Array<any>;
-  selectedIndex: number;
+  selectedValue : number;
   isValid: boolean = false;
   walletBalance: any;
+  rechargeWallet: boolean = false;
   constructor(@Inject(MAT_DIALOG_DATA) public modalData: any, public dialogRef: MatDialogRef<ConfirmationComponent>,) {
     this.minuteLisiting = [
       {
@@ -39,14 +40,17 @@ export class ConfirmationComponent implements OnInit {
   }
 
   selectList(listInfo, index){
-    this.selectedIndex  = index;
+    this.selectedValue  = listInfo.value;
     console.log("listInfo")
     if(sessionStorage.getItem('walletAmount') && listInfo){
-      let totalValue = listInfo.value * 10;
+      let perMinuteCharge = this.modalData.type == 'Chat' ? this.modalData.chat : this.modalData.call;
+      let totalValue = listInfo.value * perMinuteCharge;
       if(totalValue < parseInt(sessionStorage.getItem('walletAmount'))) {
-        this.isValid = false;
-      }else {
         this.isValid = true;
+        this.rechargeWallet = false;
+      }else {
+        this.rechargeWallet = true;
+        this.isValid = false;
       }
     }
   }
