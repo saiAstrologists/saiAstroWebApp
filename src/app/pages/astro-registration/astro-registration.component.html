@@ -83,9 +83,9 @@
     <mat-label>Skills</mat-label>
     <mat-select formControlName="skill" multiple required>
       <mat-select-trigger>
-        {{this.validateForm.controls['skill'].value ? this.validateForm.controls['skill'].value[0] : ''}}
-        <span *ngIf="this.validateForm.controls['skill'].value?.length > 1" class="example-additional-selection">
-          (+{{this.validateForm.controls['skill'].value.length - 1}} {{this.validateForm.controls['skill'].value?.length === 2 ? 'other' : 'others'}})
+        {{validateForm.controls['skill'].value ? validateForm.controls['skill'].value[0] : ''}}
+        <span *ngIf="validateForm.controls['skill'].value?.length > 1" class="example-additional-selection">
+          (+{{validateForm.controls['skill'].value.length - 1}} {{validateForm.controls['skill'].value?.length === 2 ? 'other' : 'others'}})
         </span>
       </mat-select-trigger>
       <mat-option *ngFor="let skill of skillList" [value]="skill">{{skill}}</mat-option>
@@ -99,9 +99,9 @@
     <mat-label>Language</mat-label>
     <mat-select formControlName="language" multiple required>
       <mat-select-trigger>
-        {{this.validateForm.controls['language'].value ? this.validateForm.controls['language'].value[0] : ''}}
-        <span *ngIf="this.validateForm.controls['language'].value?.length > 1" class="example-additional-selection">
-          (+{{this.validateForm.controls['language'].value.length - 1}} {{this.validateForm.controls['language'].value?.length === 2 ? 'other' : 'others'}})
+        {{validateForm.controls['language'].value ? validateForm.controls['language'].value[0] : ''}}
+        <span *ngIf="validateForm.controls['language'].value?.length > 1" class="example-additional-selection">
+          (+{{validateForm.controls['language'].value.length - 1}} {{validateForm.controls['language'].value?.length === 2 ? 'other' : 'others'}})
         </span>
       </mat-select-trigger>
       <mat-option *ngFor="let language of languageList" [value]="language">{{language}}</mat-option>
@@ -268,7 +268,7 @@
     <mat-label>Short bio</mat-label>
     <input matInput formControlName="shortBio" maxlength="256" required>
     <mat-icon matSuffix class="secondary-text">user</mat-icon>
-    <mat-hint align="end">max {{this.validateForm.controls['shortBio'].value?.length}} / 30 characters</mat-hint>
+    <mat-hint align="end">max {{validateForm.controls['shortBio'].value?.length}} / 30 characters</mat-hint>
     <mat-error *ngIf="validateForm.get('shortBio').hasError('required')">
       Short bio is required!
     </mat-error>
