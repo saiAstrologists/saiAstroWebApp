@@ -44,9 +44,9 @@ export class RestService {
   public getPayment = (route: string, headerParam: any) =>{
     return this.http.get(environment.paymentUrlAddress+ route, {params : headerParam})
   }
-  public patch = (route: string, headerParam: any) =>{
+  public patch = (route: string, headerParam: any, body: any) =>{
     console.log(environment.paymentUrlAddress+ route, 'url');
-    return this.http.patch(environment.paymentUrlAddress+ route, {}, {params : headerParam})
+    return this.http.patch(environment.paymentUrlAddress+ route, body, {params : headerParam})
   }
 
   public getByParams = (route: string, headerParam: any) =>{

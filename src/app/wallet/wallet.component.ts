@@ -165,7 +165,13 @@ export class WalletComponent implements OnInit {
         orderId: orderInfo.razorpay_order_id,
         amount: this.walletForm.value.walletAmount
       }
-      this.paymentService.updateWalletInfo(params).subscribe(response => {
+      let bodyReq = {
+        amount: this.walletForm.value.walletAmount,
+        razorpay_payment_id: orderInfo.razorpay_payment_id,
+        razorpay_order_id: orderInfo.razorpay_order_id,
+        razorpay_signature: orderInfo.razorpay_signature
+      }
+      this.paymentService.updateWalletInfo(params, bodyReq).subscribe(response => {
         console.log(response, 'wallet update');
         this.walletForm.patchValue({walletAmount: ''});
         
