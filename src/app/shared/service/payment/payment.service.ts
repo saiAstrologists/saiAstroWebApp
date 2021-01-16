@@ -21,7 +21,7 @@ export class PaymentService {
     return this.restService.getPayment(RestUrl.verifySignature, data);
   }
 
-  updateWalletInfo(data) {
-    return this.restService.patch(RestUrl.updateWalletInfo, data);
+  updateWalletInfo(data, bodyReq) {
+    return this.restService.patch(RestUrl.updateWalletInfo, data, bodyReq);
   }
 }
