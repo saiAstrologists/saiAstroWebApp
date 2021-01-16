@@ -96,7 +96,7 @@ export class WalletComponent implements OnInit {
 
      
       this.paymentService.orderPlace(reqObj).subscribe(response => {
-        this.walletForm.patchValue({walletAmount: ''});
+        // this.walletForm.patchValue({walletAmount: ''});
         this.selectedRechargeAmount = null;
         console.log(response, 'place order');
         if(response) {
@@ -162,10 +162,12 @@ export class WalletComponent implements OnInit {
       let userData = JSON.parse(sessionStorage.getItem('userData'));
       let params = {
         userId: userData.userId,
-        orderId: orderInfo.razorpay_order_id
+        orderId: orderInfo.razorpay_order_id,
+        amount: this.walletForm.value.walletAmount
       }
       this.paymentService.updateWalletInfo(params).subscribe(response => {
         console.log(response, 'wallet update');
+        this.walletForm.patchValue({walletAmount: ''});
         
       })
     }
