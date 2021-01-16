@@ -181,7 +181,7 @@ export class ChatComponent implements OnInit {
         userId: 'balatwo',
         orderId: orderInfo.razorpay_order_id
       }
-      this.paymentService.updateWalletInfo(params).subscribe(response => {
+      this.paymentService.updateWalletInfo(params, '').subscribe(response => {
         console.log(response, 'wallet update');
         
       })
