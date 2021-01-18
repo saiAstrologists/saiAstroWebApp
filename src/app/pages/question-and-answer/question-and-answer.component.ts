@@ -89,6 +89,7 @@ export class QuestionAndAnswerComponent implements OnInit {
       let resonseMessage = responseData.message;
       if(responseData.status == 200) {
         this._commonService.tostMessage("Question submited successfully, "+this.astroData.name+" will soon get back to you");
+        this.isVisible = !this.isVisible;
       } else {
         this._commonService.tostMessage(resonseMessage);
       }

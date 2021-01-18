@@ -133,6 +133,8 @@ submitForm(value) {
 
       this._commonService.tostMessage("Report submited successfully, "+this.astroData.name+" will soon get back to you");
 
+      this.isVisible = !this.isVisible;
+
     } else if(responseData.status == 300){
       this._commonService.tostMessage(resonseMessage);
        this.authService.logOut();

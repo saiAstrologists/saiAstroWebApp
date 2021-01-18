@@ -174,6 +174,10 @@ export class WalletComponent implements OnInit {
       this.paymentService.updateWalletInfo(params, bodyReq).subscribe(response => {
         console.log(response, 'wallet update');
         this.walletForm.patchValue({walletAmount: ''});
+
+        // after update call get amount api
+        this.getWalletInfo();
+        // after update call get amount api end
         
       })
     }

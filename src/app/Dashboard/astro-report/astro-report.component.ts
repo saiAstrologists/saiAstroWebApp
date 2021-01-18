@@ -52,6 +52,9 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   words: any;
   statusTypeList: any = [];
 
+  selectedUserStatusEvent: any;
+  selectedUserIndex: any;
+
 
   constructor(private _authService : AuthService, private _commonService: CommonService, private _astroReportService : AstroReportService, private _authenticationService : AuthenticationService, private _formBuilder: FormBuilder, private _dialog: MatDialog) {
     this.statusTypeList = [
@@ -195,6 +198,12 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
           let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
           if(acceptRejectRes) {
             this.deductions();
+            this.dataSource.data.filter((list, i) => {
+              if(this.selectedUserIndex == i ){
+                list['isAnswered'] = true;
+              }
+            });
+            this.dataSource.filter = "";
           }
 
           this.validateForm.reset();
@@ -225,11 +234,14 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   closeDrawer(reference){
     reference.toggle();
     this.validateForm.reset();
+    this.selectedUserStatusEvent.source.writeValue(null);
   }
 
-  statusChange(statusEvent, rowData){
+  statusChange(statusEvent, rowData, index){
     if(statusEvent && statusEvent.value == 'Accept'){
       this.selectedUser = rowData;
+      this.selectedUserStatusEvent = statusEvent;
+      this.selectedUserIndex = index;
       this.sidenav.toggle();
     }else if(statusEvent && statusEvent.value == 'Reject') {
       const dialogRef = this._dialog.open(ConfirmationModalComponent, {
