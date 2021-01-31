@@ -104,8 +104,14 @@
             </div>
             <div class="col-8 astro-card-content">
               <h1>{{element.name}} <span><mat-icon>verified</mat-icon></span></h1>
-              <p>{{element.language}}</p>
-              <p>Vedic Astrologer, Gemology</p>
+              <ng-container *ngIf="element.language && element.language.length">
+                <span *ngFor="let lang of element.language; let last = last">{{lang}} <span *ngIf="!last">, </span></span>
+              </ng-container>
+              <div *ngIf="element.skills && element.skills.length" class="mt-2">
+                <span *ngFor="let skill of element.skills; let last = last">
+                  {{skill}}<span *ngIf="!last">, </span>
+                </span>
+              </div>
               <!-- <p>{{userData.countryCode}} NT$</p> -->
 
               <p *ngIf="countryCode != null">
@@ -173,7 +179,7 @@
              </span></h1>
 
             <p>{{detailData.language}}</p>
-            <p>Vedic Astrologer, Gemology</p>
+            <p>{{detailData.skills}}</p>
             <p>{{detailData.email}}</p>
             <p>Experience : {{detailData.experience}}</p>
             <p>{{detailData.contactNo}}</p>
@@ -186,7 +192,7 @@
       <!-- End Astro Detail page -->
 
       <section *ngIf="!this.isDetailPage" class="load-more-wrapper my-5" >
-        <button class="bounce" mat-stroked-button color="warn" (click)="searchedByFilter ? filterOperation() : getAstroListing(1)">Load More <mat-icon >filter_list</mat-icon></button>
+        <button class="bounce" mat-stroked-button color="primary" (click)="searchedByFilter ? filterOperation() : getAstroListing(1)">Load More <mat-icon >filter_list</mat-icon></button>
       </section>
     </div>  <!-- col-md-8 End -->
 

@@ -55,8 +55,9 @@ anchors are inline so you need ot make them block to go full width
   // background-color: $primary;
   color: $black;
   p {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.5;
+    text-align: center;
   }
 }
 
@@ -87,6 +88,7 @@ anchors are inline so you need ot make them block to go full width
 }
 
 .slide.testimonial-img {
+  min-height: 380px;
   img {
     width: 30%;
     margin: auto;
@@ -100,6 +102,12 @@ anchors are inline so you need ot make them block to go full width
       font-size: 17px;
       line-height: 27px;
     }
+  }
+}
+
+.astro-news {
+  .img-wrapper {
+    background-color: #fff;
   }
 }
 

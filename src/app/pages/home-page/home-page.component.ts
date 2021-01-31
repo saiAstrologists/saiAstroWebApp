@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  clientList: any[];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -40,7 +41,68 @@ export class HomePageComponent implements OnInit {
   userData;
   isVisible : boolean = false;
   constructor(private _service : HomeService, private _route : Router, private _commonService: CommonService,
-     private _observableDataService : ObservableDataService) { }
+     private _observableDataService : ObservableDataService) {
+
+      this.clientList = [
+        {
+          img: '/assets/images/client/disrupt.png',
+          name: 'Disrupt'
+        },
+        {
+          img: '/assets/images/client/silicon.png',
+          name: 'Silicon'
+        },
+        {
+          img: '/assets/images/client/times-india.png',
+          name: 'Times India'
+        },
+        {
+          img: '/assets/images/client/hindustan.png',
+          name: 'Hindustan'
+        },
+        {
+          img: '/assets/images/client/tedx.png',
+          name: 'Tedx'
+        },
+        {
+          img: '/assets/images/client/datingadvice.png',
+          name: 'Dating Advice'
+        },
+        {
+          img: '/assets/images/client/dating-news.png',
+          name: 'Dating News'
+        },
+        {
+          img: '/assets/images/client/youstory.png',
+          name: 'Your Story'
+        },
+        {
+          img: '/assets/images/client/e27.jpg',
+          name: 'e27'
+        },
+        {
+          img: '/assets/images/client/ani.png',
+          name: 'Ani'
+        },
+        {
+          img: '/assets/images/client/dailyhunt.png',
+          name: 'dailyhunt'
+        },
+        {
+          img: '/assets/images/client/united-news.png',
+          name: 'united news of india'
+        },
+        {
+          img: '/assets/images/client/business-stand.png',
+          name: 'business standard'
+        },
+        {
+          img: '/assets/images/client/start-up.png',
+          name: 'startup'
+        }
+      ]
+
+     }
 
 
 

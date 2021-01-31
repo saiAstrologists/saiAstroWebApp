@@ -91,7 +91,7 @@ export class LoginComponent implements OnInit {
           this._commonService.tostMessage(resonseMessage);
 
           // get wallet info
-          this.getWalletInfo(responseBody.userData.userId);
+          this.getWalletInfo(responseBody.userData);
           // get wallet info end
 
           if(!responseBody.profileUpdated && typeof responseBody.profileUpdated != 'undefined') {
@@ -173,9 +173,9 @@ passwordPattern = (control: FormControl): {[s: string]: boolean} => {
 }
 
 
-getWalletInfo(userId){
-  if(userId){
-    let params = new HttpParams().set('userId', userId).set('wallet','wallet_amount');
+getWalletInfo(userData){
+  if(userData){
+    let params = new HttpParams().set('userId', userData.userId).set('userType', userData.userType).set('wallet','wallet_amount');
     this._paymentService.walletInfo(params).subscribe(response => {
       if(response && response['length']){
         sessionStorage.setItem('walletAmount', response[0].amount);

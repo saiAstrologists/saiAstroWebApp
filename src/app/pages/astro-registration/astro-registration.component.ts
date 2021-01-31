@@ -103,7 +103,7 @@ export class AstroRegistrationComponent implements OnInit {
       formData.append('experience', value.experience);
       formData.append('gender', value.gender);
       formData.append('ifsc', value.ifsc);
-      formData.append('language', JSON.stringify(value.language));
+      formData.append('language', value.language);
       formData.append('longBio', value.longBio);
       formData.append('monthlyEarning', value.monthlyEarning);
       formData.append('name', this.validateForm.controls['name'].value);
@@ -116,7 +116,7 @@ export class AstroRegistrationComponent implements OnInit {
       formData.append('userType', this.userData.userType);
 
 
-      console.log("formData+++++  ",formData);
+      console.log("formData+++++  ",formData, value);
 
 
       // formData.append('fileKey', fileToUpload, fileToUpload.name);

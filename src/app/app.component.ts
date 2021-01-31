@@ -206,6 +206,11 @@ export class AppComponent implements OnInit {
     // }
   }
 
+  viewHoroscope(){
+    this._route.navigate(['home']);
+    this.sidenav.close();
+  }
+
   viewBlog(){
     this._route.navigate(['blog']);
     this.sidenav.close();

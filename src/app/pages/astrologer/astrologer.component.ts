@@ -20,7 +20,7 @@ export class AstrologerComponent implements OnInit {
   CallBtnFlag : boolean = false;
   QAndAFlag : boolean = false;
   astroListing = [];
-  expertise = ['Vedic Astrology','Nadi Astrology','Gemology','Nummerology','Vastu','Fengshui','KP Astrology','Prashna Kundali'];
+  expertise = ['Vedic Astrology','Nadi Astrology','Gemology','Nummerology','Vastu','Fengshui','KP Astrology','Prashna Kundali', 'Palm reading', 'Face reading'];
   languages = ['Bangla','English','Gujarati','Hindi','Kannada','Marathi','Tamil','Telugu','Punjabi','Malayalam','Marwari'];
   experience = ['10','20','m20'];
   // price = ['High to low','Low to high'];

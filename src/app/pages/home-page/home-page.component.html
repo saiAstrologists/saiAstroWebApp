@@ -102,7 +102,7 @@
     <div class="hm-astrologer-header mb-5">
       <h1 class="mt-5 mb-1"><b>Astologer's</b></h1>
       <div class="separator home">
-        <span class="text">Our Astrologer</span>
+        <span class="text">Best Astrologers from India for Online Consultation</span>
       </div>
       <span class="float-right"><button mat-raised-button color="primary" (click)="hmViewAllAstrologer()">View All</button></span>
     </div>
@@ -327,12 +327,35 @@
 
 <hr>
 
+<!-- sai AstroWorld news -->
+<section class="astro-news mb-5">
+  <div class="container">
+    <div class="hm-horoscope-header mb-">
+      <h1 class="mt-5 mb-1"><b>Sai AstroWorld In News</b></h1>
+      <div class="separator home">
+        <span class="text">Our Success Stories In Media Headlines And Lots Of Encouragement</span>
+      </div>
+    </div>
+    <div class="listing mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-2" *ngFor="let client of clientList;">
+          <div class="img-wrapper mb-3">
+            <img [src]="client.img" [alt]="client.name" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- sai AstroWorld news end -->
+
 <section class="testimonial-wrapper mb-5">
 <div class="container">
   <div class="hm-horoscope-header mb-5">
     <h1 class="mt-5 mb-1"><b>Testimonials</b></h1>
     <div class="separator home">
-      <span class="text">What Clients Are Saying</span>
+      <span class="text">Top Astrologers. 24*7 customer support. Happy to help</span>
     </div>
   </div>
   <owl-carousel-o [options]="customOptions">
@@ -418,7 +441,7 @@
     <div class="hm-about-us-block mb-5">
       <h1 class="mb-0"><b>About</b></h1>
       <div class="separator home">
-        <span class="text">Us</span>
+        <span class="text">Satisfied customers,Astrologers and lots of love</span>
       </div>
     </div>
     <p> AstroWorld is the best astrology website for online Astrology predictions. Talk to Astrologer on call and

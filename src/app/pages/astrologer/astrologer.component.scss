@@ -55,7 +55,7 @@ $black: #000;
 }
 .astrologer-listing-wrapper{
   .mat-card {
-    min-height: 191px;
+    min-height: 250px;
   }
   img{
     width: 80px;
@@ -108,7 +108,8 @@ $black: #000;
 .load-more-wrapper{
   text-align: center;
   button{
-    border: 1px solid red;
+    border: 2px solid #f2bf2b;
+    color: #000;
   }
 }
 
