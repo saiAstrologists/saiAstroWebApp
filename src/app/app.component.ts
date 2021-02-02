@@ -367,4 +367,13 @@ export class AppComponent implements OnInit {
       console.log(snapShot.val(), 'valkjkukjk');
     })
   }
+
+  logo(){
+    let loginData = JSON.parse(sessionStorage.getItem('userData'));
+    if(loginData && loginData['userType'] && loginData['userType'] == 2){
+      this._route.navigate(['dashboard']);
+    }else {
+      this._route.navigate(['home']);
+    }
+  }
 }

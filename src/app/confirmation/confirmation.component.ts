@@ -57,7 +57,11 @@ export class ConfirmationComponent implements OnInit {
 
 
   connect(){
-    this.dialogRef.close(true);
+    let connectValue = {
+      isConnected: true,
+      minutes: this.selectedValue
+    }
+    this.dialogRef.close(connectValue);
   }
 
 }

@@ -29,7 +29,7 @@ export class ProfileUpdateService {
   public createFormData = (route: string, body) => {
     console.log("route",route," createProfile body",body);
     let setHeaders = new HttpHeaders({
-      'Authorization':  this.getAuthenticatedToken,
+      'Authorization':  this.getAuthenticatedToken || JSON.parse(JSON.stringify(sessionStorage.getItem('token'))),
     })
     return this.http.post(environment.urlAddress + route, body, {headers : setHeaders})
   //   .pipe(

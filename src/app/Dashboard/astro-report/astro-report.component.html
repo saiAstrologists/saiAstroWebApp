@@ -66,7 +66,7 @@
         <div class="mt-5">
           <button mat-raised-button color="primary" class="submit-button mt-3 mr-5" aria-label="LOGIN"
           [disabled]="validateForm.invalid" (click)="submitForm(validateForm.value)">
-            Create
+            Submit
           </button>
 
           <button mat-stroked-button color="warn" class="mt-3" (click)="resetForm($event)">
@@ -99,7 +99,7 @@
         <!-- Edit Column -->
         <ng-container matColumnDef="edit">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit </th>
-          <td class="edit-report" mat-cell *matCellDef="let row" data-label="Edit" (click)="editQuestion(reportSideNav,row)"><mat-icon *ngIf="!row.isAnswered"> edit </mat-icon> </td>
+          <td class="edit-report" mat-cell *matCellDef="let row" data-label="Edit" (click)="editQuestion(reportSideNav,row)"><mat-icon *ngIf="!row.isAnswered && (row.isRequestAccpted == null ? true : row.isRequestAccpted)"> edit </mat-icon> </td>
         </ng-container>
 
           <!-- ID Column -->
@@ -132,7 +132,7 @@
                 <mat-form-field appearance="fill">
                   <mat-label>Status</mat-label>
                   <!-- value="{{row.isApplicationAccepted == null  ? null : element.isApplicationAccepted ? 'Approve': 'Reject'}}" -->
-                  <mat-select (selectionChange)="statusChange($event, row, i)" [value]="row.isAnswered ? 'Accept': 'Reject'" [disabled]="row.isAnswered">
+                  <mat-select (selectionChange)="statusChange($event, row, i)" [value]="row.isRequestAccpted ? 'Accept': (row.isRequestAccpted == null ? '' : 'Reject')" [disabled]="row.isRequestAccpted != null">
                     <mat-option *ngFor="let statusType of statusTypeList" [value]="statusType.name">
                       {{statusType.name}}
                     </mat-option>

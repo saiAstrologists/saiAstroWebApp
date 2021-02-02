@@ -5,6 +5,8 @@ import { ObservableDataService } from '../observables/behaviourSubject.service';
 import { PaymentService } from '../shared/service/payment/payment.service';
 import { HttpParams } from '../../../node_modules/@angular/common/http';
 import { ChatService } from './chat.service';
+import * as moment from 'moment';
+import { CommonService } from '../shared/service/commonService/common.service';
 
 @Component({
   selector: 'app-chat',
@@ -20,7 +22,7 @@ export class ChatComponent implements OnInit {
   viewChatScreen: boolean = false;
   @Input() viewChatOption : boolean = true;
   timer: any;
-  constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService, private chatService: ChatService) {
+  constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService, private chatService: ChatService, private _commonService: CommonService) {
     this.chatForm = new FormGroup({
       message: new FormControl('', Validators.required)
     }); 
@@ -76,8 +78,14 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage(){
-    this.firebaseService.sendMessages(this.chatForm.value.message);
-    this.chatForm.reset();
+    let emailRegex = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    let mobileRegex = /\b[\+]?[(]?[0-9]{2,6}[)]?[-\s\.]?[-\s\/\.0-9]{3,15}\b/m;
+    if(emailRegex.test(this.chatForm.value.message) || mobileRegex.test(this.chatForm.value.message)){
+      this._commonService.tostMessage("You can't share Email-Id or Mobile Number.")
+    }else {
+      this.firebaseService.sendMessages(this.chatForm.value.message);
+      this.chatForm.reset();
+    }
   }
 
   getChatMsgScreen(chatInfo){
@@ -199,8 +207,8 @@ export class ChatComponent implements OnInit {
         sec = 0;
         min++;
       }
-      let chatTime = (((min && min < 10) ? '0'+min : min)+ ':' + ((sec && sec < 10) ? '0' + sec : sec));
-      localStorage.setItem('time', min.toString());
+      let chatTime = (((min == 0 || min < 10) ? '0'+min : min)+ ':' + ((sec == 0 || sec < 10) ? '0' + sec : sec));
+      localStorage.setItem('time', chatTime.toString());
       console.log(chatTime, 'chat time');
       return chatTime;
       
@@ -233,15 +241,34 @@ export class ChatComponent implements OnInit {
   deductChatAmount(){
     let userData = JSON.parse(sessionStorage.getItem('userData'));
     let chatUserData = JSON.parse(sessionStorage.getItem('chatUserDetail'));
+    let chatDetail = JSON.parse(localStorage.getItem('chatAmountDeduct'));
     let reqObj = {
       type: 'chat',
       minutes: localStorage.getItem('time') ? parseInt(localStorage.getItem('time')): '',
       userId: userData.userId,
-      astrologerId: chatUserData.userId
+      astrologerId: chatUserData.userId,
+      amount: chatDetail.amount,
     }
-    this.chatService.deductChatBalance(reqObj).subscribe(response => {
-      console.log(response, 'chat response');
-      localStorage.removeItem('time');
-    })
+
+
+    // chat deduction logic
+    
+    if(chatDetail && chatDetail.minToChat && localStorage.getItem('time')){
+      let getChatTime = localStorage.getItem('time').split(':');
+      let remainingTiming = moment(chatDetail.minToChat, 'mm:ss').subtract(moment.duration({'minutes': parseFloat(getChatTime[0]), 'seconds': parseFloat(getChatTime[1])})).format('mm:ss');
+      if(!chatDetail.isAmountDeducted){
+        this.chatService.deductChatBalance(reqObj).subscribe(response => {
+          console.log(response, 'chat response');
+          localStorage.removeItem('time');
+          if(remainingTiming){
+            chatDetail.minToChat = remainingTiming;
+            chatDetail.isAmountDeducted = true;
+            localStorage.setItem('chatAmountDeduct', JSON.stringify(chatDetail));
+          }
+        })
+      }
+      
+    }
+    // chat deduction logic
   }
 }

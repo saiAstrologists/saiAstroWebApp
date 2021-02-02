@@ -114,7 +114,8 @@ export class AstroQuestionComponent implements OnInit {
               reportSubType: everyData.reportSubType,
               reportType: everyData.reportType,
               userId: everyData.userId,
-              isAnswered: everyData.isAnswered
+              isAnswered: everyData.isAnswered,
+              isRequestAccpted: everyData.isRequestAccpted
             });
             this.users = obj;
           })
@@ -180,22 +181,22 @@ export class AstroQuestionComponent implements OnInit {
         let resonseMessage = responseData.message;
         if(responseData.status == 200) {
           this._commonService.tostMessage(resonseMessage);
-          let userData = JSON.parse(sessionStorage.getItem('userData'));
-          let acceptRejectRequest = {
-              "userId": userData.userId,
-              "queryId": this.selectedUser._id,
-	            "isRequestAccpted": 'true'
-          }
-          let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
-          if(acceptRejectRes) {
-            this.deductions();
-            this.dataSource.data.filter((list, i) => {
-              if(this.selectedUserIndex == i ){
-                list['isAnswered'] = true;
-              }
-            });
-            this.dataSource.filter = "";
-          }
+          // let userData = JSON.parse(sessionStorage.getItem('userData'));
+          // let acceptRejectRequest = {
+          //     "userId": userData.userId,
+          //     "queryId": this.selectedUser._id,
+	        //     "isRequestAccpted": 'true'
+          // }
+          // let acceptRejectRes = await this.acceptReject(acceptRejectRequest);
+          // if(acceptRejectRes) {
+          //   this.deductions();
+          //   this.dataSource.data.filter((list, i) => {
+          //     if(this.selectedUserIndex == i ){
+          //       list['isAnswered'] = true;
+          //     }
+          //   });
+          //   this.dataSource.filter = "";
+          // }
           this.validateForm.reset();
           this.sidenav.close();
         } else if(responseData.status == 300){
@@ -228,32 +229,64 @@ export class AstroQuestionComponent implements OnInit {
 
 
   statusChange(statusEvent, rowData, index){
-    if(statusEvent && statusEvent.value == 'Accept'){
-      this.selectedUser = rowData;
-      this.selectedUserStatusEvent = statusEvent;
-      this.selectedUserIndex = index;
-      this.sidenav.toggle();
-    }else if(statusEvent && statusEvent.value == 'Reject') {
-      const dialogRef = this._dialog.open(ConfirmationModalComponent, {
-        width: '400px',
-      });
-      dialogRef.afterClosed().subscribe(modalResponse => {
-        if(modalResponse == 'Y') {
-          let userData = JSON.parse(sessionStorage.getItem('userData'));
-          let acceptRejectRequest = {
-              "userId": userData.userId,
-              "queryId": rowData._id,
-	            "isRequestAccpted": 'false'
-          }
-          this.acceptReject(acceptRejectRequest).then(response => {
-            console.log(response, 'response');
-            
-          })
-        }else {
-          statusEvent.source.writeValue(null);
+    this.selectedUser = rowData;
+    this.selectedUserStatusEvent = statusEvent;
+    // this.selectedUserIndex = index;
+    const dialogRef = this._dialog.open(ConfirmationModalComponent, {
+      width: '400px',
+    });
+    dialogRef.afterClosed().subscribe(modalResponse => {
+      if(modalResponse == 'Y') {
+        let userData = JSON.parse(sessionStorage.getItem('userData'));
+        let acceptRejectRequest = {
+            "userId": userData.userId,
+            "queryId": rowData._id,
+            "isRequestAccpted": statusEvent && statusEvent.value == 'Accept' ? 'true': 'false'
         }
-      })
-    }
+        this.acceptReject(acceptRejectRequest).then(response => {
+          console.log(response, 'response');
+          if(statusEvent && statusEvent.value == 'Accept'){
+            this.deductions();
+          }
+
+          this.dataSource.data.filter((list, i) => {
+          if(index == i ){
+              list['isRequestAccpted'] = statusEvent && statusEvent.value == 'Accept' ? true: false;
+            }
+          });
+          this.dataSource.filter = "";
+          
+        })
+      }else {
+        statusEvent.source.writeValue(null);
+      }
+    })
+    // if(statusEvent && statusEvent.value == 'Accept'){
+    //   this.selectedUser = rowData;
+    //   this.selectedUserStatusEvent = statusEvent;
+    //   this.selectedUserIndex = index;
+    //   this.sidenav.toggle();
+    // }else if(statusEvent && statusEvent.value == 'Reject') {
+    //   const dialogRef = this._dialog.open(ConfirmationModalComponent, {
+    //     width: '400px',
+    //   });
+    //   dialogRef.afterClosed().subscribe(modalResponse => {
+    //     if(modalResponse == 'Y') {
+    //       let userData = JSON.parse(sessionStorage.getItem('userData'));
+    //       let acceptRejectRequest = {
+    //           "userId": userData.userId,
+    //           "queryId": rowData._id,
+	  //           "isRequestAccpted": 'false'
+    //       }
+    //       this.acceptReject(acceptRejectRequest).then(response => {
+    //         console.log(response, 'response');
+            
+    //       })
+    //     }else {
+    //       statusEvent.source.writeValue(null);
+    //     }
+    //   })
+    // }
   }
 
   deductions(){

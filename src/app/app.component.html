@@ -30,7 +30,7 @@
       <mat-toolbar-row>
 
         <button mat-button class="menu-button" (click)="sidenav.open()"><mat-icon aria-hidden="false">view_headline</mat-icon></button>
-        <span class="hm-logo"><a href="javascript:;"><img src="../assets/images/logo/PNG/font120px.png"></a></span>
+        <span class="hm-logo" (click)="logo();"><a href="javascript:;"><img src="../assets/images/logo/PNG/font120px.png"></a></span>
         <span class="example-spacer"></span>
 
         <div class="quick-link" *ngIf="isAstrologerLoggedIn$ | async as isAstrologerLoggedIn">

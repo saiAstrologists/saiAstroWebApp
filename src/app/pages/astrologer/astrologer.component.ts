@@ -411,9 +411,25 @@ openConfirmation(userData, type){
   });
   dialogRef.afterClosed().subscribe(modalResponse => {
     console.log(modalResponse, 'modal response');
-    if(modalResponse){
+    if(modalResponse.isConnected && modalResponse.minutes){
       sessionStorage.setItem('receiverId', userData.firebaseUserId);
       sessionStorage.setItem('chatUserDetail', JSON.stringify(userData));
+
+      // store data with whom chatting
+      if(modalResponse.minutes < 10) {
+        modalResponse['minToChat'] = '0'+ modalResponse.minutes.toString() +':'+ '00';
+      }else {
+        modalResponse['minToChat'] = modalResponse.minutes.toString() +':'+ '00';
+      }
+      let chatData = {
+        minToChat: modalResponse['minToChat'],
+        astrologerId: userData.firebaseUserId,
+        isAmountDeducted: false,
+        amount: userData.chat * modalResponse.minutes
+      }
+
+      localStorage.setItem('chatAmountDeduct', JSON.stringify(chatData));
+      // store data with whom chatting end
       this._route.navigate(['/chat']);
     }
   })

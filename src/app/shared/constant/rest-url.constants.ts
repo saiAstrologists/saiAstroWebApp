@@ -30,6 +30,7 @@ export class RestUrl {
     public static get verifySignature(): string { return '/rayzorpay/verify/signature'; }
     public static get updateWalletInfo(): string { return '/update/wallet'; }
     public static get deductBalance(): string { return '/users/deductbalance'; }
+    public static get deductChatBalance(): string { return '/call/charges'; }
 
 
     //Filters

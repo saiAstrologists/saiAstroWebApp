@@ -10,6 +10,7 @@ export class ChatService {
   constructor(private restService: RestService) { }
 
   deductChatBalance(data){
-    return this.restService.create(RestUrl.deductBalance, data);
+    // return this.restService.create(RestUrl.deductBalance, data);
+    return this.restService.patch(RestUrl.deductChatBalance, data, {});
   }
 }
