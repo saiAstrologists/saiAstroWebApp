@@ -103,6 +103,7 @@ export class ChatComponent implements OnInit {
     this.viewChatScreen = false;
     clearInterval(this.timer);
     this.deductChatAmount();
+
     sessionStorage.removeItem('chatName');
     this.chatListDetail();
   }
@@ -249,6 +250,12 @@ export class ChatComponent implements OnInit {
       astrologerId: chatUserData.userId,
       amount: chatDetail.amount,
     }
+
+    // if chatting wtih different user
+    if(userData.firebaseUserId != sessionStorage.getItem('receiverId') && userData.userType != 1){
+      return;
+    }
+    // if chatting wtih different user dont deduct
 
 
     // chat deduction logic

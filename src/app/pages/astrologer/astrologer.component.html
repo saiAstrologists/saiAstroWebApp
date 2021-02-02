@@ -102,7 +102,7 @@
             <div class="col-4 pl-1" (click)="detailPage(element)">
               <img src="{{element.profilePic ? element.profilePic : '../../../assets//images/user/default-user.jpg'}}">
             </div>
-            <div class="col-8 astro-card-content">
+            <div class="col-8 astro-card-content astrologer-data">
               <h1>{{element.name}} <span><mat-icon>verified</mat-icon></span></h1>
               <ng-container *ngIf="element.language && element.language.length">
                 <span *ngFor="let lang of element.language; let last = last">{{lang}} <span *ngIf="!last">, </span></span>
@@ -112,9 +112,12 @@
                   {{skill}}<span *ngIf="!last">, </span>
                 </span>
               </div>
+              <ng-container *ngIf="element.experience">
+                <span class="d-block mt-1 mb-1">Exp : {{element.experience}}</span>
+              </ng-container>
               <!-- <p>{{userData.countryCode}} NT$</p> -->
 
-              <p *ngIf="countryCode != null">
+              <p *ngIf="countryCode != null" class="mb-1">
                 <span *ngIf="CallBtnFlag"> Call
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
                 <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
@@ -125,7 +128,7 @@
                 <!-- <i [ngClass]="userData.countryCode == '+91' ? 'fa fa-inr' : userData.countryCode == '+1' ? 'fa fa-usd' : null" aria-hidden="true"></i> {{userData.countryCode == '+886'}} ? NT$ : '' </span> {{element.call}}/min</p> -->
                 <!-- Call {{userData.countryCode == '+91'}} ? &#8377; : {{userData.countryCode == '+1'}} ? : &#36; : NT$ {{element.call}}/min</p> -->
 
-              <p *ngIf="countryCode != null">
+              <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="ChatBtnFlag"> Chat
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
                 <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
@@ -133,7 +136,7 @@
                 {{element.chat}}/Min</span>
               </p>
 
-              <p *ngIf="countryCode != null">
+              <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="ReportBtnFlag">
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
                 <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
@@ -141,7 +144,7 @@
                 {{element.report}}/Report</span>
               </p>
 
-              <p *ngIf="countryCode != null">
+              <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="QAndAFlag">
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
                 <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
@@ -151,10 +154,10 @@
 
 
 
-              <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" (click)="report(element)">Report</button>
-              <button *ngIf="CallBtnFlag" mat-raised-button color="primary" (click)="call(element)">Call</button>
-              <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" (click)="chat(element)">Chat</button>
-              <button *ngIf="QAndAFlag" mat-raised-button color="primary" (click)="question(element)">Ask Question</button>
+              <button *ngIf="ReportBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="report(element)">Report</button>
+              <button *ngIf="CallBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="call(element)">Call</button>
+              <button *ngIf="ChatBtnFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="chat(element)">Chat</button>
+              <button *ngIf="QAndAFlag" mat-raised-button color="primary" [class]="element.activeStatus" (click)="question(element)">Ask Question</button>
             </div>
           </div>
         </mat-card>

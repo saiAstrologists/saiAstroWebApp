@@ -206,6 +206,12 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
           //   }); 
           //   this.dataSource.filter = "";
           // }
+          this.dataSource.data.filter((list, i) => {
+          if(this.selectedUserIndex == i ){
+            list['isAnswered'] = true;
+          }
+        }); 
+        this.dataSource.filter = "";
 
           this.validateForm.reset();
           this.sidenav.close();
@@ -241,6 +247,7 @@ export class AstroReportComponent implements OnInit, AfterViewInit {
   statusChange(statusEvent, rowData, index){
     this.selectedUser = rowData;
     this.selectedUserStatusEvent = statusEvent;
+    this.selectedUserIndex = index;
     const dialogRef = this._dialog.open(ConfirmationModalComponent, {
       width: '400px',
     });
