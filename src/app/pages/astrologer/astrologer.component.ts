@@ -158,6 +158,7 @@ export class AstrologerComponent implements OnInit {
   }
 
   call(value) {
+    let currentUser = JSON.parse(sessionStorage.getItem('userData'));
     console.log(" this.userData ------>> ",this.userData);
     console.log(" call value ------>> ",value);
     if( this.userData != null) {
@@ -166,17 +167,20 @@ export class AstrologerComponent implements OnInit {
               let countryCode =  !!this.userData.countryCode ? this.userData.countryCode : '+91';
               let requestBody = {
               contactNo : countryCode + this.userData.contactNo,
-              astrologerId : value.userId
+              astrologerId : value.userId,
+              userId: currentUser.userId
               }
               console.log("call requestBody ", requestBody);
 
-              this.openConfirmation(value, 'Call');
+              this.openConfirmation(value, 'Call').then(response => {
+                this._commonService.makeCall(requestBody).subscribe((responseData)=>{
+                  console.log("makeCall ++++++++++++", responseData);
+                  let resonseMessage = responseData.message;
+                  this._commonService.tostMessage(resonseMessage);
+                })
+              });
 
-              this._commonService.makeCall(requestBody).subscribe((responseData)=>{
-                console.log("makeCall ++++++++++++", responseData);
-                let resonseMessage = responseData.message;
-                this._commonService.tostMessage(resonseMessage);
-            })
+              
       } else {
         this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
       }
@@ -402,8 +406,9 @@ export class AstrologerComponent implements OnInit {
 
 // }
 
-openConfirmation(userData, type){
-  userData.type = type;
+openConfirmation(userData, type): Promise<any>{
+  let promise = new Promise((resolve) => {
+    userData.type = type;
   const dialogRef = this.dialog.open(ConfirmationComponent, {
     width: '500px',
     disableClose: false,
@@ -411,7 +416,12 @@ openConfirmation(userData, type){
   });
   dialogRef.afterClosed().subscribe(modalResponse => {
     console.log(modalResponse, 'modal response');
-    if(modalResponse.isConnected && modalResponse.minutes){
+    // only if call then use
+    if(type == 'Call') {
+      resolve();
+    }
+    // only if call then use end
+    if(modalResponse.isConnected && modalResponse.minutes && type == 'Chat'){
       sessionStorage.setItem('receiverId', userData.firebaseUserId);
       sessionStorage.setItem('chatUserDetail', JSON.stringify(userData));
 
@@ -432,7 +442,9 @@ openConfirmation(userData, type){
       // store data with whom chatting end
       this._route.navigate(['/chat']);
     }
+    })
   })
+  return promise;
 }
 
 }
