@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
   viewChatScreen: boolean = false;
   @Input() viewChatOption : boolean = true;
   timer: any;
+  timing: any;
   constructor(public firebaseService : FirebaseService, public observableService: ObservableDataService, private paymentService:PaymentService, private chatService: ChatService, private _commonService: CommonService) {
     this.chatForm = new FormGroup({
       message: new FormControl('', Validators.required)
@@ -211,6 +212,7 @@ export class ChatComponent implements OnInit {
       let chatTime = (((min == 0 || min < 10) ? '0'+min : min)+ ':' + ((sec == 0 || sec < 10) ? '0' + sec : sec));
       localStorage.setItem('time', chatTime.toString());
       console.log(chatTime, 'chat time');
+      this.timing = chatTime;
       return chatTime;
       
     }, 1000);

@@ -96,4 +96,13 @@
     .pointer {
         cursor: pointer;
     }
+
+    .chat-screen-heading {
+        position: relative;
+        .timer {
+            position: absolute;
+            right: 15px;
+            font-size: 18px;
+        }
+    }
 }
