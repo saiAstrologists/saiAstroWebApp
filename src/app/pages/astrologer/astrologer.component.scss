@@ -125,9 +125,11 @@ $black: #000;
     background-color: #1aa260;
     &.Offline {
       background-color: grey;
+      pointer-events: none;
     }
     &.Bussy {
       background-color: red;
+      pointer-events: none;
     }
   }
 }

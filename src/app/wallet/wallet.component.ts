@@ -74,6 +74,7 @@ export class WalletComponent implements OnInit {
           console.log(response, 'wallet info response'); 
           this.walletInfo = response[0];
           sessionStorage.setItem('wallet_id', this.walletInfo._id);
+          sessionStorage.setItem('walletAmount', this.walletInfo.amount);
         }
       })
     }

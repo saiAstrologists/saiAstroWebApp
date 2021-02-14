@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   messaging: FormGroup;
   receiverId: any;
   senderId: any;
+  userBaseLogoPath: string = '';
 
   @ViewChild('sidenav') sidenav: MatSidenav;
   isUserLogin : boolean = false;
@@ -88,6 +89,14 @@ export class AppComponent implements OnInit {
       this.checkUser = JSON.parse(sessionStorage.getItem('userData'));
       this.isAstrologerLoggedIn$ = this.authService.isAstrologerLoggedIn;
       this.isLoggedIn$ = this.authService.isLoggedIn;
+
+      if(this.checkUser && this.checkUser.userType == 1){
+        this.userBaseLogoPath = '../assets/images/logo/SVG/yellow-logo.svg';
+      }else if(this.checkUser && this.checkUser.userType == 2){
+        this.userBaseLogoPath = '../assets/images/logo/SVG/orange-logo.svg';
+      }else {
+        this.userBaseLogoPath = '../assets/images/logo/SVG/yellow-logo.svg';
+      }
 
       console.log("checkUser ++",this.checkUser);
       if(this.checkUser != null) {
@@ -154,11 +163,14 @@ export class AppComponent implements OnInit {
        console.log("isAdminUser ",isAdminUser);
        if(!result.profileUpdated && typeof result.profileUpdated != 'undefined') {
         this._route.navigate(['home/astroRegistration']);
+        this.userBaseLogoPath = '../assets/images/logo/SVG/orange-logo.svg';
        } else if(!isAdminUser){
          this._route.navigate(['dashboard']);
+         this.userBaseLogoPath = '../assets/images/logo/SVG/orange-logo.svg';
        } else {
          console.log("else condition !!!!!");
          this.home();
+         this.userBaseLogoPath = '../assets/images/logo/SVG/yellow-logo.svg';
        }
       }
     });

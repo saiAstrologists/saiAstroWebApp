@@ -17,5 +17,9 @@ export class signUpService {
     return this.restService.create(RestUrl.signUp, data)
   }
 
+  getCountry(): Observable<any> {
+    return this.restService.getJson('/assets/json/countrylist.json');
+  }
+
 
 }

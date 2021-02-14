@@ -53,6 +53,10 @@ export class RestService {
     return this.http.get(environment.urlAddress+ route, {params : headerParam})
   }
 
+  public getJson = (jsonPath) =>{
+    return this.http.get(jsonPath);
+  }
+
 
 
   // public delete = (route: string) => {

@@ -16,6 +16,7 @@ export class SignUpComponent implements OnInit {
   isVisible:boolean = false;
   loginResponseData;
   message;
+  countryCodeList: any = [];
 
   @Output()
   outputSignUpData: EventEmitter<any> = new EventEmitter<any>();
@@ -23,6 +24,8 @@ export class SignUpComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder, private _signUpService : signUpService, private _commonService : CommonService, public firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
+
+    this.getCountryCodeList();
 
     this.signUpValidateForm = this._formBuilder.group({
       name           : ['', [Validators.required]],
@@ -41,6 +44,12 @@ export class SignUpComponent implements OnInit {
 
 
   submitForm(value: any){
+
+    // if user select apart from India , USA or Taiwan then set USA as default
+    if(value && value.countryCode != '+91' || value.countryCode != '+1' || value.countryCode != '+886'){
+      value.countryCode = '+1';
+    }
+
     for (const key in this.signUpValidateForm.controls) {
         this.signUpValidateForm.controls[key].markAsDirty();
         this.signUpValidateForm.controls[key].updateValueAndValidity();
@@ -132,6 +141,11 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-
+  getCountryCodeList(){
+    this._signUpService.getCountry().subscribe(response => {
+      console.log(response, 'response country list');
+      this.countryCodeList = response;
+    })
+  }
 
 }

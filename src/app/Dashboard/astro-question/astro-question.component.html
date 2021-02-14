@@ -51,7 +51,7 @@
 
         <mat-form-field class="form-field-full-width">
           <mat-label>Answer</mat-label>
-          <textarea matInput formControlName="message"maxlength="2000" #message (keyup)="count(message.value)" required></textarea>
+          <textarea matInput formControlName="message"maxlength="2000" minlength="600" #message (keyup)="count(message.value)" required></textarea>
           <mat-hint align="start">{{characters}} / 2000</mat-hint>
         </mat-form-field>
 

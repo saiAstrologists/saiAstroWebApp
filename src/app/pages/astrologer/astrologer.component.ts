@@ -144,11 +144,19 @@ export class AstrologerComponent implements OnInit {
 
 
   report(value) {
+    let walletAmount = parseInt(sessionStorage.getItem('walletAmount'));
+    let reportCharge = value.report;
     if( this.userData != null) {
       if(this.userData.userType == 1) {
         console.log("Can question");
-        this._observableDataService.passAstroDetails(value);
-        this._route.navigate(['home/reportListing'])
+        if(reportCharge && reportCharge > walletAmount){
+          // if user has less many in wallet
+          this._commonService.tostMessage('To make this connection you required to add sufficient amount in the wallet');
+          // if user has less many in wallet end
+        }else {
+          this._observableDataService.passAstroDetails(value);
+          this._route.navigate(['home/reportListing'])
+        }
     } else {
       this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
     }
@@ -208,11 +216,19 @@ export class AstrologerComponent implements OnInit {
   }
 
   question(value){
+    let walletAmount = parseInt(sessionStorage.getItem('walletAmount'));
+    let reportCharge = value.report;
     if( this.userData != null) {
       if(this.userData.userType == 1) {
         console.log("Can question");
+        if(reportCharge && reportCharge > walletAmount){
+          // if user has less many in wallet
+          this._commonService.tostMessage('To make this connection you required to add sufficient amount in the wallet');
+          // if user has less many in wallet end
+        }else {
           this._observableDataService.passAstroDetails(value);
           this._route.navigate(['home/questionAnswer'])
+        }
       } else {
         this._commonService.tostMessage("Astrologer Can't make call to Astrologer!");
       }
