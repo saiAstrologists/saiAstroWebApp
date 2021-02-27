@@ -176,7 +176,8 @@ export class AstrologerComponent implements OnInit {
               let requestBody = {
               contactNo : countryCode + this.userData.contactNo,
               astrologerId : value.userId,
-              userId: currentUser.userId
+              userId: currentUser.userId,
+              balance : sessionStorage.getItem('walletAmount')
               }
               console.log("call requestBody ", requestBody);
 
