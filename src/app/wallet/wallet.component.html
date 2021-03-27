@@ -6,7 +6,13 @@
                 <div class="clearfix">
                         <div class="float-left">
                             <div class="wallet-info">
-                                <span class="money-symbol">₹</span>
+                                <span class="money-symbol">
+                                    <span *ngIf="countryCode == 'IN'">₹</span>
+                                    <span *ngIf="countryCode == 'TW' ">
+                                        <img src="../../../assets/images/icons-taiwan-china-dollar.png">
+                                    </span>
+                                    <span *ngIf="countryCode != 'IN' && countryCode != 'TW'">$</span>
+                                </span>
                                 <span class="amount">{{(walletInfo?.amount) ? walletInfo?.amount: '0'}}</span>
                                 <span class="d-block mt-2">SaiAstro Wallet Balance</span>
                             </div>
@@ -21,11 +27,18 @@
               </mat-card>
               <mat-card class="add-wallet-money" *ngIf="viewWallet">
                 <div class="wallet-img-holder">
-                    <img src="/assets/images/social/wallet.png" alt="" class="img-fluid">
+                    <img src="/assets/images/social/wallet.svg" alt="" class="img-fluid">
                 </div>
                 <form [formGroup]="walletForm" class="wallet-form">
                     <div class="recharge-list mb-5">
-                        <span class="list" *ngFor="let list of rechargeList; let i = index" (click)="selectRechargeAmount(list)" [ngClass]="(selectedRechargeAmount == list.amount) ? 'active': '' ">{{list.symbol}} {{list.amount}}</span>
+                        <span class="list" *ngFor="let list of rechargeList; let i = index" (click)="selectRechargeAmount(list)" [ngClass]="(selectedRechargeAmount == list.amount) ? 'active': '' ">
+                                <span *ngIf="countryCode == 'IN'">₹</span>
+                                <span *ngIf="countryCode == 'TW' ">
+                                    <img src="../../../assets/images/icons-taiwan-china-dollar.png">
+                                </span>
+                                <span *ngIf="countryCode != 'IN' && countryCode != 'TW'">$</span>
+                            {{list.amount}}
+                        </span>
                     </div>
                     <div class="field-wrapper">
                         <mat-form-field class="example-full-width w-100">

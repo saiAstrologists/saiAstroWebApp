@@ -15,10 +15,13 @@ export class WalletComponent implements OnInit {
   walletForm: FormGroup;
   rechargeList = [];
   selectedRechargeAmount: any;
+  countryCode: any;
   constructor(public paymentService: PaymentService) {
     this.walletForm = new FormGroup({
       walletAmount: new FormControl('', [Validators.required])
     });
+
+    this.countryCode = sessionStorage.getItem('CC');
 
 
     // recharge list
@@ -89,7 +92,8 @@ export class WalletComponent implements OnInit {
       let userData = JSON.parse(sessionStorage.getItem('userData'));
       let reqObj = { 
         "amount": formData.value.walletAmount,
-        "currency": "INR",
+        // "currency": "INR",
+        "currency": this.countryCode == 'IN' ? "INR" : (this.countryCode == 'TW' ? "TWD" : "USD"),
         "userId": userData.userId,
         "recieptId": this.makeOrderid(),
         "id": sessionStorage.getItem('wallet_id') || null 
