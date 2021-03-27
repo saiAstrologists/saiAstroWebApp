@@ -116,11 +116,11 @@
                 <span class="d-block mt-1 mb-1">Exp : {{element.experience}}</span>
               </ng-container>
               <!-- <p>{{userData.countryCode}} NT$</p> -->
-
               <p *ngIf="countryCode != null" class="mb-1">
                 <span *ngIf="CallBtnFlag"> Call
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+                <!-- <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span> -->
+                <span *ngIf="countryCode != 'IN' || countryCode != 'TW' "> <i class="fa fa-usd" aria-hidden="true"></i> </span>
                 <span class="taiwan-dollar" *ngIf="countryCode == 'TW'"> <img src="../../../assets/images/icons-taiwan-china-dollar.png"> </span>
                 {{element.call}}/Min
                 </span>
@@ -131,7 +131,8 @@
               <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="ChatBtnFlag"> Chat
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+                <!-- <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span> -->
+                <span *ngIf="countryCode != 'IN' || countryCode != 'TW' "> <i class="fa fa-usd" aria-hidden="true"></i> </span>
                 <span class="taiwan-dollar" *ngIf="countryCode == 'TW'"> <img src="../../../assets/images/icons-taiwan-china-dollar.png"> </span>
                 {{element.chat}}/Min</span>
               </p>
@@ -139,7 +140,8 @@
               <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="ReportBtnFlag">
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+                <!-- <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span> -->
+                <span *ngIf="countryCode != 'IN' || countryCode != 'TW' "> <i class="fa fa-usd" aria-hidden="true"></i> </span>
                 <span class="taiwan-dollar" *ngIf="countryCode == 'TW'"> <img src="../../../assets/images/icons-taiwan-china-dollar.png"> </span>
                 {{element.report}}/Report</span>
               </p>
@@ -147,7 +149,8 @@
               <p *ngIf="countryCode != null" class="mb-1">
               <span *ngIf="QAndAFlag">
                 <span *ngIf="countryCode == 'IN'"> <i class="fa fa-inr" aria-hidden="true"></i> </span>
-                <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span>
+                <!-- <span *ngIf="countryCode == 'US'"> <i class="fa fa-usd" aria-hidden="true"></i> </span> -->
+                <span *ngIf="countryCode != 'IN' || countryCode != 'TW' "> <i class="fa fa-usd" aria-hidden="true"></i> </span>
                 <span class="taiwan-dollar" *ngIf="countryCode == 'TW'"> <img src="../../../assets/images/icons-taiwan-china-dollar.png"> </span>
                 {{element.questionAnswer}}/Q&A</span>
                 </p>
