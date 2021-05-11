@@ -229,6 +229,12 @@ export class AppComponent implements OnInit {
   }
 
 
+  viewTransaction(){
+    this._route.navigate(['/transaction']);
+    this.sidenav.close();
+  }
+
+
   logOut(){
     this.authService.logOut();
   }

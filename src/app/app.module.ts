@@ -26,6 +26,7 @@ import 'firebase/messaging';
 import { ChatComponent } from './chat/chat.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { WalletComponent } from './wallet/wallet.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 
@@ -68,7 +69,8 @@ firebase.initializeApp(config);
     SpinnerComponent,
     ChatComponent,
     ConfirmationComponent,
-    WalletComponent
+    WalletComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

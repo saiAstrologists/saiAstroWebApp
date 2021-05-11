@@ -24,4 +24,10 @@ export class PaymentService {
   updateWalletInfo(data, bodyReq) {
     return this.restService.patch(RestUrl.updateWalletInfo, data, bodyReq);
   }
+
+  //transaction
+  viewTransaction(data){
+    // return this.restService.get('/payment/wallet/transactions?astrologerId=a01');
+    return this.restService.get(RestUrl.viewTransaction+'?'+data);
+  }
 }

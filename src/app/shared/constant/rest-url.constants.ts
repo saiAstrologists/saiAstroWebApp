@@ -31,6 +31,7 @@ export class RestUrl {
     public static get updateWalletInfo(): string { return '/update/wallet'; }
     public static get deductBalance(): string { return '/users/deductbalance'; }
     public static get deductChatBalance(): string { return '/call/charges'; }
+    public static get viewTransaction(): string { return '/payment/wallet/transactions'; }
 
 
     //Filters
